@@ -12,4 +12,26 @@
 
 A library to calculate the time of next retry in apps that needs to be fault tolerant and retry failed attempts of doing
  something.
- 
+
+Requirements
+------------
+
+1. PHP ^7.0
+
+Status: ACTIVE DEVELOPMENT
+--------------------------
+
+This library is currently in development mode. We use it in our live projects and so we try to maintain it in good health.
+
+It is as stable as possible. If you, using it, find bugs or scenarios not covered, please, open an issue describing the problem.
+
+All issues are reviewd and fixed.
+
+If you have a feature request, equally, please, open an issue and we will review it and evaluate if it may be implemented.
+
+Thank you for your collaboration.
+
+DOCUMENTATION
+=============
+
+You can read how to use the SerendipityHQ ThenWhen library in the [documentation](docs/Strategies.md).

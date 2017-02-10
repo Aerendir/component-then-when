@@ -1,0 +1,26 @@
+{
+    "name": "serendipity_hq/then-when",
+    "description": "A library to calculate the time of next retry in apps that needs to be fault tolerant and retry failed attempts of doing something.",
+    "type": "library",
+    "keywords": [],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Adamo Aerendir Crespi",
+            "email": "hello@aerendir.me"
+        }
+    ],
+    "require": {
+        "php": "~7.0"
+    },
+    "require-dev": {
+        "codeclimate/php-test-reporter": "dev-master",
+        "phpunit/phpunit": "*",
+        "symfony/var-dumper": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "SerendipityHQ\\Component\\ThenWhen\\": ""
+        }
+    }
+}

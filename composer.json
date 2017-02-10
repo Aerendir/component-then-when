@@ -11,7 +11,8 @@
         }
     ],
     "require": {
-        "php": "~7.0"
+        "php": "~7.0",
+        "nesbot/carbon": "*"
     },
     "require-dev": {
         "codeclimate/php-test-reporter": "dev-master",
@@ -20,7 +21,8 @@
     },
     "autoload": {
         "psr-4": {
-            "SerendipityHQ\\Component\\ThenWhen\\": ""
+            "SerendipityHQ\\Component\\ThenWhen\\": "src",
+            "SerendipityHQ\\Component\\ThenWhen\\Tests\\": "tests"
         }
     }
 }

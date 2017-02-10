@@ -7,15 +7,15 @@
     </php>
     <testsuites>
         <testsuite name="ThenWhen component.">
-            <directory>./src/Tests</directory>
+            <directory>tests</directory>
         </testsuite>
     </testsuites>
     <filter>
         <whitelist>
             <directory>.</directory>
             <exclude>
-                <directory>./src/Tests</directory>
-                <directory>./vendor</directory>
+                <directory>tests</directory>
+                <directory>vendor</directory>
             </exclude>
         </whitelist>
     </filter>

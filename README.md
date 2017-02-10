@@ -12,4 +12,3 @@
 
 A library to calculate the time of next retry in apps that needs to be fault tolerant and retry failed attempts of doing
  something.
- 

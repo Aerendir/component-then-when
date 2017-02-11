@@ -19,7 +19,7 @@ class LinearStrategy extends AbstractStrategy
             $incrementBy = $this->getIncrementBy() * $this->getAttempts();
 
             // ... return the date on which to retry
-            return (new \DateTime())->modify('+' . $incrementBy . ' ' . $this->getTimeUnit());
+            return (new \DateTime())->modify('+'.$incrementBy.' '.$this->getTimeUnit());
         }
 
         return false;

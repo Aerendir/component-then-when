@@ -10,24 +10,23 @@ abstract class AbstractStrategy implements StrategyInterface
     /** @var int $attempts How many retry attempts have been done */
     private $attempts = 0;
 
-    /** @var  int $incrementBy */
+    /** @var int $incrementBy */
     private $incrementBy;
 
     /** @var int $maxAttempts */
     private $maxAttempts = 0;
 
-    /** @var  string $timeUnit */
+    /** @var string $timeUnit */
     private $timeUnit;
 
     /**
-     * @param int $maxAttempts
-     * @param int $incrementBy
+     * @param int    $maxAttempts
+     * @param int    $incrementBy
      * @param string $timeUnit
      */
     public function __construct(
         int $maxAttempts, int $incrementBy, string $timeUnit = StrategyInterface::TIME_UNIT_SECONDS
-    )
-    {
+    ) {
         $this->setMaxAttempts($maxAttempts)->setIncrementBy($incrementBy)->setTimeUnit($timeUnit);
     }
 
@@ -42,7 +41,7 @@ abstract class AbstractStrategy implements StrategyInterface
     /**
      * {@inheritdoc}
      */
-    public function getAttempts() : int 
+    public function getAttempts() : int
     {
         return $this->attempts;
     }
@@ -91,20 +90,20 @@ abstract class AbstractStrategy implements StrategyInterface
 
         switch ($timeUnit) {
             case StrategyInterface::TIME_UNIT_YEARS:
-                return $this->convertToSeconds($increment*12, StrategyInterface::TIME_UNIT_MONTHS);
+                return $this->convertToSeconds($increment * 12, StrategyInterface::TIME_UNIT_MONTHS);
                 break;
             case StrategyInterface::TIME_UNIT_MONTHS:
                 // We average to 30 days in a month, without taking care of the ones long 31 days or 28 or 29
-                return $this->convertToSeconds($increment*30, StrategyInterface::TIME_UNIT_DAYS);
+                return $this->convertToSeconds($increment * 30, StrategyInterface::TIME_UNIT_DAYS);
                 break;
             case StrategyInterface::TIME_UNIT_DAYS:
-                return $this->convertToSeconds($increment*24, StrategyInterface::TIME_UNIT_HOURS);
+                return $this->convertToSeconds($increment * 24, StrategyInterface::TIME_UNIT_HOURS);
                 break;
             case StrategyInterface::TIME_UNIT_HOURS:
-                return $this->convertToSeconds($increment*60, StrategyInterface::TIME_UNIT_MINUTES);
+                return $this->convertToSeconds($increment * 60, StrategyInterface::TIME_UNIT_MINUTES);
                 break;
             case StrategyInterface::TIME_UNIT_MINUTES:
-                return $increment*60;
+                return $increment * 60;
                 break;
             case StrategyInterface::TIME_UNIT_SECONDS:
                 return $increment;
@@ -116,17 +115,19 @@ abstract class AbstractStrategy implements StrategyInterface
 
     /**
      * @param int $attempts
+     *
      * @return AbstractStrategy
      */
     protected function setAttempts(int $attempts)  : AbstractStrategy
     {
         $this->attempts = $attempts;
-        
+
         return $this;
     }
-    
+
     /**
      * @param int $incremenetBy
+     *
      * @return AbstractStrategy
      */
     protected function setIncrementBy(int $incremenetBy)  : AbstractStrategy
@@ -138,6 +139,7 @@ abstract class AbstractStrategy implements StrategyInterface
 
     /**
      * @param string $timeUnit
+     *
      * @return AbstractStrategy
      */
     protected function setTimeUnit(string $timeUnit) : AbstractStrategy
@@ -151,6 +153,7 @@ abstract class AbstractStrategy implements StrategyInterface
 
     /**
      * @param int $maxAttempts
+     *
      * @return AbstractStrategy
      */
     protected function setMaxAttempts(int $maxAttempts)  : AbstractStrategy
@@ -162,6 +165,7 @@ abstract class AbstractStrategy implements StrategyInterface
 
     /**
      * @param string $timeUnit
+     *
      * @return bool
      */
     protected function validateTimeUnit(string $timeUnit)
@@ -183,18 +187,18 @@ abstract class AbstractStrategy implements StrategyInterface
      */
     public function jsonSerialize()
     {
-        if (false === defined(get_class($this) . '::STRATEGY')) {
+        if (false === defined(get_class($this).'::STRATEGY')) {
             throw new \RuntimeException(
                 'The Strategy doesn\'t tells its own name. Create the contant "STRATEGY" that tells the name of the'
-                . ' strategy.'
+                .' strategy.'
             );
         }
 
         return [
-            'attempts' => $this->getAttempts(),
-            'max_attempts' => $this->getMaxAttempts(),
-            'increment_by' => $this->getIncrementBy(),
-            'increment_unit' => $this->getTimeUnit()
+            'attempts'       => $this->getAttempts(),
+            'max_attempts'   => $this->getMaxAttempts(),
+            'increment_by'   => $this->getIncrementBy(),
+            'increment_unit' => $this->getTimeUnit(),
         ];
     }
 }

@@ -2,9 +2,6 @@
 
 namespace SerendipityHQ\Component\ThenWhen\Strategy;
 
-/**
- *
- */
 class ExponentialStrategy extends AbstractStrategy
 {
     const STRATEGY = 'exponential';
@@ -13,18 +10,17 @@ class ExponentialStrategy extends AbstractStrategy
     private $exponentialBase;
 
     /**
-     * @param int $maxAttempts
-     * @param int $incrementBy
+     * @param int    $maxAttempts
+     * @param int    $incrementBy
      * @param string $timeUnit
-     * @param int $exponentialBase
+     * @param int    $exponentialBase
      */
     public function __construct(
         int $maxAttempts,
         int $incrementBy,
         string $timeUnit = StrategyInterface::TIME_UNIT_SECONDS,
         int $exponentialBase = 2
-    )
-    {
+    ) {
         $this->setExponentialBase($exponentialBase);
 
         parent::__construct($maxAttempts, $incrementBy, $timeUnit);
@@ -39,10 +35,10 @@ class ExponentialStrategy extends AbstractStrategy
         if (parent::canRetry()) {
             $incrementBy = $this->getAttempts() === 1
                 ? $this->getIncrementBy()
-                : pow($this->getExponentialBase(), $this->getAttempts()) * $this->getIncrementBy() ;
+                : pow($this->getExponentialBase(), $this->getAttempts()) * $this->getIncrementBy();
 
             // ... return the date on which to retry
-            return (new \DateTime())->modify('+' . $incrementBy . ' ' . $this->getTimeUnit());
+            return (new \DateTime())->modify('+'.$incrementBy.' '.$this->getTimeUnit());
         }
 
         // No more retries
@@ -59,6 +55,7 @@ class ExponentialStrategy extends AbstractStrategy
 
     /**
      * @param int $exponentialBase
+     *
      * @return AbstractStrategy
      */
     protected function setExponentialBase(int $exponentialBase) : AbstractStrategy

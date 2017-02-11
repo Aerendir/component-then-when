@@ -20,7 +20,7 @@ interface StrategyInterface
         self::TIME_UNIT_HOURS,
         self::TIME_UNIT_DAYS,
         self::TIME_UNIT_MONTHS,
-        self::TIME_UNIT_YEARS
+        self::TIME_UNIT_YEARS,
     ];
 
     /**
@@ -55,6 +55,7 @@ interface StrategyInterface
 
     /**
      * Returns the DateTime of the next retry or false if no retries have to be done.
+     *
      * @return \DateTime|false
      */
     public function retryOn();

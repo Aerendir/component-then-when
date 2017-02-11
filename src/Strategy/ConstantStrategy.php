@@ -17,7 +17,7 @@ class ConstantStrategy extends AbstractStrategy
         // If we can retry...
         if (parent::canRetry()) {
             // ... return the date on which to retry
-            return (new \DateTime())->modify('+' . $this->getIncrementBy() . ' ' . $this->getTimeUnit());
+            return (new \DateTime())->modify('+'.$this->getIncrementBy().' '.$this->getTimeUnit());
         }
 
         // No more retries

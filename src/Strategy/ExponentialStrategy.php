@@ -33,16 +33,24 @@ class ExponentialStrategy extends AbstractStrategy
     {
         // If we can retry...
         if (parent::canRetry()) {
-            $incrementBy = $this->getAttempts() === 1
-                ? $this->getIncrementBy()
-                : pow($this->getExponentialBase(), $this->getAttempts()) * $this->getIncrementBy();
-
             // ... return the date on which to retry
-            return (new \DateTime())->modify('+'.$incrementBy.' '.$this->getTimeUnit());
+            return (new \DateTime())->modify('+'.$this->waitFor().' '.self::TIME_UNIT_SECONDS);
         }
 
         // No more retries
         return false;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function waitFor(): int
+    {
+        $incrementBy = $this->getAttempts() === 1
+            ? $this->getIncrementBy()
+            : pow($this->getExponentialBase(), $this->getAttempts()) * $this->getIncrementBy();
+
+        return $this->convertToSeconds($incrementBy, $this->getTimeUnit());
     }
 
     /**

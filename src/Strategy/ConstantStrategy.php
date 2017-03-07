@@ -17,10 +17,18 @@ class ConstantStrategy extends AbstractStrategy
         // If we can retry...
         if (parent::canRetry()) {
             // ... return the date on which to retry
-            return (new \DateTime())->modify('+'.$this->getIncrementBy().' '.$this->getTimeUnit());
+            return (new \DateTime())->modify('+'.$this->waitFor().' '.self::TIME_UNIT_SECONDS);
         }
 
         // No more retries
         return false;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function waitFor() : int
+    {
+        return $this->convertToSeconds($this->getIncrementBy(), $this->getTimeUnit());
     }
 }

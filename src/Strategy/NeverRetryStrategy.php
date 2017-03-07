@@ -24,4 +24,12 @@ class NeverRetryStrategy extends AbstractStrategy
     {
         return false;
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function waitFor(): int
+    {
+        return 0;
+    }
 }

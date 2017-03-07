@@ -16,12 +16,19 @@ class LinearStrategy extends AbstractStrategy
     {
         // If we can retry...
         if (parent::canRetry()) {
-            $incrementBy = $this->getIncrementBy() * $this->getAttempts();
-
             // ... return the date on which to retry
-            return (new \DateTime())->modify('+'.$incrementBy.' '.$this->getTimeUnit());
+            return (new \DateTime())->modify('+'.$this->waitFor().' '.self::TIME_UNIT_SECONDS);
         }
 
         return false;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function waitFor() : int
+    {
+        $incrementBy = $this->getIncrementBy() * $this->getAttempts();
+        return $this->convertToSeconds($incrementBy, $this->getTimeUnit());
     }
 }

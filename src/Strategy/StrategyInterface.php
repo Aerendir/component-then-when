@@ -34,7 +34,7 @@ interface StrategyInterface
     public function getAttempts() : int;
 
     /**
-     * @return mixed
+     * @return int
      */
     public function getIncrementBy() : int;
 
@@ -52,6 +52,13 @@ interface StrategyInterface
      * @return string
      */
     public function getStrategyName() : string;
+
+    /**
+     * The time to wait in seconds.
+     *
+     * @return int
+     */
+    public function waitFor() : int;
 
     /**
      * @return StrategyInterface

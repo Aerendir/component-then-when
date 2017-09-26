@@ -16,6 +16,7 @@
     },
     "require-dev": {
         "codeclimate/php-test-reporter": "dev-master",
+        "friendsofphp/php-cs-fixer": "^2.0",
         "phpunit/phpunit": "^6",
         "symfony/var-dumper": "^3.0"
     },

@@ -1,5 +1,15 @@
 <?php
 
+/*
+ * This file is part of PHP Value Objects.
+ *
+ * Copyright Adamo Aerendir Crespi 2017.
+ *
+ * @author    Adamo Aerendir Crespi <hello@aerendir.me>
+ * @copyright Copyright (C) 2017 Aerendir. All rights reserved.
+ * @license   MIT
+ */
+
 namespace SerendipityHQ\Component\ThenWhen\Strategy;
 
 use Carbon\Carbon;
@@ -15,7 +25,7 @@ class TimeFixedStrategy extends LinearStrategy
     /**
      * @param int           $maxAttempts
      * @param \DateTime|int $endOfTimeWindow
-     * @param null|string   $timeUnit
+     * @param string|null   $timeUnit
      */
     public function __construct(int $maxAttempts, $endOfTimeWindow, string $timeUnit = null)
     {
@@ -70,7 +80,7 @@ class TimeFixedStrategy extends LinearStrategy
      *
      * @return int The amount of seconds
      */
-    private function calculateIncrementBy(int $maxAttempts, Carbon $endOfTimeWindow) : int
+    private function calculateIncrementBy(int $maxAttempts, Carbon $endOfTimeWindow): int
     {
         $seconds = $endOfTimeWindow->diffInSeconds();
 
@@ -88,7 +98,7 @@ class TimeFixedStrategy extends LinearStrategy
         if ($seconds < $maxAttempts) {
             throw new \LogicException(
                 'The given number of max attempts exceeds the available time window. Try to reduce the max amount of'
-                .' attempts or to increase the available time window.'
+                . ' attempts or to increase the available time window.'
             );
         }
     }

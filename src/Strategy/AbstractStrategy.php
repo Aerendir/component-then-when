@@ -1,5 +1,15 @@
 <?php
 
+/*
+ * This file is part of PHP Value Objects.
+ *
+ * Copyright Adamo Aerendir Crespi 2017.
+ *
+ * @author    Adamo Aerendir Crespi <hello@aerendir.me>
+ * @copyright Copyright (C) 2017 Aerendir. All rights reserved.
+ * @license   MIT
+ */
+
 namespace SerendipityHQ\Component\ThenWhen\Strategy;
 
 /**
@@ -33,7 +43,7 @@ abstract class AbstractStrategy implements StrategyInterface
     /**
      * {@inheritdoc}
      */
-    public function canRetry() : bool
+    public function canRetry(): bool
     {
         return $this->attempts < $this->maxAttempts;
     }
@@ -41,7 +51,7 @@ abstract class AbstractStrategy implements StrategyInterface
     /**
      * {@inheritdoc}
      */
-    public function getAttempts() : int
+    public function getAttempts(): int
     {
         return $this->attempts;
     }
@@ -49,7 +59,7 @@ abstract class AbstractStrategy implements StrategyInterface
     /**
      * {@inheritdoc}
      */
-    public function getIncrementBy() : int
+    public function getIncrementBy(): int
     {
         return $this->incrementBy;
     }
@@ -73,7 +83,7 @@ abstract class AbstractStrategy implements StrategyInterface
     /**
      * {@inheritdoc}
      */
-    public function getStrategyName() : string
+    public function getStrategyName(): string
     {
         return $this::STRATEGY;
     }
@@ -81,11 +91,31 @@ abstract class AbstractStrategy implements StrategyInterface
     /**
      * {@inheritdoc}
      */
-    public function newAttempt() : StrategyInterface
+    public function newAttempt(): StrategyInterface
     {
-        $this->attempts++;
+        ++$this->attempts;
 
         return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function jsonSerialize()
+    {
+        if (false === defined(get_class($this) . '::STRATEGY')) {
+            throw new \RuntimeException(
+                'The Strategy doesn\'t tells its own name. Create the contant "STRATEGY" that tells the name of the'
+                . ' strategy.'
+            );
+        }
+
+        return [
+            'attempts'       => $this->getAttempts(),
+            'max_attempts'   => $this->getMaxAttempts(),
+            'increment_by'   => $this->getIncrementBy(),
+            'increment_unit' => $this->getTimeUnit(),
+        ];
     }
 
     /**
@@ -94,7 +124,7 @@ abstract class AbstractStrategy implements StrategyInterface
      *
      * @return int
      */
-    protected function convertToSeconds(int $increment, string $timeUnit) : int
+    protected function convertToSeconds(int $increment, string $timeUnit): int
     {
         $this->validateTimeUnit($timeUnit);
 
@@ -128,7 +158,7 @@ abstract class AbstractStrategy implements StrategyInterface
      *
      * @return AbstractStrategy
      */
-    protected function setAttempts(int $attempts)  : AbstractStrategy
+    protected function setAttempts(int $attempts): AbstractStrategy
     {
         $this->attempts = $attempts;
 
@@ -140,7 +170,7 @@ abstract class AbstractStrategy implements StrategyInterface
      *
      * @return AbstractStrategy
      */
-    protected function setIncrementBy(int $incremenetBy)  : AbstractStrategy
+    protected function setIncrementBy(int $incremenetBy): AbstractStrategy
     {
         $this->incrementBy = $incremenetBy;
 
@@ -152,7 +182,7 @@ abstract class AbstractStrategy implements StrategyInterface
      *
      * @return AbstractStrategy
      */
-    protected function setTimeUnit(string $timeUnit) : AbstractStrategy
+    protected function setTimeUnit(string $timeUnit): AbstractStrategy
     {
         $this->validateTimeUnit($timeUnit);
 
@@ -166,7 +196,7 @@ abstract class AbstractStrategy implements StrategyInterface
      *
      * @return AbstractStrategy
      */
-    protected function setMaxAttempts(int $maxAttempts)  : AbstractStrategy
+    protected function setMaxAttempts(int $maxAttempts): AbstractStrategy
     {
         $this->maxAttempts = $maxAttempts;
 
@@ -190,25 +220,5 @@ abstract class AbstractStrategy implements StrategyInterface
         }
 
         return $timeUnit;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function jsonSerialize()
-    {
-        if (false === defined(get_class($this).'::STRATEGY')) {
-            throw new \RuntimeException(
-                'The Strategy doesn\'t tells its own name. Create the contant "STRATEGY" that tells the name of the'
-                .' strategy.'
-            );
-        }
-
-        return [
-            'attempts'       => $this->getAttempts(),
-            'max_attempts'   => $this->getMaxAttempts(),
-            'increment_by'   => $this->getIncrementBy(),
-            'increment_unit' => $this->getTimeUnit(),
-        ];
     }
 }

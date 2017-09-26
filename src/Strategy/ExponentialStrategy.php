@@ -1,5 +1,15 @@
 <?php
 
+/*
+ * This file is part of PHP Value Objects.
+ *
+ * Copyright Adamo Aerendir Crespi 2017.
+ *
+ * @author    Adamo Aerendir Crespi <hello@aerendir.me>
+ * @copyright Copyright (C) 2017 Aerendir. All rights reserved.
+ * @license   MIT
+ */
+
 namespace SerendipityHQ\Component\ThenWhen\Strategy;
 
 class ExponentialStrategy extends AbstractStrategy
@@ -34,7 +44,7 @@ class ExponentialStrategy extends AbstractStrategy
         // If we can retry...
         if (parent::canRetry()) {
             // ... return the date on which to retry
-            return (new \DateTime())->modify('+'.$this->waitFor().' '.self::TIME_UNIT_SECONDS);
+            return (new \DateTime())->modify('+' . $this->waitFor() . ' ' . self::TIME_UNIT_SECONDS);
         }
 
         // No more retries
@@ -46,7 +56,7 @@ class ExponentialStrategy extends AbstractStrategy
      */
     public function waitFor(): int
     {
-        $incrementBy = $this->getAttempts() === 1
+        $incrementBy = 1 === $this->getAttempts()
             ? $this->getIncrementBy()
             : pow($this->getExponentialBase(), $this->getAttempts()) * $this->getIncrementBy();
 
@@ -66,7 +76,7 @@ class ExponentialStrategy extends AbstractStrategy
      *
      * @return AbstractStrategy
      */
-    protected function setExponentialBase(int $exponentialBase) : AbstractStrategy
+    protected function setExponentialBase(int $exponentialBase): AbstractStrategy
     {
         if (2 > $exponentialBase) {
             throw new \InvalidArgumentException('The exponential base must be greater than or equal to 2.');

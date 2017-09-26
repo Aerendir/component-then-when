@@ -1,5 +1,15 @@
 <?php
 
+/*
+ * This file is part of PHP Value Objects.
+ *
+ * Copyright Adamo Aerendir Crespi 2017.
+ *
+ * @author    Adamo Aerendir Crespi <hello@aerendir.me>
+ * @copyright Copyright (C) 2017 Aerendir. All rights reserved.
+ * @license   MIT
+ */
+
 namespace SerendipityHQ\Component\ThenWhen;
 
 use SerendipityHQ\Component\ThenWhen\Strategy\StrategyInterface;
@@ -19,11 +29,12 @@ class RetryStrategyBuilder
     private $finalHandlers = [];
 
     /**
-     * @param string|array $exceptionClasses
+     * @param array|string      $exceptionClasses
      * @param StrategyInterface $strategy
+     *
      * @return RetryStrategyBuilder
      */
-    public function setStrategyForException($exceptionClasses, StrategyInterface $strategy) : RetryStrategyBuilder
+    public function setStrategyForException($exceptionClasses, StrategyInterface $strategy): RetryStrategyBuilder
     {
         $exceptionClasses = $this->prepareClasses($exceptionClasses);
 
@@ -39,11 +50,12 @@ class RetryStrategyBuilder
     }
 
     /**
-     * @param string|array $exceptionClasses
-     * @param callable $middleHandler
+     * @param array|string $exceptionClasses
+     * @param callable     $middleHandler
+     *
      * @return RetryStrategyBuilder
      */
-    public function setMiddleHandlerForException($exceptionClasses, callable $middleHandler) : RetryStrategyBuilder
+    public function setMiddleHandlerForException($exceptionClasses, callable $middleHandler): RetryStrategyBuilder
     {
         $exceptionClasses = $this->prepareClasses($exceptionClasses);
 
@@ -64,11 +76,12 @@ class RetryStrategyBuilder
     }
 
     /**
-     * @param string|array $exceptionClasses
-     * @param callable $finalHandler
+     * @param array|string $exceptionClasses
+     * @param callable     $finalHandler
+     *
      * @return RetryStrategyBuilder
      */
-    public function setFinalHandlerForException($exceptionClasses, callable $finalHandler) : RetryStrategyBuilder
+    public function setFinalHandlerForException($exceptionClasses, callable $finalHandler): RetryStrategyBuilder
     {
         $exceptionClasses = $this->prepareClasses($exceptionClasses);
 
@@ -100,6 +113,7 @@ class RetryStrategyBuilder
 
     /**
      * @param array|string $exceptionClasses
+     *
      * @return array|string
      */
     private function prepareClasses($exceptionClasses)

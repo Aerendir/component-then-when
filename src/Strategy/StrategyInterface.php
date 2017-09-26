@@ -1,5 +1,15 @@
 <?php
 
+/*
+ * This file is part of PHP Value Objects.
+ *
+ * Copyright Adamo Aerendir Crespi 2017.
+ *
+ * @author    Adamo Aerendir Crespi <hello@aerendir.me>
+ * @copyright Copyright (C) 2017 Aerendir. All rights reserved.
+ * @license   MIT
+ */
+
 namespace SerendipityHQ\Component\ThenWhen\Strategy;
 
 /**
@@ -10,11 +20,11 @@ interface StrategyInterface
     // The available increment units
     const TIME_UNIT_SECONDS = 'seconds';
     const TIME_UNIT_MINUTES = 'minutes';
-    const TIME_UNIT_HOURS = 'hours';
-    const TIME_UNIT_DAYS = 'days';
-    const TIME_UNIT_MONTHS = 'months';
-    const TIME_UNIT_YEARS = 'years';
-    const TIME_UNITS = [
+    const TIME_UNIT_HOURS   = 'hours';
+    const TIME_UNIT_DAYS    = 'days';
+    const TIME_UNIT_MONTHS  = 'months';
+    const TIME_UNIT_YEARS   = 'years';
+    const TIME_UNITS        = [
         self::TIME_UNIT_SECONDS,
         self::TIME_UNIT_MINUTES,
         self::TIME_UNIT_HOURS,
@@ -31,12 +41,12 @@ interface StrategyInterface
     /**
      * @return int
      */
-    public function getAttempts() : int;
+    public function getAttempts(): int;
 
     /**
      * @return int
      */
-    public function getIncrementBy() : int;
+    public function getIncrementBy(): int;
 
     /**
      * @return int
@@ -51,19 +61,19 @@ interface StrategyInterface
     /**
      * @return string
      */
-    public function getStrategyName() : string;
+    public function getStrategyName(): string;
 
     /**
      * The time to wait in seconds.
      *
      * @return int
      */
-    public function waitFor() : int;
+    public function waitFor(): int;
 
     /**
      * @return StrategyInterface
      */
-    public function newAttempt() : StrategyInterface;
+    public function newAttempt(): StrategyInterface;
 
     /**
      * Returns the DateTime of the next retry or false if no retries have to be done.

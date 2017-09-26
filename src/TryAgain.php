@@ -1,5 +1,15 @@
 <?php
 
+/*
+ * This file is part of PHP Value Objects.
+ *
+ * Copyright Adamo Aerendir Crespi 2017.
+ *
+ * @author    Adamo Aerendir Crespi <hello@aerendir.me>
+ * @copyright Copyright (C) 2017 Aerendir. All rights reserved.
+ * @license   MIT
+ */
+
 namespace SerendipityHQ\Component\ThenWhen;
 
 use SerendipityHQ\Component\ThenWhen\Strategy\StrategyInterface;
@@ -25,15 +35,17 @@ class TryAgain
      */
     public function __construct(array $strategies, array $middleHandlers, array $finalHandlers)
     {
-        $this->strategies = $strategies;
+        $this->strategies     = $strategies;
         $this->middleHandlers = $middleHandlers;
-        $this->finalHandlers = $finalHandlers;
+        $this->finalHandlers  = $finalHandlers;
     }
 
     /**
      * @param callable $callback
-     * @return mixed
+     *
      * @throws \Exception
+     *
+     * @return mixed
      */
     public function try(callable $callback)
     {
@@ -49,7 +61,7 @@ class TryAgain
                 throw $e;
             }
 
-            /** @var StrategyInterface $strategy A strategy exists: use it **/
+            /** @var StrategyInterface $strategy A strategy exists: use it * */
             $strategy = $this->strategies[$exception];
 
             // First check if the operation can be retried

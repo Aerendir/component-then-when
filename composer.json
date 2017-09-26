@@ -11,7 +11,7 @@
         }
     ],
     "require": {
-        "php": "^7.1",
+        "php": "^7.0||^7.1",
         "nesbot/carbon": "^1.22"
     },
     "require-dev": {

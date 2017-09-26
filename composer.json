@@ -11,13 +11,13 @@
         }
     ],
     "require": {
-        "php": "~7.0",
-        "nesbot/carbon": "*"
+        "php": "^7.1",
+        "nesbot/carbon": "^1.22"
     },
     "require-dev": {
         "codeclimate/php-test-reporter": "dev-master",
-        "phpunit/phpunit": "*",
-        "symfony/var-dumper": "*"
+        "phpunit/phpunit": "^6",
+        "symfony/var-dumper": "^3.0"
     },
     "autoload": {
         "psr-4": {

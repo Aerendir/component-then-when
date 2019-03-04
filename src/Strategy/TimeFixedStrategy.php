@@ -43,7 +43,7 @@ class TimeFixedStrategy extends LinearStrategy
             $this->validateTimeUnit($timeUnit);
 
             // Then we convert all to seconds
-            $seconds = parent::convertToSeconds($endOfTimeWindow, $timeUnit);
+            $seconds = $this->convertToSeconds($endOfTimeWindow, $timeUnit);
 
             // Now we can validate the time window
             $this->validateTimeWindow($maxAttempts, $seconds);

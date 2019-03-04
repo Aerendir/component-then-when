@@ -1,3 +1,11 @@
+<p align="center">
+    <a href="http://www.serendipityhq.com" target="_blank">
+        <img src="http://www.serendipityhq.com/assets/open-source-projects/Logo-SerendipityHQ-Icon-Text-Purple.png">
+    </a>
+</p>
+
+# ThenWhen
+
 [![Latest Stable Version](https://poser.pugx.org/serendipity_hq/then-when/v/stable)](https://packagist.org/packages/serendipity_hq/then-when)
 [![Build Status](https://travis-ci.org/Aerendir/then-when.svg?branch=master)](https://travis-ci.org/Aerendir/then-when)
 [![Total Downloads](https://poser.pugx.org/serendipity_hq/then-when/downloads)](https://packagist.org/packages/serendipity_hq/then-when)
@@ -6,8 +14,6 @@
 [![Test Coverage](https://codeclimate.com/github/Aerendir/then-when/badges/coverage.svg)](https://codeclimate.com/github/Aerendir/then-when/coverage)
 [![Issue Count](https://codeclimate.com/github/Aerendir/then-when/badges/issue_count.svg)](https://codeclimate.com/github/Aerendir/then-when)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/2ad9c37a-2014-4901-97a9-9a8d497ecd75/mini.png)](https://insight.sensiolabs.com/projects/2ad9c37a-2014-4901-97a9-9a8d497ecd75)
-
-# ThenWhen
 
 A library to calculate the time of next retry in apps that needs to be fault tolerant and retry failed attempts of doing
  something.

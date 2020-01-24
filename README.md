@@ -6,14 +6,21 @@
 
 # ThenWhen
 
-[![Latest Stable Version](https://poser.pugx.org/serendipity_hq/then-when/v/stable)](https://packagist.org/packages/serendipity_hq/then-when)
-[![Build Status](https://travis-ci.org/Aerendir/then-when.svg?branch=master)](https://travis-ci.org/Aerendir/then-when)
-[![Total Downloads](https://poser.pugx.org/serendipity_hq/then-when/downloads)](https://packagist.org/packages/serendipity_hq/then-when)
-[![License](https://poser.pugx.org/serendipity_hq/then-when/license)](https://packagist.org/packages/serendipity_hq/then-when)
-[![Code Climate](https://codeclimate.com/github/Aerendir/then-when/badges/gpa.svg)](https://codeclimate.com/github/Aerendir/then-when)
-[![Test Coverage](https://codeclimate.com/github/Aerendir/then-when/badges/coverage.svg)](https://codeclimate.com/github/Aerendir/then-when/coverage)
-[![Issue Count](https://codeclimate.com/github/Aerendir/then-when/badges/issue_count.svg)](https://codeclimate.com/github/Aerendir/then-when)
+[![PHP from Packagist](https://img.shields.io/packagist/php-v/serendipity_hq/then-when?color=%238892BF)](https://packagist.org/packages/serendipity_hq/then-when)
+[![Latest Stable Version](https://poser.pugx.org/serendipity_hq/then-when/v/stable.png)](https://packagist.org/packages/serendipity_hq/then-when)
+[![Total Downloads](https://poser.pugx.org/serendipity_hq/then-when/downloads.svg)](https://packagist.org/packages/serendipity_hq/then-when)
+[![License](https://poser.pugx.org/serendipity_hq/then-when/license.svg)](https://packagist.org/packages/serendipity_hq/then-when)
+
+[![Coverage Status](https://codecov.io/gh/Aerendir/then-when/branch/master/graph/badge.svg)](https://codecov.io/gh/Aerendir/then-when/)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/2ad9c37a-2014-4901-97a9-9a8d497ecd75/mini.png)](https://insight.sensiolabs.com/projects/2ad9c37a-2014-4901-97a9-9a8d497ecd75)
+
+![Phan](https://github.com/Aerendir/then-when/workflows/Phan/badge.svg)
+![PHPStan](https://github.com/Aerendir/then-when/workflows/PHPStan/badge.svg)
+![PSalm](https://github.com/Aerendir/then-when/workflows/PSalm/badge.svg)
+![PHPUnit](https://github.com/Aerendir/then-when/workflows/PHPunit/badge.svg)
+![Composer](https://github.com/Aerendir/then-when/workflows/Composer/badge.svg)
+![PHP CS Fixer](https://github.com/Aerendir/then-when/workflows/PHP%20CS%20Fixer/badge.svg)
+![Rector](https://github.com/Aerendir/then-when/workflows/Rector/badge.svg)
 
 A library to calculate the time of next retry in apps that needs to be fault tolerant and retry failed attempts of doing
  something.

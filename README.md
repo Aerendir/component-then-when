@@ -13,6 +13,13 @@
 [![Coverage Status](https://codecov.io/gh/Aerendir/then-when/branch/master/graph/badge.svg)](https://codecov.io/gh/Aerendir/then-when/)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/2ad9c37a-2014-4901-97a9-9a8d497ecd75/mini.png)](https://insight.sensiolabs.com/projects/2ad9c37a-2014-4901-97a9-9a8d497ecd75)
 
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_then-when&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=Aerendir_then-when)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_then-when&metric=alert_status)](https://sonarcloud.io/dashboard?id=Aerendir_then-when)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_then-when&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=Aerendir_then-when)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_then-when&metric=security_rating)](https://sonarcloud.io/dashboard?id=Aerendir_then-when)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_then-when&metric=sqale_index)](https://sonarcloud.io/dashboard?id=Aerendir_then-when)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_then-when&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=Aerendir_then-when)
+
 ![Phan](https://github.com/Aerendir/then-when/workflows/Phan/badge.svg)
 ![PHPStan](https://github.com/Aerendir/then-when/workflows/PHPStan/badge.svg)
 ![PSalm](https://github.com/Aerendir/then-when/workflows/PSalm/badge.svg)
@@ -23,11 +30,6 @@
 
 A library to calculate the time of next retry in apps that needs to be fault tolerant and retry failed attempts of doing
  something.
-
-Requirements
-------------
-
-1. PHP ^7.0
 
 Status: ACTIVE DEVELOPMENT
 --------------------------

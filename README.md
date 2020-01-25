@@ -10,7 +10,6 @@
 [![Latest Stable Version](https://poser.pugx.org/serendipity_hq/then-when/v/stable.png)](https://packagist.org/packages/serendipity_hq/then-when)
 [![Total Downloads](https://poser.pugx.org/serendipity_hq/then-when/downloads.svg)](https://packagist.org/packages/serendipity_hq/then-when)
 [![License](https://poser.pugx.org/serendipity_hq/then-when/license.svg)](https://packagist.org/packages/serendipity_hq/then-when)
-
 [![Coverage Status](https://codecov.io/gh/Aerendir/then-when/branch/master/graph/badge.svg)](https://codecov.io/gh/Aerendir/then-when/)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/2ad9c37a-2014-4901-97a9-9a8d497ecd75/mini.png)](https://insight.sensiolabs.com/projects/2ad9c37a-2014-4901-97a9-9a8d497ecd75)
 

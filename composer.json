@@ -21,7 +21,7 @@
         "phan/phan": "^2.4",
         "phpmetrics/phpmetrics": "^2.5",
         "psalm/plugin-phpunit": "^0.8.1",
-        "rector/rector": "^0.6.13",
+        "rector/rector": "^0.6.13 || ^0.7.0",
         "symfony/var-dumper": "^3||^4||^5",
         "vimeo/psalm": "^3.8"
     },

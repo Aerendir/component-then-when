@@ -16,7 +16,7 @@
         "thecodingmachine/safe": "^0.1|^1.0"
     },
     "require-dev": {
-        "drenso/phan-extensions": "^2.5",
+        "drenso/phan-extensions": "@stable",
         "friendsofphp/php-cs-fixer": "^2.16",
         "phan/phan": "^2.4",
         "psalm/plugin-phpunit": "^0.8.1",

@@ -19,7 +19,7 @@
         "drenso/phan-extensions": "@stable",
         "friendsofphp/php-cs-fixer": "^2.16",
         "phan/phan": "^2.4",
-        "psalm/plugin-phpunit": "^0.8.1",
+        "psalm/plugin-phpunit": "@stable",
         "rector/rector": "^0.6.13",
         "roave/security-advisories": "dev-master",
         "symfony/var-dumper": "^3.0|^4.0|^5.0",

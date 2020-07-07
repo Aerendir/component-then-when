@@ -18,7 +18,6 @@
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_then-when&metric=security_rating)](https://sonarcloud.io/dashboard?id=Aerendir_then-when)
 [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_then-when&metric=sqale_index)](https://sonarcloud.io/dashboard?id=Aerendir_then-when)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_then-when&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=Aerendir_then-when)
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/2ad9c37a-2014-4901-97a9-9a8d497ecd75/mini.png)](https://insight.sensiolabs.com/projects/2ad9c37a-2014-4901-97a9-9a8d497ecd75)
 
 ![Phan](https://github.com/Aerendir/then-when/workflows/Phan/badge.svg)
 ![PHPStan](https://github.com/Aerendir/then-when/workflows/PHPStan/badge.svg)

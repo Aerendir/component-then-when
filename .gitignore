@@ -3,7 +3,6 @@ vendor
 /vendor-bin/**/vendor
 build
 composer.lock
-.php_cs.cache
 .phpunit.result.cache
 var
 !var/cache/.gitkeep

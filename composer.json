@@ -16,17 +16,9 @@
         "thecodingmachine/safe": "^0.1|^1.0"
     },
     "require-dev": {
-        "drenso/phan-extensions": "@stable",
-        "friendsofphp/php-cs-fixer": "^2.16",
-        "phan/phan": "^2.4",
-        "phpstan/phpstan-phpunit": "@stable",
-        "psalm/plugin-phpunit": "@stable",
-        "rector/rector": "^0.6.13",
+        "bamarni/composer-bin-plugin": "^1.4",
         "roave/security-advisories": "dev-master",
-        "symfony/phpunit-bridge": "^5.1",
-        "symfony/var-dumper": "^3.0|^4.0|^5.0",
-        "thecodingmachine/phpstan-safe-rule": "@stable",
-        "vimeo/psalm": "^3.8"
+        "symfony/var-dumper": "^3.0|^4.0|^5.0"
     },
     "config": {
         "sort-packages": true
@@ -40,6 +32,11 @@
         "psr-4": {
             "SerendipityHQ\\Component\\ThenWhen\\Tests\\": "tests"
         }
+    },
+    "scripts": {
+        "bin": "echo 'bin not installed'",
+        "post-install-cmd": ["@composer bin all install --ansi"],
+        "post-update-cmd": ["@composer bin all update --ansi"]
     },
     "conflict": {
         "nikic/php-parser": "4.6.0"

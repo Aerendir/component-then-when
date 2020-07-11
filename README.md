@@ -4,7 +4,7 @@
     </a>
 </p>
 
-<h1 align="center">Serendipity HQ Array Writer</h1>
+<h1 align="center">Serendipity HQ Then When</h1>
 <p align="center">A library to calculate the time of next retry in apps that needs to be fault tolerant and retry failed attempts of doing something.</p>
 <p align="center">
     <a href="https://github.com/Aerendir/component-then-when/releases"><img src="https://img.shields.io/packagist/v/serendipity_hq/component-then-when.svg?style=flat-square"></a>
@@ -13,13 +13,13 @@
 </p>
 
 ## Current Status
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_then-when&metric=coverage)](https://sonarcloud.io/dashboard?id=Aerendir_then-when)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_then-when&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=Aerendir_then-when)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_then-when&metric=alert_status)](https://sonarcloud.io/dashboard?id=Aerendir_then-when)
-[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_then-when&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=Aerendir_then-when)
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_then-when&metric=security_rating)](https://sonarcloud.io/dashboard?id=Aerendir_then-when)
-[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_then-when&metric=sqale_index)](https://sonarcloud.io/dashboard?id=Aerendir_then-when)
-[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_then-when&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=Aerendir_then-when)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_component-then-when&metric=coverage)](https://sonarcloud.io/dashboard?id=Aerendir_component-then-when)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_component-then-when&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=Aerendir_component-then-when)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_component-then-when&metric=alert_status)](https://sonarcloud.io/dashboard?id=Aerendir_component-then-when)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_component-then-when&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=Aerendir_component-then-when)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_component-then-when&metric=security_rating)](https://sonarcloud.io/dashboard?id=Aerendir_component-then-when)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_component-then-when&metric=sqale_index)](https://sonarcloud.io/dashboard?id=Aerendir_component-then-when)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_component-then-when&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=Aerendir_component-then-when)
 
 [![Phan](https://github.com/Aerendir/component-then-when/workflows/Phan/badge.svg)](https://github.com/Aerendir/component-then-when/actions?query=branch%3Adev)
 [![PHPStan](https://github.com/Aerendir/component-then-when/workflows/PHPStan/badge.svg)](https://github.com/Aerendir/component-then-when/actions?query=branch%3Adev)

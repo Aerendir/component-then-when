@@ -1,6 +1,7 @@
 {
-    "name": "serendipity_hq/then-when",
+    "name": "serendipity_hq/component-then-when",
     "description": "A library to calculate the time of next retry in apps that needs to be fault tolerant and retry failed attempts of doing something.",
+    "homepage": "https://github.com/Aerendir/component-then-when",
     "type": "library",
     "keywords": [],
     "license": "MIT",

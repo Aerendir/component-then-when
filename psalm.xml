@@ -15,14 +15,16 @@
 >
     <projectFiles>
         <directory name="src"/>
+        <directory name="tests"/>
         <ignoreFiles>
             <directory name="vendor"/>
         </ignoreFiles>
     </projectFiles>
 
     <issueHandlers>
-        <!-- We support PHP 7.2: suppress errors related to upper versions -->
-        <MissingParamType errorLevel="suppress" />
+        <MissingThrowsDocblock errorLevel="suppress" />
+        <MixedAssignment errorLevel="suppress" />
+        <DocblockTypeContradiction errorLevel="suppress"/>
 
         <LessSpecificReturnType errorLevel="info"/>
 
@@ -51,7 +53,7 @@
 
         <RedundantCondition errorLevel="info"/>
 
-        <DocblockTypeContradiction errorLevel="suppress"/>
+
         <RedundantConditionGivenDocblockType errorLevel="suppress"/>
 
         <UnresolvableInclude errorLevel="info"/>
@@ -63,7 +65,6 @@
         <MixedInferredReturnType errorLevel="suppress"/>
         <MoreSpecificImplementedParamType errorLevel="suppress"/>
         <ImplicitToStringCast errorLevel="suppress" />
-        <MixedAssignment errorLevel="suppress" />
     </issueHandlers>
     <plugins>
         <pluginClass class="Psalm\PhpUnitPlugin\Plugin"/>

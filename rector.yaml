@@ -75,21 +75,23 @@ parameters:
     import_short_classes: false
     exclude_rectors:
         # I don't like those
+        - 'Rector\CodeQuality\Rector\Catch_\ThrowWithPreviousExceptionRector'
         - 'Rector\CodeQuality\Rector\Identical\SimplifyBoolIdenticalTrueRector'
+        - 'Rector\CodingStyle\Rector\Class_\AddArrayDefaultToArrayPropertyRector'
+        - 'Rector\CodingStyle\Rector\ClassMethod\NewlineBeforeNewAssignSetRector'
         - 'Rector\CodeQuality\Rector\Concat\JoinStringConcatRector'
         - 'Rector\CodingStyle\Rector\Identical\IdenticalFalseToBooleanNotRector'
-        - 'Rector\SOLID\Rector\ClassMethod\UseInterfaceOverImplementationInConstructorRector'
-        - 'Rector\CodingStyle\Rector\ClassMethod\NewlineBeforeNewAssignSetRector'
         - 'Rector\CodingStyle\Rector\Encapsed\EncapsedStringsToSprintfRector'
-        - 'Rector\CodingStyle\Rector\Class_\AddArrayDefaultToArrayPropertyRector'
+        - 'Rector\CodingStyle\Rector\Switch_\BinarySwitchToIfElseRector'
+        - 'Rector\Naming\Rector\Class_\RenamePropertyToMatchTypeRector'
+        - 'Rector\Php56\Rector\FunctionLike\AddDefaultValueForUndefinedVariableRector'
         - 'Rector\PHPUnit\Rector\Class_\AddSeeTestAnnotationRector'
-        # Incompatible with static analyzers
-        - 'Rector\DeadCode\Rector\Concat\RemoveConcatAutocastRector'
-        # Bug https://github.com/rectorphp/rector/pull/2694
-        - 'Rector\TypeDeclaration\Rector\FunctionLike\ReturnTypeDeclarationRector'
-        # Bug https://github.com/rectorphp/rector/issues/2695
-        - 'Rector\SOLID\Rector\Class_\FinalizeClassesWithoutChildrenRector'
-        # Bug https://github.com/rectorphp/rector/issues/2696
-        - 'Rector\TypeDeclaration\Rector\FunctionLike\ParamTypeDeclarationRector'
-        # Bug https://github.com/rectorphp/rector/issues/2699
+        - 'Rector\Privatization\Rector\ClassMethod\PrivatizeLocalOnlyMethodRector'
+        - 'Rector\Privatization\Rector\MethodCall\PrivatizeLocalGetterToPropertyRector'
+        - 'Rector\SOLID\Rector\ClassMethod\UseInterfaceOverImplementationInConstructorRector'
+        - 'Rector\SOLID\Rector\Property\AddFalseDefaultToBoolPropertyRector'
+        - 'Rector\TypeDeclaration\Rector\ClassMethod\AddArrayParamDocTypeRector'
         - 'Rector\TypeDeclaration\Rector\ClassMethod\AddArrayReturnDocTypeRector'
+        # Incompatible with static analyzers
+        - 'Rector\DeadCode\Rector\Class_\RemoveUnusedClassesRector'
+        - 'Rector\DeadCode\Rector\Concat\RemoveConcatAutocastRector'

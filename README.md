@@ -29,6 +29,18 @@
 [![PHP CS Fixer](https://github.com/Aerendir/component-then-when/workflows/PHP%20CS%20Fixer/badge.svg)](https://github.com/Aerendir/component-then-when/actions?query=branch%3Adev)
 [![Rector](https://github.com/Aerendir/component-then-when/workflows/Rector/badge.svg)](https://github.com/Aerendir/component-then-when/actions?query=branch%3Adev)
 
+<hr />
+<h3 align="center">
+    <b>Do you like this bundle?</b><br />
+    <b><a href="#js-repo-pjax-container">LEAVE A &#9733;</a></b>
+</h3>
+<p align="center">
+    or run<br />
+    <code>composer global require symfony/thanks && composer thanks</code><br />
+    to say thank you to all libraries you use in your current project, this included!
+</p>
+<hr />
+
 ## Install Serendipity HQ Text Matrix via Composer
 
     $ composer require serendipity_hq/component-then-when
@@ -38,3 +50,15 @@ This library follows the http://semver.org/ versioning conventions.
 # Documentation
 
 You can read how to use the SerendipityHQ ThenWhen library in the [documentation](docs/Strategies.md).
+
+<hr />
+<h3 align="center">
+    <b>Do you like this bundle?</b><br />
+    <b><a href="#js-repo-pjax-container">LEAVE A &#9733;</a></b>
+</h3>
+<p align="center">
+    or run<br />
+    <code>composer global require symfony/thanks && composer thanks</code><br />
+    to say thank you to all libraries you use in your current project, this included!
+</p>
+<hr />

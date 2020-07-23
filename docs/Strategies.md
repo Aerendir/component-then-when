@@ -1,3 +1,5 @@
+*Do you like this bundle? [**Leave a &#9733;**](#js-repo-pjax-container) or run `composer global require symfony/thanks && composer thanks` to say thank you to all libraries you use in your current project, this included!*
+
 # RETRY STRATEGIES
 
 You can choose between multiple retry strategies.
@@ -37,5 +39,7 @@ Divides the number of max attempts by the max time you want to wait.
 
 To better understand how to use them, simply see the signature of each strategy or, better, simply try to initialize
  them:
- 
+
     $strategy = new NeverRetryStrategy(); // Or whichever strategy you would like to use!
+
+*Do you like this bundle? [**Leave a &#9733;**](#js-repo-pjax-container) or run `composer global require symfony/thanks && composer thanks` to say thank you to all libraries you use in your current project, this included!*

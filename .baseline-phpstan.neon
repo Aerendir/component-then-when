@@ -1,0 +1,182 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Property SerendipityHQ\\\\Component\\\\ThenWhen\\\\RetryStrategyBuilder\\:\\:\\$strategies type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/RetryStrategyBuilder.php
+
+		-
+			message: "#^Property SerendipityHQ\\\\Component\\\\ThenWhen\\\\RetryStrategyBuilder\\:\\:\\$middleHandlers type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/RetryStrategyBuilder.php
+
+		-
+			message: "#^Property SerendipityHQ\\\\Component\\\\ThenWhen\\\\RetryStrategyBuilder\\:\\:\\$finalHandlers type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/RetryStrategyBuilder.php
+
+		-
+			message: "#^Method SerendipityHQ\\\\Component\\\\ThenWhen\\\\RetryStrategyBuilder\\:\\:setStrategyForException\\(\\) has parameter \\$exceptionClasses with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/RetryStrategyBuilder.php
+
+		-
+			message: "#^Argument of an invalid type array\\|string supplied for foreach, only iterables are supported\\.$#"
+			count: 3
+			path: src/RetryStrategyBuilder.php
+
+		-
+			message: "#^Function sprintf is unsafe to use\\. It can return FALSE instead of throwing an exception\\. Please add 'use function Safe\\\\sprintf;' at the beginning of the file to use the variant provided by the 'thecodingmachine/safe' library\\.$#"
+			count: 3
+			path: src/RetryStrategyBuilder.php
+
+		-
+			message: "#^Method SerendipityHQ\\\\Component\\\\ThenWhen\\\\RetryStrategyBuilder\\:\\:setMiddleHandlerForException\\(\\) has parameter \\$exceptionClasses with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/RetryStrategyBuilder.php
+
+		-
+			message: "#^Method SerendipityHQ\\\\Component\\\\ThenWhen\\\\RetryStrategyBuilder\\:\\:setFinalHandlerForException\\(\\) has parameter \\$exceptionClasses with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/RetryStrategyBuilder.php
+
+		-
+			message: "#^Method SerendipityHQ\\\\Component\\\\ThenWhen\\\\RetryStrategyBuilder\\:\\:prepareClasses\\(\\) has parameter \\$exceptionClasses with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/RetryStrategyBuilder.php
+
+		-
+			message: "#^Method SerendipityHQ\\\\Component\\\\ThenWhen\\\\RetryStrategyBuilder\\:\\:prepareClasses\\(\\) never returns string so it can be removed from the return typehint\\.$#"
+			count: 1
+			path: src/RetryStrategyBuilder.php
+
+		-
+			message: "#^Method SerendipityHQ\\\\Component\\\\ThenWhen\\\\RetryStrategyBuilder\\:\\:prepareClasses\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/RetryStrategyBuilder.php
+
+		-
+			message: "#^Strict comparison using \\=\\=\\= between false and true will always evaluate to false\\.$#"
+			count: 1
+			path: src/RetryStrategyBuilder.php
+
+		-
+			message: "#^Access to undefined constant SerendipityHQ\\\\Component\\\\ThenWhen\\\\Strategy\\\\AbstractStrategy\\:\\:STRATEGY\\.$#"
+			count: 1
+			path: src/Strategy/AbstractStrategy.php
+
+		-
+			message: "#^Method SerendipityHQ\\\\Component\\\\ThenWhen\\\\Strategy\\\\AbstractStrategy\\:\\:jsonSerialize\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: src/Strategy/AbstractStrategy.php
+
+		-
+			message: "#^PHPDoc tag @param has invalid value \\(\\$timeUnit\\)\\: Unexpected token \"\\$timeUnit\", expected type at offset 47$#"
+			count: 1
+			path: src/Strategy/AbstractStrategy.php
+
+		-
+			message: "#^Unreachable statement \\- code above always terminates\\.$#"
+			count: 6
+			path: src/Strategy/AbstractStrategy.php
+
+		-
+			message: "#^Function sprintf is unsafe to use\\. It can return FALSE instead of throwing an exception\\. Please add 'use function Safe\\\\sprintf;' at the beginning of the file to use the variant provided by the 'thecodingmachine/safe' library\\.$#"
+			count: 2
+			path: src/Strategy/AbstractStrategy.php
+
+		-
+			message: "#^Method SerendipityHQ\\\\Component\\\\ThenWhen\\\\Strategy\\\\AbstractStrategy\\:\\:validateTimeUnit\\(\\) should return bool but returns string\\.$#"
+			count: 1
+			path: src/Strategy/AbstractStrategy.php
+
+		-
+			message: "#^Class DateTime is unsafe to use\\. Its methods can return FALSE instead of throwing an exception\\. Please add 'use Safe\\\\DateTime;' at the beginning of the file to use the variant provided by the 'thecodingmachine/safe' library\\.$#"
+			count: 1
+			path: src/Strategy/ConstantStrategy.php
+
+		-
+			message: "#^Class DateTime is unsafe to use\\. Its methods can return FALSE instead of throwing an exception\\. Please add 'use Safe\\\\DateTime;' at the beginning of the file to use the variant provided by the 'thecodingmachine/safe' library\\.$#"
+			count: 1
+			path: src/Strategy/ExponentialStrategy.php
+
+		-
+			message: "#^Class DateTime is unsafe to use\\. Its methods can return FALSE instead of throwing an exception\\. Please add 'use Safe\\\\DateTime;' at the beginning of the file to use the variant provided by the 'thecodingmachine/safe' library\\.$#"
+			count: 1
+			path: src/Strategy/LinearStrategy.php
+
+		-
+			message: "#^Result of && is always false\\.$#"
+			count: 1
+			path: src/Strategy/TimeFixedStrategy.php
+
+		-
+			message: "#^Strict comparison using \\=\\=\\= between false and true will always evaluate to false\\.$#"
+			count: 1
+			path: src/Strategy/TimeFixedStrategy.php
+
+		-
+			message: "#^Parameter \\#1 \\$timeUnit of method SerendipityHQ\\\\Component\\\\ThenWhen\\\\Strategy\\\\AbstractStrategy\\:\\:validateTimeUnit\\(\\) expects string, string\\|null given\\.$#"
+			count: 1
+			path: src/Strategy/TimeFixedStrategy.php
+
+		-
+			message: "#^Parameter \\#2 \\$timeUnit of method SerendipityHQ\\\\Component\\\\ThenWhen\\\\Strategy\\\\AbstractStrategy\\:\\:convertToSeconds\\(\\) expects string, string\\|null given\\.$#"
+			count: 1
+			path: src/Strategy/TimeFixedStrategy.php
+
+		-
+			message: "#^Parameter \\#2 \\$incrementBy of method SerendipityHQ\\\\Component\\\\ThenWhen\\\\Strategy\\\\AbstractStrategy\\:\\:__construct\\(\\) expects int, float\\|int given\\.$#"
+			count: 1
+			path: src/Strategy/TimeFixedStrategy.php
+
+		-
+			message: "#^Method SerendipityHQ\\\\Component\\\\ThenWhen\\\\Strategy\\\\TimeFixedStrategy\\:\\:calculateIncrementBy\\(\\) should return int but returns float\\|int\\.$#"
+			count: 1
+			path: src/Strategy/TimeFixedStrategy.php
+
+		-
+			message: "#^Method SerendipityHQ\\\\Component\\\\ThenWhen\\\\Strategy\\\\TimeFixedStrategy\\:\\:validateTimeWindow\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: src/Strategy/TimeFixedStrategy.php
+
+		-
+			message: "#^Property SerendipityHQ\\\\Component\\\\ThenWhen\\\\TryAgain\\:\\:\\$strategies type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/TryAgain.php
+
+		-
+			message: "#^Property SerendipityHQ\\\\Component\\\\ThenWhen\\\\TryAgain\\:\\:\\$middleHandlers type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/TryAgain.php
+
+		-
+			message: "#^Property SerendipityHQ\\\\Component\\\\ThenWhen\\\\TryAgain\\:\\:\\$finalHandlers type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/TryAgain.php
+
+		-
+			message: "#^Method SerendipityHQ\\\\Component\\\\ThenWhen\\\\TryAgain\\:\\:__construct\\(\\) has parameter \\$finalHandlers with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/TryAgain.php
+
+		-
+			message: "#^Method SerendipityHQ\\\\Component\\\\ThenWhen\\\\TryAgain\\:\\:__construct\\(\\) has parameter \\$middleHandlers with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/TryAgain.php
+
+		-
+			message: "#^Method SerendipityHQ\\\\Component\\\\ThenWhen\\\\TryAgain\\:\\:__construct\\(\\) has parameter \\$strategies with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/TryAgain.php
+
+		-
+			message: "#^Function sleep is unsafe to use\\. It can return FALSE instead of throwing an exception\\. Please add 'use function Safe\\\\sleep;' at the beginning of the file to use the variant provided by the 'thecodingmachine/safe' library\\.$#"
+			count: 1
+			path: src/TryAgain.php
+
+		-
+			message: "#^Method SerendipityHQ\\\\Component\\\\ThenWhen\\\\Tests\\\\Strategy\\\\NeverRetryStrategyTest\\:\\:testStrategy\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: tests/Strategy/NeverRetryStrategyTest.php
+

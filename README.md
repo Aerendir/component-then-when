@@ -31,7 +31,7 @@
 
 <hr />
 <h3 align="center">
-    <b>Do you like this bundle?</b><br />
+    <b>Do you like this library?</b><br />
     <b><a href="#js-repo-pjax-container">LEAVE A &#9733;</a></b>
 </h3>
 <p align="center">
@@ -53,7 +53,7 @@ You can read how to use the SerendipityHQ ThenWhen library in the [documentation
 
 <hr />
 <h3 align="center">
-    <b>Do you like this bundle?</b><br />
+    <b>Do you like this library?</b><br />
     <b><a href="#js-repo-pjax-container">LEAVE A &#9733;</a></b>
 </h3>
 <p align="center">

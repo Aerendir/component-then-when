@@ -18,12 +18,25 @@ namespace SerendipityHQ\Component\ThenWhen\Strategy;
 interface StrategyInterface
 {
     // The available increment units
+    /** @var string */
     const TIME_UNIT_SECONDS = 'seconds';
+
+    /** @var string */
     const TIME_UNIT_MINUTES = 'minutes';
+
+    /** @var string */
     const TIME_UNIT_HOURS   = 'hours';
+
+    /** @var string */
     const TIME_UNIT_DAYS    = 'days';
+
+    /** @var string */
     const TIME_UNIT_MONTHS  = 'months';
+
+    /** @var string */
     const TIME_UNIT_YEARS   = 'years';
+
+    /** @var string[] */
     const TIME_UNITS        = [
         self::TIME_UNIT_SECONDS,
         self::TIME_UNIT_MINUTES,

@@ -15,7 +15,7 @@ namespace SerendipityHQ\Component\ThenWhen;
 /**
  * Manges te retry logic implementing various strategies.
  */
-class ThenWhen
+final class ThenWhen
 {
     /**
      * This class cannot be instantiated.
@@ -24,18 +24,12 @@ class ThenWhen
     {
     }
 
-    /**
-     * @return TryAgain
-     */
-    public static function createRetryStrategy()
+    public static function createRetryStrategy(): \SerendipityHQ\Component\ThenWhen\TryAgain
     {
         return self::createRetryStrategyBuilder()->initializeRetryStrategy();
     }
 
-    /**
-     * @return RetryStrategyBuilder
-     */
-    public static function createRetryStrategyBuilder()
+    public static function createRetryStrategyBuilder(): \SerendipityHQ\Component\ThenWhen\RetryStrategyBuilder
     {
         return new RetryStrategyBuilder();
     }

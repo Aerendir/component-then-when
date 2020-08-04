@@ -12,8 +12,9 @@
 
 namespace SerendipityHQ\Component\ThenWhen\Strategy;
 
-class ExponentialStrategy extends AbstractStrategy
+final class ExponentialStrategy extends AbstractStrategy
 {
+    /** @var string */
     const STRATEGY = 'exponential';
 
     /** @var int $exponentialBase */
@@ -58,7 +59,7 @@ class ExponentialStrategy extends AbstractStrategy
     {
         $incrementBy = 1 === $this->getAttempts()
             ? $this->getIncrementBy()
-            : pow($this->getExponentialBase(), $this->getAttempts()) * $this->getIncrementBy();
+            : $this->getExponentialBase() ** $this->getAttempts() * $this->getIncrementBy();
 
         return $this->convertToSeconds($incrementBy, $this->getTimeUnit());
     }
@@ -71,12 +72,7 @@ class ExponentialStrategy extends AbstractStrategy
         return $this->exponentialBase;
     }
 
-    /**
-     * @param int $exponentialBase
-     *
-     * @return AbstractStrategy
-     */
-    protected function setExponentialBase(int $exponentialBase): AbstractStrategy
+    protected function setExponentialBase(int $exponentialBase): self
     {
         if (2 > $exponentialBase) {
             throw new \InvalidArgumentException('The exponential base must be greater than or equal to 2.');

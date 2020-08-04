@@ -18,8 +18,9 @@ use Carbon\Carbon;
  * Calculates the interval between attempts given the max number of attempts and the final DateTime or the max amount of
  * time.
  */
-class TimeFixedStrategy extends LinearStrategy
+final class TimeFixedStrategy extends LinearStrategy
 {
+    /** @var string */
     const STRATEGY = 'time_fixed';
 
     /**
@@ -31,14 +32,14 @@ class TimeFixedStrategy extends LinearStrategy
     {
         $incrementBy = 1;
         // $endOfTime can be only an integer or a \DateTime
-        if (false === is_int($endOfTimeWindow) && false === $endOfTimeWindow instanceof \DateTime) {
+        if (false === \is_int($endOfTimeWindow) && false === $endOfTimeWindow instanceof \DateTime) {
             throw new \InvalidArgumentException(
                 '$endOfTimeWindow (second argument) can be only an integer or a \DateTime object.'
             );
         }
 
         // If $endOfTimeWindow is an integer...
-        if (is_int($endOfTimeWindow)) {
+        if (\is_int($endOfTimeWindow)) {
             // We need a valid time unit
             $this->validateTimeUnit($timeUnit);
 
@@ -48,7 +49,7 @@ class TimeFixedStrategy extends LinearStrategy
             // Now we can validate the time window
             $this->validateTimeWindow($maxAttempts, $seconds);
 
-            $incrementBy = ceil($seconds / $endOfTimeWindow);
+            $incrementBy = \ceil($seconds / $endOfTimeWindow);
         }
 
         // If $endOfTimeWindow is a \DateTime...
@@ -86,14 +87,10 @@ class TimeFixedStrategy extends LinearStrategy
 
         $this->validateTimeWindow($maxAttempts, $seconds);
 
-        return ceil($seconds / $maxAttempts);
+        return \ceil($seconds / $maxAttempts);
     }
 
-    /**
-     * @param int $maxAttempts
-     * @param int $seconds
-     */
-    private function validateTimeWindow(int $maxAttempts, int $seconds)
+    private function validateTimeWindow(int $maxAttempts, int $seconds): void
     {
         if ($seconds < $maxAttempts) {
             throw new \LogicException(

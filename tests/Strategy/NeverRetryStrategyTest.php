@@ -15,13 +15,13 @@ namespace SerendipityHQ\Component\ThenWhen\Tests\Strategy;
 use PHPUnit\Framework\TestCase;
 use SerendipityHQ\Component\ThenWhen\Strategy\NeverRetryStrategy;
 
-class NeverRetryStrategyTest extends TestCase
+final class NeverRetryStrategyTest extends TestCase
 {
-    public function testStrategy()
+    public function testStrategy(): void
     {
         $resource = new NeverRetryStrategy();
 
-        $this::assertFalse($resource->canRetry());
-        $this::assertFalse($resource->retryOn());
+        self::assertFalse($resource->canRetry());
+        self::assertFalse($resource->retryOn());
     }
 }

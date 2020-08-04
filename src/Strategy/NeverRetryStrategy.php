@@ -15,8 +15,9 @@ namespace SerendipityHQ\Component\ThenWhen\Strategy;
 /**
  * Ever returns false stopping the retrying.
  */
-class NeverRetryStrategy extends AbstractStrategy
+final class NeverRetryStrategy extends AbstractStrategy
 {
+    /** @var string */
     const STRATEGY = 'never_retry';
 
     /**
@@ -30,7 +31,7 @@ class NeverRetryStrategy extends AbstractStrategy
     /**
      * {@inheritdoc}
      */
-    public function retryOn()
+    public function retryOn(): bool
     {
         return false;
     }

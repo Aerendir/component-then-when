@@ -15,8 +15,9 @@ namespace SerendipityHQ\Component\ThenWhen\Strategy;
 /**
  * Waits only one second before retry.
  */
-class LiveStrategy extends ConstantStrategy
+final class LiveStrategy extends ConstantStrategy
 {
+    /** @var string */
     const STRATEGY = 'live';
 
     /**

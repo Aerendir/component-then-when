@@ -1,13 +1,12 @@
 <?php
 
 /*
- * This file is part of PHP Value Objects.
+ * This file is part of the Serendipity HQ Then When Component.
  *
- * Copyright Adamo Aerendir Crespi 2017.
+ * Copyright (c) Adamo Aerendir Crespi <aerendir@serendipityhq.com>.
  *
- * @author    Adamo Aerendir Crespi <hello@aerendir.me>
- * @copyright Copyright (C) 2017 Aerendir. All rights reserved.
- * @license   MIT
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace SerendipityHQ\Component\ThenWhen\Strategy;
@@ -101,10 +100,7 @@ abstract class AbstractStrategy implements StrategyInterface
     public function jsonSerialize(): array
     {
         if (false === \defined(\get_class($this) . '::STRATEGY')) {
-            throw new \RuntimeException(
-                'The Strategy doesn\'t tells its own name. Create the contant "STRATEGY" that tells the name of the'
-                . ' strategy.'
-            );
+            throw new \RuntimeException('The Strategy doesn\'t tells its own name. Create the contant "STRATEGY" that tells the name of the' . ' strategy.');
         }
 
         return [
@@ -177,12 +173,7 @@ abstract class AbstractStrategy implements StrategyInterface
     protected function validateTimeUnit(string $timeUnit): string
     {
         if (false === \in_array($timeUnit, StrategyInterface::TIME_UNITS)) {
-            throw new \InvalidArgumentException(
-                \Safe\sprintf(
-                    'The increment unit "%s" is not supported. Supported increment units are: %s.',
-                    $timeUnit, \implode(' ', StrategyInterface::TIME_UNITS)
-                )
-            );
+            throw new \InvalidArgumentException(\Safe\sprintf('The increment unit "%s" is not supported. Supported increment units are: %s.', $timeUnit, \implode(' ', StrategyInterface::TIME_UNITS)));
         }
 
         return $timeUnit;

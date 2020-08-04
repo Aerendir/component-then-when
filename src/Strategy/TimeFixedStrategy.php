@@ -1,13 +1,12 @@
 <?php
 
 /*
- * This file is part of PHP Value Objects.
+ * This file is part of the Serendipity HQ Then When Component.
  *
- * Copyright Adamo Aerendir Crespi 2017.
+ * Copyright (c) Adamo Aerendir Crespi <aerendir@serendipityhq.com>.
  *
- * @author    Adamo Aerendir Crespi <hello@aerendir.me>
- * @copyright Copyright (C) 2017 Aerendir. All rights reserved.
- * @license   MIT
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace SerendipityHQ\Component\ThenWhen\Strategy;
@@ -33,9 +32,7 @@ final class TimeFixedStrategy extends LinearStrategy
         $incrementBy = 1;
         // $endOfTime can be only an integer or a \DateTime
         if (false === \is_int($endOfTimeWindow) && false === $endOfTimeWindow instanceof \DateTime) {
-            throw new \InvalidArgumentException(
-                '$endOfTimeWindow (second argument) can be only an integer or a \DateTime object.'
-            );
+            throw new \InvalidArgumentException('$endOfTimeWindow (second argument) can be only an integer or a \DateTime object.');
         }
 
         // If $endOfTimeWindow is an integer...
@@ -57,8 +54,7 @@ final class TimeFixedStrategy extends LinearStrategy
             // We don't need a $fixedTimeUnit...
             if (null !== $timeUnit) {
                 // ... so it's better to alert the developer that one were passed
-                throw new \LogicException(
-                    'A fixed time unit is required only if $fixedTime is an integer but it is a \DateTime object.
+                throw new \LogicException('A fixed time unit is required only if $fixedTime is an integer but it is a \DateTime object.
                 ');
             }
 
@@ -93,10 +89,7 @@ final class TimeFixedStrategy extends LinearStrategy
     private function validateTimeWindow(int $maxAttempts, int $seconds): void
     {
         if ($seconds < $maxAttempts) {
-            throw new \LogicException(
-                'The given number of max attempts exceeds the available time window. Try to reduce the max amount of'
-                . ' attempts or to increase the available time window.'
-            );
+            throw new \LogicException('The given number of max attempts exceeds the available time window. Try to reduce the max amount of' . ' attempts or to increase the available time window.');
         }
     }
 }

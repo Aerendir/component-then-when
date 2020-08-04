@@ -10,18 +10,17 @@
 return [
     // # Issue statistics:
     // PhanUnreferencedPublicMethod : 7 occurrences
-    // PhanPluginUnreachableCode : 6 occurrences
     // PhanUnreferencedPublicClassConstant : 4 occurrences
     // PhanUnreferencedClass : 2 occurrences
     // PhanPossiblyInfiniteRecursionSameParams : 1 occurrence
-    // PhanTypeMismatchReturn : 1 occurrence
+    // PhanTypeMismatchDeclaredReturn : 1 occurrence
     // PhanUndeclaredConstantOfClass : 1 occurrence
     // PhanUnreferencedProtectedMethod : 1 occurrence
 
     // Currently, file_suppressions and directory_suppressions are the only supported suppressions
     'file_suppressions' => [
-        'src/RetryStrategyBuilder.php' => ['PhanUnreferencedPublicMethod'],
-        'src/Strategy/AbstractStrategy.php' => ['PhanPluginUnreachableCode', 'PhanTypeMismatchReturn', 'PhanUndeclaredConstantOfClass', 'PhanUnreferencedProtectedMethod', 'PhanUnreferencedPublicMethod'],
+        'src/RetryStrategyBuilder.php' => ['PhanTypeMismatchDeclaredReturn', 'PhanUnreferencedPublicMethod'],
+        'src/Strategy/AbstractStrategy.php' => ['PhanUndeclaredConstantOfClass', 'PhanUnreferencedProtectedMethod', 'PhanUnreferencedPublicMethod'],
         'src/Strategy/ConstantStrategy.php' => ['PhanUnreferencedPublicClassConstant'],
         'src/Strategy/ExponentialStrategy.php' => ['PhanUnreferencedPublicClassConstant'],
         'src/Strategy/LinearStrategy.php' => ['PhanUnreferencedPublicClassConstant'],

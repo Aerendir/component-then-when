@@ -21,16 +21,6 @@ parameters:
 			path: src/RetryStrategyBuilder.php
 
 		-
-			message: "#^Argument of an invalid type array\\|string supplied for foreach, only iterables are supported\\.$#"
-			count: 3
-			path: src/RetryStrategyBuilder.php
-
-		-
-			message: "#^Function sprintf is unsafe to use\\. It can return FALSE instead of throwing an exception\\. Please add 'use function Safe\\\\sprintf;' at the beginning of the file to use the variant provided by the 'thecodingmachine/safe' library\\.$#"
-			count: 3
-			path: src/RetryStrategyBuilder.php
-
-		-
 			message: "#^Method SerendipityHQ\\\\Component\\\\ThenWhen\\\\RetryStrategyBuilder\\:\\:setMiddleHandlerForException\\(\\) has parameter \\$exceptionClasses with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/RetryStrategyBuilder.php
@@ -46,12 +36,12 @@ parameters:
 			path: src/RetryStrategyBuilder.php
 
 		-
-			message: "#^Method SerendipityHQ\\\\Component\\\\ThenWhen\\\\RetryStrategyBuilder\\:\\:prepareClasses\\(\\) never returns string so it can be removed from the return typehint\\.$#"
+			message: "#^Method SerendipityHQ\\\\Component\\\\ThenWhen\\\\RetryStrategyBuilder\\:\\:prepareClasses\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/RetryStrategyBuilder.php
 
 		-
-			message: "#^Method SerendipityHQ\\\\Component\\\\ThenWhen\\\\RetryStrategyBuilder\\:\\:prepareClasses\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: "#^PHPDoc tag @return with type array\\|string is not subtype of native type array\\.$#"
 			count: 1
 			path: src/RetryStrategyBuilder.php
 
@@ -66,27 +56,12 @@ parameters:
 			path: src/Strategy/AbstractStrategy.php
 
 		-
-			message: "#^Method SerendipityHQ\\\\Component\\\\ThenWhen\\\\Strategy\\\\AbstractStrategy\\:\\:jsonSerialize\\(\\) has no return typehint specified\\.$#"
+			message: "#^Method SerendipityHQ\\\\Component\\\\ThenWhen\\\\Strategy\\\\AbstractStrategy\\:\\:jsonSerialize\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Strategy/AbstractStrategy.php
 
 		-
 			message: "#^PHPDoc tag @param has invalid value \\(\\$timeUnit\\)\\: Unexpected token \"\\$timeUnit\", expected type at offset 47$#"
-			count: 1
-			path: src/Strategy/AbstractStrategy.php
-
-		-
-			message: "#^Unreachable statement \\- code above always terminates\\.$#"
-			count: 6
-			path: src/Strategy/AbstractStrategy.php
-
-		-
-			message: "#^Function sprintf is unsafe to use\\. It can return FALSE instead of throwing an exception\\. Please add 'use function Safe\\\\sprintf;' at the beginning of the file to use the variant provided by the 'thecodingmachine/safe' library\\.$#"
-			count: 2
-			path: src/Strategy/AbstractStrategy.php
-
-		-
-			message: "#^Method SerendipityHQ\\\\Component\\\\ThenWhen\\\\Strategy\\\\AbstractStrategy\\:\\:validateTimeUnit\\(\\) should return bool but returns string\\.$#"
 			count: 1
 			path: src/Strategy/AbstractStrategy.php
 
@@ -136,11 +111,6 @@ parameters:
 			path: src/Strategy/TimeFixedStrategy.php
 
 		-
-			message: "#^Method SerendipityHQ\\\\Component\\\\ThenWhen\\\\Strategy\\\\TimeFixedStrategy\\:\\:validateTimeWindow\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: src/Strategy/TimeFixedStrategy.php
-
-		-
 			message: "#^Property SerendipityHQ\\\\Component\\\\ThenWhen\\\\TryAgain\\:\\:\\$strategies type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/TryAgain.php
@@ -169,14 +139,4 @@ parameters:
 			message: "#^Method SerendipityHQ\\\\Component\\\\ThenWhen\\\\TryAgain\\:\\:__construct\\(\\) has parameter \\$strategies with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/TryAgain.php
-
-		-
-			message: "#^Function sleep is unsafe to use\\. It can return FALSE instead of throwing an exception\\. Please add 'use function Safe\\\\sleep;' at the beginning of the file to use the variant provided by the 'thecodingmachine/safe' library\\.$#"
-			count: 1
-			path: src/TryAgain.php
-
-		-
-			message: "#^Method SerendipityHQ\\\\Component\\\\ThenWhen\\\\Tests\\\\Strategy\\\\NeverRetryStrategyTest\\:\\:testStrategy\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: tests/Strategy/NeverRetryStrategyTest.php
 

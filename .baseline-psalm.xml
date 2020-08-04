@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<files psalm-version="3.12.2@7c7ebd068f8acaba211d4a2c707c4ba90874fa26">
+<files psalm-version="3.13.1@afd8874a9e4562eac42a02de90e42e430c3a1db1">
   <file src="src/RetryStrategyBuilder.php">
-    <DocblockTypeContradiction occurrences="1">
-      <code>false === is_array($exceptionClasses)</code>
-    </DocblockTypeContradiction>
-    <MixedArgument occurrences="4">
-      <code>$exceptionClass</code>
-      <code>$exceptionClass</code>
-      <code>$exceptionClass</code>
+    <MismatchingDocblockReturnType occurrences="1">
+      <code>array|string</code>
+    </MismatchingDocblockReturnType>
+    <MixedArgument occurrences="1">
       <code>$exceptionClass</code>
     </MixedArgument>
     <MixedArrayOffset occurrences="4">
@@ -21,25 +18,16 @@
       <code>$exceptionClass</code>
       <code>$exceptionClass</code>
     </MixedAssignment>
+    <MixedInferredReturnType occurrences="1">
+      <code>array|string</code>
+    </MixedInferredReturnType>
     <PossiblyInvalidIterator occurrences="3">
       <code>$exceptionClasses</code>
       <code>$exceptionClasses</code>
       <code>$exceptionClasses</code>
     </PossiblyInvalidIterator>
-    <RedundantConditionGivenDocblockType occurrences="1">
-      <code>is_array($exceptionClasses)</code>
-    </RedundantConditionGivenDocblockType>
   </file>
   <file src="src/Strategy/AbstractStrategy.php">
-    <InvalidReturnStatement occurrences="1">
-      <code>$timeUnit</code>
-    </InvalidReturnStatement>
-    <InvalidReturnType occurrences="1">
-      <code>bool</code>
-    </InvalidReturnType>
-    <MissingReturnType occurrences="1">
-      <code>jsonSerialize</code>
-    </MissingReturnType>
     <MixedInferredReturnType occurrences="1">
       <code>string</code>
     </MixedInferredReturnType>
@@ -57,28 +45,26 @@
     </InvalidOperand>
   </file>
   <file src="src/Strategy/ExponentialStrategy.php">
-    <InvalidOperand occurrences="2">
+    <InvalidOperand occurrences="1">
       <code>$this-&gt;waitFor()</code>
-      <code>pow($this-&gt;getExponentialBase(), $this-&gt;getAttempts()) * $this-&gt;getIncrementBy()</code>
     </InvalidOperand>
-    <InvalidScalarArgument occurrences="1">
-      <code>$incrementBy</code>
-    </InvalidScalarArgument>
-    <PropertyNotSetInConstructor occurrences="1">
-      <code>$exponentialBase</code>
-    </PropertyNotSetInConstructor>
   </file>
   <file src="src/Strategy/LinearStrategy.php">
     <InvalidOperand occurrences="1">
       <code>$this-&gt;waitFor()</code>
     </InvalidOperand>
   </file>
+  <file src="src/Strategy/NeverRetryStrategy.php">
+    <ImplementedReturnTypeMismatch occurrences="1">
+      <code>bool</code>
+    </ImplementedReturnTypeMismatch>
+  </file>
   <file src="src/Strategy/TimeFixedStrategy.php">
     <DocblockTypeContradiction occurrences="1">
-      <code>false === is_int($endOfTimeWindow) &amp;&amp; false === $endOfTimeWindow instanceof \DateTime</code>
+      <code>false === \is_int($endOfTimeWindow) &amp;&amp; false === $endOfTimeWindow instanceof \DateTime</code>
     </DocblockTypeContradiction>
     <InvalidReturnStatement occurrences="1">
-      <code>ceil($seconds / $maxAttempts)</code>
+      <code>\ceil($seconds / $maxAttempts)</code>
     </InvalidReturnStatement>
     <InvalidReturnType occurrences="1">
       <code>int</code>
@@ -95,8 +81,8 @@
       <code>$result</code>
     </MixedAssignment>
     <MixedFunctionCall occurrences="2">
-      <code>call_user_func($this-&gt;finalHandlers[$exception], $e)</code>
-      <code>call_user_func($this-&gt;middleHandlers[$exception], $e)</code>
+      <code>\call_user_func($this-&gt;finalHandlers[$throwableFQN], $throwable)</code>
+      <code>\call_user_func($this-&gt;middleHandlers[$throwableFQN], $throwable)</code>
     </MixedFunctionCall>
   </file>
 </files>

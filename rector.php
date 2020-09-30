@@ -26,7 +26,8 @@ return static function (ContainerConfigurator $containerConfigurator) : void {
     ]);
 
     $parameters->set(Option::EXCLUDE_PATHS, [
-        __DIR__ . '/tests/bootstrap.php'
+        __DIR__ . '/tests/bootstrap.php',
+        __DIR__ . '/src/Strategy/TimeFixedStrategy.php',
     ]);
 
     $parameters->set(Option::AUTOLOAD_PATHS, [__DIR__ . '/vendor-bin/phpunit/vendor/autoload.php']);
@@ -37,8 +38,6 @@ return static function (ContainerConfigurator $containerConfigurator) : void {
             SetList::ARRAY_STR_FUNCTIONS_TO_STATIC_CALL,
             SetList::CODE_QUALITY,
             SetList::CODING_STYLE,
-            // SetList::NAMING, // Do not use in this library
-            // SetList::ORDER, // Do not use in this library
             SetList::PERFORMANCE,
             SetList::PHP_52,
             SetList::PHP_53,
@@ -83,7 +82,6 @@ return static function (ContainerConfigurator $containerConfigurator) : void {
             Rector\CodingStyle\Rector\ClassMethod\NewlineBeforeNewAssignSetRector::class,
             Rector\CodingStyle\Rector\ClassMethod\RemoveDoubleUnderscoreInMethodNameRector::class,
             Rector\CodingStyle\Rector\Encapsed\EncapsedStringsToSprintfRector::class,
-            Rector\CodingStyle\Rector\Identical\IdenticalFalseToBooleanNotRector::class,
             Rector\CodingStyle\Rector\Switch_\BinarySwitchToIfElseRector::class,
             Rector\CodingStyle\Rector\Throw_\AnnotateThrowablesRector::class,
             Rector\CodingStyle\Rector\Use_\RemoveUnusedAliasRector::class,
@@ -95,6 +93,11 @@ return static function (ContainerConfigurator $containerConfigurator) : void {
             Rector\SOLID\Rector\ClassMethod\UseInterfaceOverImplementationInConstructorRector::class,
             Rector\TypeDeclaration\Rector\ClassMethod\AddArrayParamDocTypeRector::class,
             Rector\TypeDeclaration\Rector\ClassMethod\AddArrayReturnDocTypeRector::class,
+
+            // Temporary excluded
+
+            // https://github.com/Aerendir/component-then-when/issues/65
+            Rector\SOLID\Rector\Class_\FinalizeClassesWithoutChildrenRector::class,
         ]
     );
 };

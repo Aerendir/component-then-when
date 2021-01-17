@@ -81,12 +81,12 @@ parameters:
 			path: src/Strategy/LinearStrategy.php
 
 		-
-			message: "#^Result of && is always false\\.$#"
+			message: "#^Call to function is_int\\(\\) with DateTime\\|DateTimeImmutable will always evaluate to false\\.$#"
 			count: 1
 			path: src/Strategy/TimeFixedStrategy.php
 
 		-
-			message: "#^Strict comparison using \\=\\=\\= between false and true will always evaluate to false\\.$#"
+			message: "#^Call to function is_int\\(\\) with DateTime will always evaluate to false\\.$#"
 			count: 1
 			path: src/Strategy/TimeFixedStrategy.php
 
@@ -101,12 +101,17 @@ parameters:
 			path: src/Strategy/TimeFixedStrategy.php
 
 		-
-			message: "#^Parameter \\#2 \\$incrementBy of method SerendipityHQ\\\\Component\\\\ThenWhen\\\\Strategy\\\\AbstractStrategy\\:\\:__construct\\(\\) expects int, float\\|int given\\.$#"
+			message: "#^Parameter \\#2 \\$incrementBy of method SerendipityHQ\\\\Component\\\\ThenWhen\\\\Strategy\\\\AbstractStrategy\\:\\:__construct\\(\\) expects int, float given\\.$#"
 			count: 1
 			path: src/Strategy/TimeFixedStrategy.php
 
 		-
-			message: "#^Method SerendipityHQ\\\\Component\\\\ThenWhen\\\\Strategy\\\\TimeFixedStrategy\\:\\:calculateIncrementBy\\(\\) should return int but returns float\\|int\\.$#"
+			message: "#^PHPDoc tag @return with type int is incompatible with native type float\\.$#"
+			count: 1
+			path: src/Strategy/TimeFixedStrategy.php
+
+		-
+			message: "#^Call to an undefined method DateTime\\|DateTimeImmutable\\:\\:diffInSeconds\\(\\)\\.$#"
 			count: 1
 			path: src/Strategy/TimeFixedStrategy.php
 

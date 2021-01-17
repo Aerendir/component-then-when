@@ -15,6 +15,7 @@ return [
     // PhanPossiblyInfiniteRecursionSameParams : 1 occurrence
     // PhanTypeMismatchDeclaredReturn : 1 occurrence
     // PhanUndeclaredConstantOfClass : 1 occurrence
+    // PhanUndeclaredMethod : 1 occurrence
     // PhanUnreferencedProtectedMethod : 1 occurrence
 
     // Currently, file_suppressions and directory_suppressions are the only supported suppressions
@@ -25,6 +26,7 @@ return [
         'src/Strategy/ExponentialStrategy.php' => ['PhanUnreferencedPublicClassConstant'],
         'src/Strategy/LinearStrategy.php' => ['PhanUnreferencedPublicClassConstant'],
         'src/Strategy/NeverRetryStrategy.php' => ['PhanUnreferencedPublicClassConstant'],
+        'src/Strategy/TimeFixedStrategy.php' => ['PhanUndeclaredMethod'],
         'src/ThenWhen.php' => ['PhanUnreferencedClass', 'PhanUnreferencedPublicMethod'],
         'src/TryAgain.php' => ['PhanPossiblyInfiniteRecursionSameParams', 'PhanUnreferencedPublicMethod'],
         'tests/Strategy/NeverRetryStrategyTest.php' => ['PhanUnreferencedClass', 'PhanUnreferencedPublicMethod'],

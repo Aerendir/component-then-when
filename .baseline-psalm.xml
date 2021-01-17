@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<files psalm-version="3.13.1@afd8874a9e4562eac42a02de90e42e430c3a1db1">
+<files psalm-version="3.18.2@19aa905f7c3c7350569999a93c40ae91ae4e1626">
   <file src="src/RetryStrategyBuilder.php">
     <MismatchingDocblockReturnType occurrences="1">
       <code>array|string</code>
@@ -8,13 +8,12 @@
       <code>$exceptionClass</code>
     </MixedArgument>
     <MixedArrayOffset occurrences="4">
-      <code>$this-&gt;strategies[$exceptionClass]</code>
+      <code>$this-&gt;finalHandlers[$exceptionClass]</code>
       <code>$this-&gt;middleHandlers[$exceptionClass]</code>
       <code>$this-&gt;strategies[$exceptionClass]</code>
-      <code>$this-&gt;finalHandlers[$exceptionClass]</code>
+      <code>$this-&gt;strategies[$exceptionClass]</code>
     </MixedArrayOffset>
-    <MixedAssignment occurrences="3">
-      <code>$exceptionClass</code>
+    <MixedAssignment occurrences="2">
       <code>$exceptionClass</code>
       <code>$exceptionClass</code>
     </MixedAssignment>
@@ -61,7 +60,7 @@
   </file>
   <file src="src/Strategy/TimeFixedStrategy.php">
     <DocblockTypeContradiction occurrences="1">
-      <code>false === \is_int($endOfTimeWindow) &amp;&amp; false === $endOfTimeWindow instanceof \DateTime</code>
+      <code>\is_int($endOfTimeWindow)</code>
     </DocblockTypeContradiction>
     <InvalidReturnStatement occurrences="1">
       <code>\ceil($seconds / $maxAttempts)</code>
@@ -72,9 +71,21 @@
     <InvalidScalarArgument occurrences="1">
       <code>$incrementBy</code>
     </InvalidScalarArgument>
+    <MixedArgument occurrences="1">
+      <code>$seconds</code>
+    </MixedArgument>
+    <MixedAssignment occurrences="1">
+      <code>$seconds</code>
+    </MixedAssignment>
     <PossiblyNullArgument occurrences="1">
       <code>$timeUnit</code>
     </PossiblyNullArgument>
+    <RedundantConditionGivenDocblockType occurrences="1">
+      <code>false === \is_int($endOfTimeWindow)</code>
+    </RedundantConditionGivenDocblockType>
+    <UndefinedMethod occurrences="1">
+      <code>diffInSeconds</code>
+    </UndefinedMethod>
   </file>
   <file src="src/TryAgain.php">
     <MixedAssignment occurrences="1">

@@ -81,7 +81,7 @@ parameters:
 			path: src/Strategy/LinearStrategy.php
 
 		-
-			message: "#^Call to function is_int\\(\\) with DateTime\\|DateTimeImmutable will always evaluate to false\\.$#"
+			message: "#^Call to function is_int\\(\\) with DateTimeInterface will always evaluate to false\\.$#"
 			count: 1
 			path: src/Strategy/TimeFixedStrategy.php
 
@@ -111,7 +111,7 @@ parameters:
 			path: src/Strategy/TimeFixedStrategy.php
 
 		-
-			message: "#^Call to an undefined method DateTime\\|DateTimeImmutable\\:\\:diffInSeconds\\(\\)\\.$#"
+			message: "#^Call to an undefined method DateTimeInterface\\:\\:diffInSeconds\\(\\)\\.$#"
 			count: 1
 			path: src/Strategy/TimeFixedStrategy.php
 

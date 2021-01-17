@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<files psalm-version="3.18.2@19aa905f7c3c7350569999a93c40ae91ae4e1626">
+<files psalm-version="4.4.1@9fd7a7d885b3a216cff8dec9d8c21a132f275224">
   <file src="src/RetryStrategyBuilder.php">
     <MismatchingDocblockReturnType occurrences="1">
       <code>array|string</code>
@@ -53,15 +53,7 @@
       <code>$this-&gt;waitFor()</code>
     </InvalidOperand>
   </file>
-  <file src="src/Strategy/NeverRetryStrategy.php">
-    <ImplementedReturnTypeMismatch occurrences="1">
-      <code>bool</code>
-    </ImplementedReturnTypeMismatch>
-  </file>
   <file src="src/Strategy/TimeFixedStrategy.php">
-    <DocblockTypeContradiction occurrences="1">
-      <code>\is_int($endOfTimeWindow)</code>
-    </DocblockTypeContradiction>
     <InvalidReturnStatement occurrences="1">
       <code>\ceil($seconds / $maxAttempts)</code>
     </InvalidReturnStatement>
@@ -80,12 +72,17 @@
     <PossiblyNullArgument occurrences="1">
       <code>$timeUnit</code>
     </PossiblyNullArgument>
-    <RedundantConditionGivenDocblockType occurrences="1">
+    <RedundantCondition occurrences="2">
+      <code>$endOfTimeWindow instanceof \DateTime</code>
       <code>false === \is_int($endOfTimeWindow)</code>
-    </RedundantConditionGivenDocblockType>
-    <UndefinedMethod occurrences="1">
+    </RedundantCondition>
+    <TypeDoesNotContainType occurrences="2">
+      <code>\is_int($endOfTimeWindow)</code>
+      <code>\is_int($endOfTimeWindow)</code>
+    </TypeDoesNotContainType>
+    <UndefinedInterfaceMethod occurrences="1">
       <code>diffInSeconds</code>
-    </UndefinedMethod>
+    </UndefinedInterfaceMethod>
   </file>
   <file src="src/TryAgain.php">
     <MixedAssignment occurrences="1">

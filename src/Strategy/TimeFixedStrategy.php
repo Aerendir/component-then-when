@@ -23,9 +23,9 @@ final class TimeFixedStrategy extends LinearStrategy
     const STRATEGY = 'time_fixed';
 
     /**
-     * @param int                          $maxAttempts
-     * @param \DateTime|\DateTimeImmutable $endOfTimeWindow
-     * @param string|null                  $timeUnit
+     * @param int                $maxAttempts
+     * @param \DateTimeInterface $endOfTimeWindow
+     * @param string|null        $timeUnit
      */
     public function __construct(int $maxAttempts, \DateTimeInterface $endOfTimeWindow, string $timeUnit = null)
     {
@@ -72,8 +72,8 @@ final class TimeFixedStrategy extends LinearStrategy
     }
 
     /**
-     * @param int                          $maxAttempts
-     * @param \DateTime|\DateTimeImmutable $endOfTimeWindow
+     * @param int                $maxAttempts
+     * @param \DateTimeInterface $endOfTimeWindow
      *
      * @return int The amount of seconds
      */

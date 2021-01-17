@@ -89,7 +89,7 @@ final class RetryStrategyBuilder
     /**
      * Retruns an instace of the TryAgain object.
      */
-    public function initializeRetryStrategy(): \SerendipityHQ\Component\ThenWhen\TryAgain
+    public function initializeRetryStrategy(): TryAgain
     {
         return new TryAgain($this->strategies, $this->middleHandlers, $this->finalHandlers);
     }

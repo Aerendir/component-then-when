@@ -23,11 +23,11 @@ final class TimeFixedStrategy extends LinearStrategy
     const STRATEGY = 'time_fixed';
 
     /**
-     * @param int           $maxAttempts
-     * @param \DateTime|int $endOfTimeWindow
-     * @param string|null   $timeUnit
+     * @param int                          $maxAttempts
+     * @param \DateTime|\DateTimeImmutable $endOfTimeWindow
+     * @param string|null                  $timeUnit
      */
-    public function __construct(int $maxAttempts, $endOfTimeWindow, string $timeUnit = null)
+    public function __construct(int $maxAttempts, \DateTimeInterface $endOfTimeWindow, string $timeUnit = null)
     {
         $incrementBy = 1;
         // $endOfTime can be only an integer or a \DateTime
@@ -72,12 +72,12 @@ final class TimeFixedStrategy extends LinearStrategy
     }
 
     /**
-     * @param int    $maxAttempts
-     * @param Carbon $endOfTimeWindow
+     * @param int                          $maxAttempts
+     * @param \DateTime|\DateTimeImmutable $endOfTimeWindow
      *
      * @return int The amount of seconds
      */
-    private function calculateIncrementBy(int $maxAttempts, Carbon $endOfTimeWindow): int
+    private function calculateIncrementBy(int $maxAttempts, \DateTimeInterface $endOfTimeWindow): float
     {
         $seconds = $endOfTimeWindow->diffInSeconds();
 

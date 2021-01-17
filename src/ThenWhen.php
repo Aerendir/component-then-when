@@ -23,12 +23,12 @@ final class ThenWhen
     {
     }
 
-    public static function createRetryStrategy(): \SerendipityHQ\Component\ThenWhen\TryAgain
+    public static function createRetryStrategy(): TryAgain
     {
         return self::createRetryStrategyBuilder()->initializeRetryStrategy();
     }
 
-    public static function createRetryStrategyBuilder(): \SerendipityHQ\Component\ThenWhen\RetryStrategyBuilder
+    public static function createRetryStrategyBuilder(): RetryStrategyBuilder
     {
         return new RetryStrategyBuilder();
     }

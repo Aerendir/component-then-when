@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<files psalm-version="4.4.1@9fd7a7d885b3a216cff8dec9d8c21a132f275224">
+  <file src="src/RetryStrategyBuilder.php">
+    <MismatchingDocblockReturnType occurrences="1">
+      <code>array|string</code>
+    </MismatchingDocblockReturnType>
+    <MixedArgument occurrences="1">
+      <code>$exceptionClass</code>
+    </MixedArgument>
+    <MixedArrayOffset occurrences="4">
+      <code>$this-&gt;finalHandlers[$exceptionClass]</code>
+      <code>$this-&gt;middleHandlers[$exceptionClass]</code>
+      <code>$this-&gt;strategies[$exceptionClass]</code>
+      <code>$this-&gt;strategies[$exceptionClass]</code>
+    </MixedArrayOffset>
+    <MixedAssignment occurrences="2">
+      <code>$exceptionClass</code>
+      <code>$exceptionClass</code>
+    </MixedAssignment>
+    <MixedInferredReturnType occurrences="1">
+      <code>array|string</code>
+    </MixedInferredReturnType>
+    <PossiblyInvalidIterator occurrences="3">
+      <code>$exceptionClasses</code>
+      <code>$exceptionClasses</code>
+      <code>$exceptionClasses</code>
+    </PossiblyInvalidIterator>
+  </file>
+  <file src="src/Strategy/AbstractStrategy.php">
+    <MixedInferredReturnType occurrences="1">
+      <code>string</code>
+    </MixedInferredReturnType>
+    <MixedReturnStatement occurrences="1">
+      <code>$this::STRATEGY</code>
+    </MixedReturnStatement>
+    <PropertyNotSetInConstructor occurrences="2">
+      <code>$incrementBy</code>
+      <code>$timeUnit</code>
+    </PropertyNotSetInConstructor>
+  </file>
+  <file src="src/Strategy/ConstantStrategy.php">
+    <InvalidOperand occurrences="1">
+      <code>$this-&gt;waitFor()</code>
+    </InvalidOperand>
+  </file>
+  <file src="src/Strategy/ExponentialStrategy.php">
+    <InvalidOperand occurrences="1">
+      <code>$this-&gt;waitFor()</code>
+    </InvalidOperand>
+  </file>
+  <file src="src/Strategy/LinearStrategy.php">
+    <InvalidOperand occurrences="1">
+      <code>$this-&gt;waitFor()</code>
+    </InvalidOperand>
+  </file>
+  <file src="src/Strategy/TimeFixedStrategy.php">
+    <InvalidReturnStatement occurrences="1">
+      <code>\ceil($seconds / $maxAttempts)</code>
+    </InvalidReturnStatement>
+    <InvalidReturnType occurrences="1">
+      <code>int</code>
+    </InvalidReturnType>
+    <InvalidScalarArgument occurrences="1">
+      <code>$incrementBy</code>
+    </InvalidScalarArgument>
+    <MixedArgument occurrences="1">
+      <code>$seconds</code>
+    </MixedArgument>
+    <MixedAssignment occurrences="1">
+      <code>$seconds</code>
+    </MixedAssignment>
+    <PossiblyNullArgument occurrences="1">
+      <code>$timeUnit</code>
+    </PossiblyNullArgument>
+    <RedundantCondition occurrences="2">
+      <code>$endOfTimeWindow instanceof \DateTime</code>
+      <code>false === \is_int($endOfTimeWindow)</code>
+    </RedundantCondition>
+    <TypeDoesNotContainType occurrences="2">
+      <code>\is_int($endOfTimeWindow)</code>
+      <code>\is_int($endOfTimeWindow)</code>
+    </TypeDoesNotContainType>
+    <UndefinedInterfaceMethod occurrences="1">
+      <code>diffInSeconds</code>
+    </UndefinedInterfaceMethod>
+  </file>
+  <file src="src/TryAgain.php">
+    <MixedAssignment occurrences="1">
+      <code>$result</code>
+    </MixedAssignment>
+    <MixedFunctionCall occurrences="2">
+      <code>\call_user_func($this-&gt;finalHandlers[$throwableFQN], $throwable)</code>
+      <code>\call_user_func($this-&gt;middleHandlers[$throwableFQN], $throwable)</code>
+    </MixedFunctionCall>
+  </file>
+</files>

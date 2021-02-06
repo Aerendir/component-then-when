@@ -1,13 +1,12 @@
 <?php
 
 /*
- * This file is part of PHP Value Objects.
+ * This file is part of the Serendipity HQ Then When Component.
  *
- * Copyright Adamo Aerendir Crespi 2017.
+ * Copyright (c) Adamo Aerendir Crespi <aerendir@serendipityhq.com>.
  *
- * @author    Adamo Aerendir Crespi <hello@aerendir.me>
- * @copyright Copyright (C) 2017 Aerendir. All rights reserved.
- * @license   MIT
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace SerendipityHQ\Component\ThenWhen;
@@ -15,7 +14,7 @@ namespace SerendipityHQ\Component\ThenWhen;
 /**
  * Manges te retry logic implementing various strategies.
  */
-class ThenWhen
+final class ThenWhen
 {
     /**
      * This class cannot be instantiated.
@@ -24,18 +23,12 @@ class ThenWhen
     {
     }
 
-    /**
-     * @return TryAgain
-     */
-    public static function createRetryStrategy()
+    public static function createRetryStrategy(): TryAgain
     {
         return self::createRetryStrategyBuilder()->initializeRetryStrategy();
     }
 
-    /**
-     * @return RetryStrategyBuilder
-     */
-    public static function createRetryStrategyBuilder()
+    public static function createRetryStrategyBuilder(): RetryStrategyBuilder
     {
         return new RetryStrategyBuilder();
     }

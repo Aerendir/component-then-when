@@ -1,19 +1,19 @@
 <?php
 
 /*
- * This file is part of PHP Value Objects.
+ * This file is part of the Serendipity HQ Then When Component.
  *
- * Copyright Adamo Aerendir Crespi 2017.
+ * Copyright (c) Adamo Aerendir Crespi <aerendir@serendipityhq.com>.
  *
- * @author    Adamo Aerendir Crespi <hello@aerendir.me>
- * @copyright Copyright (C) 2017 Aerendir. All rights reserved.
- * @license   MIT
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace SerendipityHQ\Component\ThenWhen\Strategy;
 
-class ExponentialStrategy extends AbstractStrategy
+final class ExponentialStrategy extends AbstractStrategy
 {
+    /** @var string */
     const STRATEGY = 'exponential';
 
     /** @var int $exponentialBase */
@@ -58,7 +58,7 @@ class ExponentialStrategy extends AbstractStrategy
     {
         $incrementBy = 1 === $this->getAttempts()
             ? $this->getIncrementBy()
-            : pow($this->getExponentialBase(), $this->getAttempts()) * $this->getIncrementBy();
+            : $this->getExponentialBase() ** $this->getAttempts() * $this->getIncrementBy();
 
         return $this->convertToSeconds($incrementBy, $this->getTimeUnit());
     }
@@ -71,12 +71,7 @@ class ExponentialStrategy extends AbstractStrategy
         return $this->exponentialBase;
     }
 
-    /**
-     * @param int $exponentialBase
-     *
-     * @return AbstractStrategy
-     */
-    protected function setExponentialBase(int $exponentialBase): AbstractStrategy
+    protected function setExponentialBase(int $exponentialBase): self
     {
         if (2 > $exponentialBase) {
             throw new \InvalidArgumentException('The exponential base must be greater than or equal to 2.');

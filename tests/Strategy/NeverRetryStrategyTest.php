@@ -1,13 +1,12 @@
 <?php
 
 /*
- * This file is part of PHP Value Objects.
+ * This file is part of the Serendipity HQ Then When Component.
  *
- * Copyright Adamo Aerendir Crespi 2017.
+ * Copyright (c) Adamo Aerendir Crespi <aerendir@serendipityhq.com>.
  *
- * @author    Adamo Aerendir Crespi <hello@aerendir.me>
- * @copyright Copyright (C) 2017 Aerendir. All rights reserved.
- * @license   MIT
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace SerendipityHQ\Component\ThenWhen\Tests\Strategy;
@@ -15,13 +14,13 @@ namespace SerendipityHQ\Component\ThenWhen\Tests\Strategy;
 use PHPUnit\Framework\TestCase;
 use SerendipityHQ\Component\ThenWhen\Strategy\NeverRetryStrategy;
 
-class NeverRetryStrategyTest extends TestCase
+final class NeverRetryStrategyTest extends TestCase
 {
-    public function testStrategy()
+    public function testStrategy(): void
     {
         $resource = new NeverRetryStrategy();
 
-        $this::assertFalse($resource->canRetry());
-        $this::assertFalse($resource->retryOn());
+        self::assertFalse($resource->canRetry());
+        self::assertFalse($resource->retryOn());
     }
 }

@@ -1,13 +1,12 @@
 <?php
 
 /*
- * This file is part of PHP Value Objects.
+ * This file is part of the Serendipity HQ Then When Component.
  *
- * Copyright Adamo Aerendir Crespi 2017.
+ * Copyright (c) Adamo Aerendir Crespi <aerendir@serendipityhq.com>.
  *
- * @author    Adamo Aerendir Crespi <hello@aerendir.me>
- * @copyright Copyright (C) 2017 Aerendir. All rights reserved.
- * @license   MIT
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace SerendipityHQ\Component\ThenWhen;
@@ -17,7 +16,7 @@ use SerendipityHQ\Component\ThenWhen\Strategy\StrategyInterface;
 /**
  * Build a TryAgain object that concretely manages the retries.
  */
-class RetryStrategyBuilder
+final class RetryStrategyBuilder
 {
     /** @var array $strategies The strategies to use for the various kinds of exception we want to handle */
     private $strategies = [];
@@ -31,16 +30,14 @@ class RetryStrategyBuilder
     /**
      * @param array|string      $exceptionClasses
      * @param StrategyInterface $strategy
-     *
-     * @return RetryStrategyBuilder
      */
-    public function setStrategyForException($exceptionClasses, StrategyInterface $strategy): RetryStrategyBuilder
+    public function setStrategyForException($exceptionClasses, StrategyInterface $strategy): self
     {
         $exceptionClasses = $this->prepareClasses($exceptionClasses);
 
         foreach ($exceptionClasses as $exceptionClass) {
-            if (false === class_exists($exceptionClass)) {
-                throw new \InvalidArgumentException(sprintf('The exception %s you want to handle doesn\'t exist.', $exceptionClass));
+            if (false === \class_exists($exceptionClass)) {
+                throw new \InvalidArgumentException(\Safe\sprintf("The exception %s you want to handle doesn't exist.", $exceptionClass));
             }
 
             $this->strategies[$exceptionClass] = $strategy;
@@ -52,20 +49,14 @@ class RetryStrategyBuilder
     /**
      * @param array|string $exceptionClasses
      * @param callable     $middleHandler
-     *
-     * @return RetryStrategyBuilder
      */
-    public function setMiddleHandlerForException($exceptionClasses, callable $middleHandler): RetryStrategyBuilder
+    public function setMiddleHandlerForException($exceptionClasses, callable $middleHandler): self
     {
         $exceptionClasses = $this->prepareClasses($exceptionClasses);
 
         foreach ($exceptionClasses as $exceptionClass) {
             if (false === isset($this->strategies[$exceptionClass])) {
-                throw new \InvalidArgumentException(sprintf(
-                    'You are adding a middle handler for the class %s but you didn\'t set a Strategy for it.'
-                    . ' First set a strategy and then set the middle handler.',
-                    $exceptionClass
-                ));
+                throw new \InvalidArgumentException(\Safe\sprintf("You are adding a middle handler for the class %s but you didn't set a Strategy for it." . ' First set a strategy and then set the middle handler.', $exceptionClass));
             }
 
             // Add the handler if passed
@@ -78,20 +69,14 @@ class RetryStrategyBuilder
     /**
      * @param array|string $exceptionClasses
      * @param callable     $finalHandler
-     *
-     * @return RetryStrategyBuilder
      */
-    public function setFinalHandlerForException($exceptionClasses, callable $finalHandler): RetryStrategyBuilder
+    public function setFinalHandlerForException($exceptionClasses, callable $finalHandler): self
     {
         $exceptionClasses = $this->prepareClasses($exceptionClasses);
 
         foreach ($exceptionClasses as $exceptionClass) {
             if (false === isset($this->strategies[$exceptionClass])) {
-                throw new \InvalidArgumentException(sprintf(
-                    'You are adding a final handler for the class %s but you didn\'t set a Strategy for it.'
-                    . ' First set a strategy and then set the final handler.',
-                    $exceptionClass
-                ));
+                throw new \InvalidArgumentException(\Safe\sprintf("You are adding a final handler for the class %s but you didn't set a Strategy for it." . ' First set a strategy and then set the final handler.', $exceptionClass));
             }
 
             // Add the handler if passed
@@ -103,10 +88,8 @@ class RetryStrategyBuilder
 
     /**
      * Retruns an instace of the TryAgain object.
-     *
-     * @return TryAgain
      */
-    public function initializeRetryStrategy()
+    public function initializeRetryStrategy(): TryAgain
     {
         return new TryAgain($this->strategies, $this->middleHandlers, $this->finalHandlers);
     }
@@ -116,13 +99,13 @@ class RetryStrategyBuilder
      *
      * @return array|string
      */
-    private function prepareClasses($exceptionClasses)
+    private function prepareClasses($exceptionClasses): array
     {
-        if (is_string($exceptionClasses)) {
+        if (\is_string($exceptionClasses)) {
             $exceptionClasses = [$exceptionClasses];
         }
 
-        if (false === is_array($exceptionClasses)) {
+        if (false === \is_array($exceptionClasses)) {
             throw new \InvalidArgumentException('You have to pass a single Exception class to handle or an array of Exception classes.');
         }
 

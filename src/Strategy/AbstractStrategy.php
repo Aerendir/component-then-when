@@ -1,13 +1,12 @@
 <?php
 
 /*
- * This file is part of PHP Value Objects.
+ * This file is part of the Serendipity HQ Then When Component.
  *
- * Copyright Adamo Aerendir Crespi 2017.
+ * Copyright (c) Adamo Aerendir Crespi <aerendir@serendipityhq.com>.
  *
- * @author    Adamo Aerendir Crespi <hello@aerendir.me>
- * @copyright Copyright (C) 2017 Aerendir. All rights reserved.
- * @license   MIT
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace SerendipityHQ\Component\ThenWhen\Strategy;
@@ -98,16 +97,10 @@ abstract class AbstractStrategy implements StrategyInterface
         return $this;
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
-        if (false === defined(get_class($this) . '::STRATEGY')) {
-            throw new \RuntimeException(
-                'The Strategy doesn\'t tells its own name. Create the contant "STRATEGY" that tells the name of the'
-                . ' strategy.'
-            );
+        if (false === \defined(\get_class($this) . '::STRATEGY')) {
+            throw new \RuntimeException('The Strategy doesn\'t tells its own name. Create the contant "STRATEGY" that tells the name of the' . ' strategy.');
         }
 
         return [
@@ -131,58 +124,37 @@ abstract class AbstractStrategy implements StrategyInterface
         switch ($timeUnit) {
             case StrategyInterface::TIME_UNIT_YEARS:
                 return $this->convertToSeconds($increment * 12, StrategyInterface::TIME_UNIT_MONTHS);
-                break;
             case StrategyInterface::TIME_UNIT_MONTHS:
                 // We average to 30 days in a month, without taking care of the ones long 31 days or 28 or 29
                 return $this->convertToSeconds($increment * 30, StrategyInterface::TIME_UNIT_DAYS);
-                break;
             case StrategyInterface::TIME_UNIT_DAYS:
                 return $this->convertToSeconds($increment * 24, StrategyInterface::TIME_UNIT_HOURS);
-                break;
             case StrategyInterface::TIME_UNIT_HOURS:
                 return $this->convertToSeconds($increment * 60, StrategyInterface::TIME_UNIT_MINUTES);
-                break;
             case StrategyInterface::TIME_UNIT_MINUTES:
                 return $increment * 60;
-                break;
             case StrategyInterface::TIME_UNIT_SECONDS:
                 return $increment;
-                break;
             default:
-                throw new \RuntimeException(sprintf('Unrecognized time unit "%s". Allowed time units are...', $timeUnit));
+                throw new \RuntimeException(\Safe\sprintf('Unrecognized time unit "%s". Allowed time units are...', $timeUnit));
         }
     }
 
-    /**
-     * @param int $attempts
-     *
-     * @return AbstractStrategy
-     */
-    protected function setAttempts(int $attempts): AbstractStrategy
+    protected function setAttempts(int $attempts): self
     {
         $this->attempts = $attempts;
 
         return $this;
     }
 
-    /**
-     * @param int $incremenetBy
-     *
-     * @return AbstractStrategy
-     */
-    protected function setIncrementBy(int $incremenetBy): AbstractStrategy
+    protected function setIncrementBy(int $incremenetBy): self
     {
         $this->incrementBy = $incremenetBy;
 
         return $this;
     }
 
-    /**
-     * @param string $timeUnit
-     *
-     * @return AbstractStrategy
-     */
-    protected function setTimeUnit(string $timeUnit): AbstractStrategy
+    protected function setTimeUnit(string $timeUnit): self
     {
         $this->validateTimeUnit($timeUnit);
 
@@ -191,32 +163,17 @@ abstract class AbstractStrategy implements StrategyInterface
         return $this;
     }
 
-    /**
-     * @param int $maxAttempts
-     *
-     * @return AbstractStrategy
-     */
-    protected function setMaxAttempts(int $maxAttempts): AbstractStrategy
+    protected function setMaxAttempts(int $maxAttempts): self
     {
         $this->maxAttempts = $maxAttempts;
 
         return $this;
     }
 
-    /**
-     * @param string $timeUnit
-     *
-     * @return bool
-     */
-    protected function validateTimeUnit(string $timeUnit)
+    protected function validateTimeUnit(string $timeUnit): string
     {
-        if (false === in_array($timeUnit, StrategyInterface::TIME_UNITS)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    'The increment unit "%s" is not supported. Supported increment units are: %s.',
-                    $timeUnit, implode(' ', StrategyInterface::TIME_UNITS)
-                )
-            );
+        if (false === \in_array($timeUnit, StrategyInterface::TIME_UNITS)) {
+            throw new \InvalidArgumentException(\Safe\sprintf('The increment unit "%s" is not supported. Supported increment units are: %s.', $timeUnit, \implode(' ', StrategyInterface::TIME_UNITS)));
         }
 
         return $timeUnit;

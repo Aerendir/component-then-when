@@ -67,6 +67,7 @@ return static function (ContainerConfigurator $containerConfigurator) : void {
         Option::SKIP,
         [
             __DIR__ . '/tests/bootstrap.php',
+            __DIR__ . '/tests/Strategy/NeverRetryStrategyTest.php', // excluded due to a bug (https://github.com/rectorphp/rector/issues/5690)
             Rector\CodeQuality\Rector\Catch_\ThrowWithPreviousExceptionRector::class,
             Rector\CodeQuality\Rector\Concat\JoinStringConcatRector::class,
             Rector\CodeQuality\Rector\Identical\SimplifyBoolIdenticalTrueRector::class,
@@ -75,7 +76,6 @@ return static function (ContainerConfigurator $containerConfigurator) : void {
             Rector\CodingStyle\Rector\ClassMethod\RemoveDoubleUnderscoreInMethodNameRector::class,
             Rector\CodingStyle\Rector\Encapsed\EncapsedStringsToSprintfRector::class,
             Rector\CodingStyle\Rector\Switch_\BinarySwitchToIfElseRector::class,
-            Rector\CodingStyle\Rector\Throw_\AnnotateThrowablesRector::class,
             Rector\CodingStyle\Rector\Use_\RemoveUnusedAliasRector::class,
             Rector\Php56\Rector\FunctionLike\AddDefaultValueForUndefinedVariableRector::class, // Maybe good one day
             Rector\PHPUnit\Rector\Class_\AddSeeTestAnnotationRector::class,

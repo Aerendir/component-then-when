@@ -75,7 +75,7 @@ final class TimeFixedStrategy extends LinearStrategy
      * @param int                $maxAttempts
      * @param \DateTimeInterface $endOfTimeWindow
      *
-     * @return int The amount of seconds
+     * @return float The amount of seconds
      */
     private function calculateIncrementBy(int $maxAttempts, \DateTimeInterface $endOfTimeWindow): float
     {

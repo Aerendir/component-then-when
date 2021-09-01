@@ -106,11 +106,6 @@ parameters:
 			path: src/Strategy/TimeFixedStrategy.php
 
 		-
-			message: "#^PHPDoc tag @return with type int is incompatible with native type float\\.$#"
-			count: 1
-			path: src/Strategy/TimeFixedStrategy.php
-
-		-
 			message: "#^Call to an undefined method DateTimeInterface\\:\\:diffInSeconds\\(\\)\\.$#"
 			count: 1
 			path: src/Strategy/TimeFixedStrategy.php

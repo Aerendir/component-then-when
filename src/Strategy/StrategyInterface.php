@@ -18,25 +18,25 @@ interface StrategyInterface
 {
     // The available increment units
     /** @var string */
-    const TIME_UNIT_SECONDS = 'seconds';
+    public const TIME_UNIT_SECONDS = 'seconds';
 
     /** @var string */
-    const TIME_UNIT_MINUTES = 'minutes';
+    public const TIME_UNIT_MINUTES = 'minutes';
 
     /** @var string */
-    const TIME_UNIT_HOURS   = 'hours';
+    public const TIME_UNIT_HOURS = 'hours';
 
     /** @var string */
-    const TIME_UNIT_DAYS    = 'days';
+    public const TIME_UNIT_DAYS = 'days';
 
     /** @var string */
-    const TIME_UNIT_MONTHS  = 'months';
+    public const TIME_UNIT_MONTHS = 'months';
 
     /** @var string */
-    const TIME_UNIT_YEARS   = 'years';
+    public const TIME_UNIT_YEARS = 'years';
 
     /** @var string[] */
-    const TIME_UNITS        = [
+    public const TIME_UNITS = [
         self::TIME_UNIT_SECONDS,
         self::TIME_UNIT_MINUTES,
         self::TIME_UNIT_HOURS,

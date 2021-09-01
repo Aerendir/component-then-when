@@ -17,7 +17,7 @@ namespace SerendipityHQ\Component\ThenWhen\Strategy;
 final class LiveStrategy extends ConstantStrategy
 {
     /** @var string */
-    const STRATEGY = 'live';
+    public const STRATEGY = 'live';
 
     /**
      * @param int $maxAttempts

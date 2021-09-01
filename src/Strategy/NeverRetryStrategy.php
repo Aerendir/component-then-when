@@ -17,7 +17,7 @@ namespace SerendipityHQ\Component\ThenWhen\Strategy;
 final class NeverRetryStrategy extends AbstractStrategy
 {
     /** @var string */
-    const STRATEGY = 'never_retry';
+    public const STRATEGY = 'never_retry';
 
     /**
      * This doesn't accept parameters as ever returns false.

@@ -20,7 +20,7 @@ use Carbon\Carbon;
 final class TimeFixedStrategy extends LinearStrategy
 {
     /** @var string */
-    const STRATEGY = 'time_fixed';
+    public const STRATEGY = 'time_fixed';
 
     /**
      * @param int                $maxAttempts

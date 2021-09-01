@@ -14,7 +14,7 @@ namespace SerendipityHQ\Component\ThenWhen\Strategy;
 final class ExponentialStrategy extends AbstractStrategy
 {
     /** @var string */
-    const STRATEGY = 'exponential';
+    public const STRATEGY = 'exponential';
 
     /** @var int $exponentialBase */
     private $exponentialBase;

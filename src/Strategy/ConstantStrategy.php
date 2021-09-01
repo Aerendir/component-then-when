@@ -17,7 +17,7 @@ namespace SerendipityHQ\Component\ThenWhen\Strategy;
 class ConstantStrategy extends AbstractStrategy
 {
     /** @var string */
-    const STRATEGY = 'constant';
+    public const STRATEGY = 'constant';
 
     /**
      * {@inheritdoc}

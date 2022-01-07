@@ -11,6 +11,7 @@
 
 namespace SerendipityHQ\Component\ThenWhen;
 
+use function Safe\sprintf;
 use SerendipityHQ\Component\ThenWhen\Strategy\StrategyInterface;
 
 /**
@@ -37,7 +38,7 @@ final class RetryStrategyBuilder
 
         foreach ($exceptionClasses as $exceptionClass) {
             if (false === \class_exists($exceptionClass)) {
-                throw new \InvalidArgumentException(\Safe\sprintf("The exception %s you want to handle doesn't exist.", $exceptionClass));
+                throw new \InvalidArgumentException(sprintf("The exception %s you want to handle doesn't exist.", $exceptionClass));
             }
 
             $this->strategies[$exceptionClass] = $strategy;
@@ -56,7 +57,7 @@ final class RetryStrategyBuilder
 
         foreach ($exceptionClasses as $exceptionClass) {
             if (false === isset($this->strategies[$exceptionClass])) {
-                throw new \InvalidArgumentException(\Safe\sprintf("You are adding a middle handler for the class %s but you didn't set a Strategy for it." . ' First set a strategy and then set the middle handler.', $exceptionClass));
+                throw new \InvalidArgumentException(sprintf("You are adding a middle handler for the class %s but you didn't set a Strategy for it." . ' First set a strategy and then set the middle handler.', $exceptionClass));
             }
 
             // Add the handler if passed
@@ -76,7 +77,7 @@ final class RetryStrategyBuilder
 
         foreach ($exceptionClasses as $exceptionClass) {
             if (false === isset($this->strategies[$exceptionClass])) {
-                throw new \InvalidArgumentException(\Safe\sprintf("You are adding a final handler for the class %s but you didn't set a Strategy for it." . ' First set a strategy and then set the final handler.', $exceptionClass));
+                throw new \InvalidArgumentException(sprintf("You are adding a final handler for the class %s but you didn't set a Strategy for it." . ' First set a strategy and then set the final handler.', $exceptionClass));
             }
 
             // Add the handler if passed

@@ -26,7 +26,7 @@ return static function (ContainerConfigurator $containerConfigurator) : void {
         __DIR__ . '/tests'
     ]);
 
-    $parameters->set(Option::AUTOLOAD_PATHS, [__DIR__ . '/vendor-bin/phpunit/vendor/autoload.php']);
+    $parameters->set(Option::BOOTSTRAP_FILES, [__DIR__ . '/vendor-bin/phpunit/vendor/autoload.php']);
 
     $containerConfigurator->import(SetList::ACTION_INJECTION_TO_CONSTRUCTOR_INJECTION);
     $containerConfigurator->import(SetList::CODE_QUALITY);

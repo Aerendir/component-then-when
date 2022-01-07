@@ -1,36 +1,6 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Property SerendipityHQ\\\\Component\\\\ThenWhen\\\\RetryStrategyBuilder\\:\\:\\$strategies type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/RetryStrategyBuilder.php
-
-		-
-			message: "#^Property SerendipityHQ\\\\Component\\\\ThenWhen\\\\RetryStrategyBuilder\\:\\:\\$middleHandlers type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/RetryStrategyBuilder.php
-
-		-
-			message: "#^Property SerendipityHQ\\\\Component\\\\ThenWhen\\\\RetryStrategyBuilder\\:\\:\\$finalHandlers type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/RetryStrategyBuilder.php
-
-		-
-			message: "#^Method SerendipityHQ\\\\Component\\\\ThenWhen\\\\RetryStrategyBuilder\\:\\:setStrategyForException\\(\\) has parameter \\$exceptionClasses with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/RetryStrategyBuilder.php
-
-		-
-			message: "#^Method SerendipityHQ\\\\Component\\\\ThenWhen\\\\RetryStrategyBuilder\\:\\:setMiddleHandlerForException\\(\\) has parameter \\$exceptionClasses with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/RetryStrategyBuilder.php
-
-		-
-			message: "#^Method SerendipityHQ\\\\Component\\\\ThenWhen\\\\RetryStrategyBuilder\\:\\:setFinalHandlerForException\\(\\) has parameter \\$exceptionClasses with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/RetryStrategyBuilder.php
-
-		-
 			message: "#^Method SerendipityHQ\\\\Component\\\\ThenWhen\\\\RetryStrategyBuilder\\:\\:prepareClasses\\(\\) has parameter \\$exceptionClasses with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/RetryStrategyBuilder.php
@@ -41,7 +11,37 @@ parameters:
 			path: src/RetryStrategyBuilder.php
 
 		-
+			message: "#^Method SerendipityHQ\\\\Component\\\\ThenWhen\\\\RetryStrategyBuilder\\:\\:setFinalHandlerForException\\(\\) has parameter \\$exceptionClasses with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/RetryStrategyBuilder.php
+
+		-
+			message: "#^Method SerendipityHQ\\\\Component\\\\ThenWhen\\\\RetryStrategyBuilder\\:\\:setMiddleHandlerForException\\(\\) has parameter \\$exceptionClasses with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/RetryStrategyBuilder.php
+
+		-
+			message: "#^Method SerendipityHQ\\\\Component\\\\ThenWhen\\\\RetryStrategyBuilder\\:\\:setStrategyForException\\(\\) has parameter \\$exceptionClasses with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/RetryStrategyBuilder.php
+
+		-
 			message: "#^PHPDoc tag @return with type array\\|string is not subtype of native type array\\.$#"
+			count: 1
+			path: src/RetryStrategyBuilder.php
+
+		-
+			message: "#^Property SerendipityHQ\\\\Component\\\\ThenWhen\\\\RetryStrategyBuilder\\:\\:\\$finalHandlers type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/RetryStrategyBuilder.php
+
+		-
+			message: "#^Property SerendipityHQ\\\\Component\\\\ThenWhen\\\\RetryStrategyBuilder\\:\\:\\$middleHandlers type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/RetryStrategyBuilder.php
+
+		-
+			message: "#^Property SerendipityHQ\\\\Component\\\\ThenWhen\\\\RetryStrategyBuilder\\:\\:\\$strategies type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/RetryStrategyBuilder.php
 
@@ -81,7 +81,7 @@ parameters:
 			path: src/Strategy/LinearStrategy.php
 
 		-
-			message: "#^Call to function is_int\\(\\) with DateTimeInterface will always evaluate to false\\.$#"
+			message: "#^Call to an undefined method DateTimeInterface\\:\\:diffInSeconds\\(\\)\\.$#"
 			count: 1
 			path: src/Strategy/TimeFixedStrategy.php
 
@@ -91,12 +91,12 @@ parameters:
 			path: src/Strategy/TimeFixedStrategy.php
 
 		-
-			message: "#^Parameter \\#1 \\$timeUnit of method SerendipityHQ\\\\Component\\\\ThenWhen\\\\Strategy\\\\AbstractStrategy\\:\\:validateTimeUnit\\(\\) expects string, string\\|null given\\.$#"
+			message: "#^Call to function is_int\\(\\) with DateTimeInterface will always evaluate to false\\.$#"
 			count: 1
 			path: src/Strategy/TimeFixedStrategy.php
 
 		-
-			message: "#^Parameter \\#2 \\$timeUnit of method SerendipityHQ\\\\Component\\\\ThenWhen\\\\Strategy\\\\AbstractStrategy\\:\\:convertToSeconds\\(\\) expects string, string\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$timeUnit of method SerendipityHQ\\\\Component\\\\ThenWhen\\\\Strategy\\\\AbstractStrategy\\:\\:validateTimeUnit\\(\\) expects string, string\\|null given\\.$#"
 			count: 1
 			path: src/Strategy/TimeFixedStrategy.php
 
@@ -106,24 +106,9 @@ parameters:
 			path: src/Strategy/TimeFixedStrategy.php
 
 		-
-			message: "#^Call to an undefined method DateTimeInterface\\:\\:diffInSeconds\\(\\)\\.$#"
+			message: "#^Parameter \\#2 \\$timeUnit of method SerendipityHQ\\\\Component\\\\ThenWhen\\\\Strategy\\\\AbstractStrategy\\:\\:convertToSeconds\\(\\) expects string, string\\|null given\\.$#"
 			count: 1
 			path: src/Strategy/TimeFixedStrategy.php
-
-		-
-			message: "#^Property SerendipityHQ\\\\Component\\\\ThenWhen\\\\TryAgain\\:\\:\\$strategies type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/TryAgain.php
-
-		-
-			message: "#^Property SerendipityHQ\\\\Component\\\\ThenWhen\\\\TryAgain\\:\\:\\$middleHandlers type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/TryAgain.php
-
-		-
-			message: "#^Property SerendipityHQ\\\\Component\\\\ThenWhen\\\\TryAgain\\:\\:\\$finalHandlers type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/TryAgain.php
 
 		-
 			message: "#^Method SerendipityHQ\\\\Component\\\\ThenWhen\\\\TryAgain\\:\\:__construct\\(\\) has parameter \\$finalHandlers with no value type specified in iterable type array\\.$#"
@@ -137,6 +122,21 @@ parameters:
 
 		-
 			message: "#^Method SerendipityHQ\\\\Component\\\\ThenWhen\\\\TryAgain\\:\\:__construct\\(\\) has parameter \\$strategies with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/TryAgain.php
+
+		-
+			message: "#^Property SerendipityHQ\\\\Component\\\\ThenWhen\\\\TryAgain\\:\\:\\$finalHandlers type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/TryAgain.php
+
+		-
+			message: "#^Property SerendipityHQ\\\\Component\\\\ThenWhen\\\\TryAgain\\:\\:\\$middleHandlers type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/TryAgain.php
+
+		-
+			message: "#^Property SerendipityHQ\\\\Component\\\\ThenWhen\\\\TryAgain\\:\\:\\$strategies type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/TryAgain.php
 

@@ -9,8 +9,8 @@ jobs:
             fail-fast: false
             matrix:
                 os: [ ubuntu-latest ]
-                php: [ '7.3', '7.4', '8.0' ]
-                symfony: [ '~3.4', '~4.4', '~5.2' ]
+                php: [ '7.4', '8.0', '8.1' ]
+                symfony: [ '~5.4' ]
 
         steps:
             -   name: Checkout

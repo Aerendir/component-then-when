@@ -20,7 +20,7 @@ use Carbon\Carbon;
 final class TimeFixedStrategy extends LinearStrategy
 {
     /** @var string */
-    const STRATEGY = 'time_fixed';
+    public const STRATEGY = 'time_fixed';
 
     /**
      * @param int                $maxAttempts
@@ -75,7 +75,7 @@ final class TimeFixedStrategy extends LinearStrategy
      * @param int                $maxAttempts
      * @param \DateTimeInterface $endOfTimeWindow
      *
-     * @return int The amount of seconds
+     * @return float The amount of seconds
      */
     private function calculateIncrementBy(int $maxAttempts, \DateTimeInterface $endOfTimeWindow): float
     {

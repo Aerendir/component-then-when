@@ -11,6 +11,7 @@
 
 namespace SerendipityHQ\Component\ThenWhen;
 
+use function Safe\sleep;
 use SerendipityHQ\Component\ThenWhen\Strategy\StrategyInterface;
 
 /**
@@ -98,7 +99,7 @@ final class TryAgain
             }
 
             // Wait the defined time
-            \Safe\sleep($strategy->waitFor());
+            sleep($strategy->waitFor());
 
             // Try again with the same original callable
             return self::try($callback);

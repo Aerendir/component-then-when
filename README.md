@@ -10,9 +10,16 @@
     <a href="https://github.com/Aerendir/component-then-when/releases"><img src="https://img.shields.io/packagist/v/serendipity_hq/component-then-when.svg?style=flat-square"></a>
     <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square"></a>
     <a href="https://github.com/Aerendir/component-then-when/releases"><img src="https://img.shields.io/packagist/php-v/serendipity_hq/component-then-when?color=%238892BF&style=flat-square&logo=php" /></a>
-    <a title="Tested with Symfony ^3.4" href="https://github.com/Aerendir/component-then-when/actions"><img title="Tested with Symfony ^3.4" src="https://img.shields.io/badge/Symfony-%5E3.4-333?style=flat-square&logo=symfony" /></a>
+</p>
+<p>
+    <a title="Supports Symfony ^4.4" href="https://github.com/Aerendir/component-then-when/actions"><img title="Supports Symfony ^4.4" src="https://img.shields.io/badge/Symfony-%5E4.4-333?style=flat-square&logo=symfony" /></a>
+    <a title="Supports Symfony ^5.4" href="https://github.com/Aerendir/component-then-when/actions"><img title="Supports Symfony ^5.4" src="https://img.shields.io/badge/Symfony-%5E5.4-333?style=flat-square&logo=symfony" /></a>
+    <a title="Supports Symfony ^6.0" href="https://github.com/Aerendir/component-then-when/actions"><img title="Supports Symfony ^6.0" src="https://img.shields.io/badge/Symfony-%5E6.0-333?style=flat-square&logo=symfony" /></a>
+</p>
+<p>
     <a title="Tested with Symfony ^4.4" href="https://github.com/Aerendir/component-then-when/actions"><img title="Tested with Symfony ^4.4" src="https://img.shields.io/badge/Symfony-%5E4.4-333?style=flat-square&logo=symfony" /></a>
-    <a title="Tested with Symfony ^5.2" href="https://github.com/Aerendir/component-then-when/actions"><img title="Tested with Symfony ^5.2" src="https://img.shields.io/badge/Symfony-%5E5.2-333?style=flat-square&logo=symfony" /></a>
+    <a title="Tested with Symfony ^5.4" href="https://github.com/Aerendir/component-then-when/actions"><img title="Tested with Symfony ^5.4" src="https://img.shields.io/badge/Symfony-%5E5.4-333?style=flat-square&logo=symfony" /></a>
+    <a title="Tested with Symfony ^6.0" href="https://github.com/Aerendir/component-then-when/actions"><img title="Tested with Symfony ^6.0" src="https://img.shields.io/badge/Symfony-%5E6.0-333?style=flat-square&logo=symfony" /></a>
 </p>
 
 ## Current Status

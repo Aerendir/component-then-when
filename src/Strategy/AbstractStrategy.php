@@ -11,6 +11,8 @@
 
 namespace SerendipityHQ\Component\ThenWhen\Strategy;
 
+use function Safe\sprintf;
+
 /**
  * Abstract class to manage strategies.
  */
@@ -136,7 +138,7 @@ abstract class AbstractStrategy implements StrategyInterface
             case StrategyInterface::TIME_UNIT_SECONDS:
                 return $increment;
             default:
-                throw new \RuntimeException(\Safe\sprintf('Unrecognized time unit "%s". Allowed time units are...', $timeUnit));
+                throw new \RuntimeException(sprintf('Unrecognized time unit "%s". Allowed time units are...', $timeUnit));
         }
     }
 
@@ -173,7 +175,7 @@ abstract class AbstractStrategy implements StrategyInterface
     protected function validateTimeUnit(string $timeUnit): string
     {
         if (false === \in_array($timeUnit, StrategyInterface::TIME_UNITS)) {
-            throw new \InvalidArgumentException(\Safe\sprintf('The increment unit "%s" is not supported. Supported increment units are: %s.', $timeUnit, \implode(' ', StrategyInterface::TIME_UNITS)));
+            throw new \InvalidArgumentException(sprintf('The increment unit "%s" is not supported. Supported increment units are: %s.', $timeUnit, \implode(' ', StrategyInterface::TIME_UNITS)));
         }
 
         return $timeUnit;

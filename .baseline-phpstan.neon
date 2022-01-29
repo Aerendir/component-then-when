@@ -61,7 +61,7 @@ parameters:
 			path: src/Strategy/AbstractStrategy.php
 
 		-
-			message: "#^PHPDoc tag @param has invalid value \\(\\$timeUnit\\)\\: Unexpected token \"\\$timeUnit\", expected type at offset 47$#"
+			message: "#^PHPDoc tag @param has invalid value \\(\\$timeUnit\\)\\: Unexpected token \"\\$timeUnit\", expected type at offset 18$#"
 			count: 1
 			path: src/Strategy/AbstractStrategy.php
 

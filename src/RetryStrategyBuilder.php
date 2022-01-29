@@ -29,8 +29,7 @@ final class RetryStrategyBuilder
     private $finalHandlers = [];
 
     /**
-     * @param array|string      $exceptionClasses
-     * @param StrategyInterface $strategy
+     * @param array|string $exceptionClasses
      */
     public function setStrategyForException($exceptionClasses, StrategyInterface $strategy): self
     {
@@ -49,7 +48,6 @@ final class RetryStrategyBuilder
 
     /**
      * @param array|string $exceptionClasses
-     * @param callable     $middleHandler
      */
     public function setMiddleHandlerForException($exceptionClasses, callable $middleHandler): self
     {
@@ -69,7 +67,6 @@ final class RetryStrategyBuilder
 
     /**
      * @param array|string $exceptionClasses
-     * @param callable     $finalHandler
      */
     public function setFinalHandlerForException($exceptionClasses, callable $finalHandler): self
     {

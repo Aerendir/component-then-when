@@ -23,9 +23,7 @@ final class TimeFixedStrategy extends LinearStrategy
     public const STRATEGY = 'time_fixed';
 
     /**
-     * @param int                $maxAttempts
-     * @param \DateTimeInterface $endOfTimeWindow
-     * @param string|null        $timeUnit
+     * @param string|null $timeUnit
      */
     public function __construct(int $maxAttempts, \DateTimeInterface $endOfTimeWindow, string $timeUnit = null)
     {
@@ -72,9 +70,6 @@ final class TimeFixedStrategy extends LinearStrategy
     }
 
     /**
-     * @param int                $maxAttempts
-     * @param \DateTimeInterface $endOfTimeWindow
-     *
      * @return float The amount of seconds
      */
     private function calculateIncrementBy(int $maxAttempts, \DateTimeInterface $endOfTimeWindow): float

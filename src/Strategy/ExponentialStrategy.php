@@ -19,12 +19,6 @@ final class ExponentialStrategy extends AbstractStrategy
     /** @var int $exponentialBase */
     private $exponentialBase;
 
-    /**
-     * @param int    $maxAttempts
-     * @param int    $incrementBy
-     * @param string $timeUnit
-     * @param int    $exponentialBase
-     */
     public function __construct(
         int $maxAttempts,
         int $incrementBy,
@@ -63,9 +57,6 @@ final class ExponentialStrategy extends AbstractStrategy
         return $this->convertToSeconds($incrementBy, $this->getTimeUnit());
     }
 
-    /**
-     * @return int
-     */
     public function getExponentialBase(): int
     {
         return $this->exponentialBase;

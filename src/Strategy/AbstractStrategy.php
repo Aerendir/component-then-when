@@ -30,11 +30,6 @@ abstract class AbstractStrategy implements StrategyInterface
     /** @var string $timeUnit */
     private $timeUnit;
 
-    /**
-     * @param int    $maxAttempts
-     * @param int    $incrementBy
-     * @param string $timeUnit
-     */
     public function __construct(
         int $maxAttempts, int $incrementBy, string $timeUnit = StrategyInterface::TIME_UNIT_SECONDS
     ) {
@@ -114,10 +109,7 @@ abstract class AbstractStrategy implements StrategyInterface
     }
 
     /**
-     * @param int $increment
      * @param $timeUnit
-     *
-     * @return int
      */
     protected function convertToSeconds(int $increment, string $timeUnit): int
     {

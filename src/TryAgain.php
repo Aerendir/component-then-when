@@ -28,11 +28,6 @@ final class TryAgain
     /** @var array $finalHandlers What to do when exceptions are catched and no other retries are possible */
     private $finalHandlers = [];
 
-    /**
-     * @param array $strategies
-     * @param array $middleHandlers
-     * @param array $finalHandlers
-     */
     public function __construct(array $strategies, array $middleHandlers, array $finalHandlers)
     {
         $this->strategies     = $strategies;
@@ -41,8 +36,6 @@ final class TryAgain
     }
 
     /**
-     * @param callable $callback
-     *
      * @throws \Exception
      *
      * @return mixed

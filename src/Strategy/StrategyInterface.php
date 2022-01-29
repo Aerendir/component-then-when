@@ -45,46 +45,23 @@ interface StrategyInterface
         self::TIME_UNIT_YEARS,
     ];
 
-    /**
-     * @return bool
-     */
     public function canRetry(): bool;
 
-    /**
-     * @return int
-     */
     public function getAttempts(): int;
 
-    /**
-     * @return int
-     */
     public function getIncrementBy(): int;
 
-    /**
-     * @return int
-     */
     public function getMaxAttempts(): int;
 
-    /**
-     * @return string
-     */
     public function getTimeUnit(): string;
 
-    /**
-     * @return string
-     */
     public function getStrategyName(): string;
 
     /**
      * The time to wait in seconds.
-     *
-     * @return int
      */
     public function waitFor(): int;
 
-    /**
-     * @return StrategyInterface
-     */
     public function newAttempt(): StrategyInterface;
 
     /**

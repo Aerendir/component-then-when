@@ -20,13 +20,13 @@ use SerendipityHQ\Component\ThenWhen\Strategy\StrategyInterface;
 final class TryAgain
 {
     /** @var array $strategies The strategies to use to manage exceptions */
-    private $strategies = [];
+    private array $strategies = [];
 
     /** @var array $middleHandlers What to do when exceptions are catched during the retryings */
-    private $middleHandlers = [];
+    private array $middleHandlers = [];
 
     /** @var array $finalHandlers What to do when exceptions are catched and no other retries are possible */
-    private $finalHandlers = [];
+    private array $finalHandlers = [];
 
     public function __construct(array $strategies, array $middleHandlers, array $finalHandlers)
     {

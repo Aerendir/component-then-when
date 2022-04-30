@@ -19,14 +19,14 @@ use SerendipityHQ\Component\ThenWhen\Strategy\StrategyInterface;
  */
 final class RetryStrategyBuilder
 {
-    /** @var array $strategies The strategies to use for the various kinds of exception we want to handle */
-    private $strategies = [];
+    /** The strategies to use for the various kinds of exception we want to handle */
+    private array $strategies = [];
 
-    /** @var array $middleHandlers What to do when exceptions are catched during the retryings */
-    private $middleHandlers = [];
+    /** What to do when exceptions are catched during the retryings */
+    private array $middleHandlers = [];
 
-    /** @var array $finalHandlers What to do when exceptions are catched and no other retries are possible */
-    private $finalHandlers = [];
+    /** What to do when exceptions are catched and no other retries are possible */
+    private array $finalHandlers = [];
 
     /**
      * @param array|string $exceptionClasses

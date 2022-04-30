@@ -19,16 +19,13 @@ use function Safe\sprintf;
 abstract class AbstractStrategy implements StrategyInterface
 {
     /** @var int $attempts How many retry attempts have been done */
-    private $attempts = 0;
+    private int $attempts = 0;
 
-    /** @var int $incrementBy */
-    private $incrementBy;
+    private int $incrementBy;
 
-    /** @var int $maxAttempts */
-    private $maxAttempts = 0;
+    private int $maxAttempts = 0;
 
-    /** @var string $timeUnit */
-    private $timeUnit;
+    private string $timeUnit;
 
     public function __construct(
         int $maxAttempts, int $incrementBy, string $timeUnit = StrategyInterface::TIME_UNIT_SECONDS

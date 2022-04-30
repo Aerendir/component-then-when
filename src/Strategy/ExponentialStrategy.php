@@ -16,8 +16,7 @@ final class ExponentialStrategy extends AbstractStrategy
     /** @var string */
     public const STRATEGY = 'exponential';
 
-    /** @var int $exponentialBase */
-    private $exponentialBase;
+    private int $exponentialBase;
 
     public function __construct(
         int $maxAttempts,

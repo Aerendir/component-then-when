@@ -12,6 +12,7 @@
 namespace SerendipityHQ\Component\ThenWhen;
 
 use function Safe\sleep;
+
 use SerendipityHQ\Component\ThenWhen\Strategy\StrategyInterface;
 
 /**

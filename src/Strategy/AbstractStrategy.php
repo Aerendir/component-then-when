@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Serendipity HQ Then When Component.
  *
@@ -22,9 +24,7 @@ abstract class AbstractStrategy implements StrategyInterface
     private int $attempts = 0;
 
     private int $incrementBy;
-
     private int $maxAttempts = 0;
-
     private string $timeUnit;
 
     public function __construct(
@@ -33,57 +33,36 @@ abstract class AbstractStrategy implements StrategyInterface
         $this->setMaxAttempts($maxAttempts)->setIncrementBy($incrementBy)->setTimeUnit($timeUnit);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function canRetry(): bool
     {
         return $this->attempts < $this->maxAttempts;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getAttempts(): int
     {
         return $this->attempts;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getIncrementBy(): int
     {
         return $this->incrementBy;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getMaxAttempts(): int
     {
         return $this->maxAttempts;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getTimeUnit(): string
     {
         return $this->timeUnit;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getStrategyName(): string
     {
         return $this::STRATEGY;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function newAttempt(): StrategyInterface
     {
         ++$this->attempts;

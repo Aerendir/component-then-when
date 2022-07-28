@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Serendipity HQ Then When Component.
  *
@@ -19,9 +21,6 @@ class LinearStrategy extends AbstractStrategy
     /** @var string */
     public const STRATEGY = 'linear';
 
-    /**
-     * {@inheritdoc}
-     */
     public function retryOn()
     {
         // If we can retry...
@@ -33,9 +32,6 @@ class LinearStrategy extends AbstractStrategy
         return false;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function waitFor(): int
     {
         $incrementBy = $this->getIncrementBy() * $this->getAttempts();

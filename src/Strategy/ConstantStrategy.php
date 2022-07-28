@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Serendipity HQ Then When Component.
  *
@@ -19,9 +21,6 @@ class ConstantStrategy extends AbstractStrategy
     /** @var string */
     public const STRATEGY = 'constant';
 
-    /**
-     * {@inheritdoc}
-     */
     public function retryOn()
     {
         // If we can retry...
@@ -34,9 +33,6 @@ class ConstantStrategy extends AbstractStrategy
         return false;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function waitFor(): int
     {
         return $this->convertToSeconds($this->getIncrementBy(), $this->getTimeUnit());

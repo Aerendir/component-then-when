@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Serendipity HQ Then When Component.
  *
@@ -29,9 +31,6 @@ final class ExponentialStrategy extends AbstractStrategy
         parent::__construct($maxAttempts, $incrementBy, $timeUnit);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function retryOn()
     {
         // If we can retry...
@@ -44,9 +43,6 @@ final class ExponentialStrategy extends AbstractStrategy
         return false;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function waitFor(): int
     {
         $incrementBy = 1 === $this->getAttempts()

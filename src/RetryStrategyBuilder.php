@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Serendipity HQ Then When Component.
  *
@@ -11,9 +13,9 @@
 
 namespace SerendipityHQ\Component\ThenWhen;
 
-use function Safe\sprintf;
-
 use SerendipityHQ\Component\ThenWhen\Strategy\StrategyInterface;
+
+use function Safe\sprintf;
 
 /**
  * Build a TryAgain object that concretely manages the retries.

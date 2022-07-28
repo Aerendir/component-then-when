@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Serendipity HQ Then When Component.
  *
@@ -11,9 +13,9 @@
 
 namespace SerendipityHQ\Component\ThenWhen;
 
-use function Safe\sleep;
-
 use SerendipityHQ\Component\ThenWhen\Strategy\StrategyInterface;
+
+use function Safe\sleep;
 
 /**
  * Manges te retry logic implementing various strategies.
@@ -36,11 +38,6 @@ final class TryAgain
         $this->finalHandlers  = $finalHandlers;
     }
 
-    /**
-     * @throws \Exception
-     *
-     * @return mixed
-     */
     public function try(callable $callback)
     {
         try {

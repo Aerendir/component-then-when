@@ -35,9 +35,9 @@
     </InvalidOperand>
   </file>
   <file src="src/Strategy/TimeFixedStrategy.php">
-    <InvalidScalarArgument occurrences="1">
+    <PossiblyInvalidArgument occurrences="1">
       <code>$incrementBy</code>
-    </InvalidScalarArgument>
+    </PossiblyInvalidArgument>
     <PossiblyNullArgument occurrences="1">
       <code>$timeUnit</code>
     </PossiblyNullArgument>
@@ -52,5 +52,10 @@
     <UndefinedInterfaceMethod occurrences="1">
       <code>diffInSeconds</code>
     </UndefinedInterfaceMethod>
+  </file>
+  <file src="src/TryAgain.php">
+    <MissingReturnType occurrences="1">
+      <code>try</code>
+    </MissingReturnType>
   </file>
 </files>

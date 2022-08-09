@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Serendipity HQ Then When Component.
  *
@@ -27,17 +29,11 @@ final class NeverRetryStrategy extends AbstractStrategy
         parent::__construct(0, 0);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function retryOn(): bool
     {
         return false;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function waitFor(): int
     {
         return 0;

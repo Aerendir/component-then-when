@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Serendipity HQ Then When Component.
  *
@@ -19,9 +21,6 @@ final class LiveStrategy extends ConstantStrategy
     /** @var string */
     public const STRATEGY = 'live';
 
-    /**
-     * @param int $maxAttempts
-     */
     public function __construct(int $maxAttempts)
     {
         parent::__construct($maxAttempts, 1, StrategyInterface::TIME_UNIT_SECONDS);

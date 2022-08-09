@@ -1,25 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<files psalm-version="4.18.0.0">
+<files psalm-version="4.24.0@06dd975cb55d36af80f242561738f16c5f58264f">
   <file src="src/RetryStrategyBuilder.php">
     <MismatchingDocblockReturnType occurrences="1">
       <code>array|string</code>
     </MismatchingDocblockReturnType>
-    <MixedArgument occurrences="1">
-      <code>$exceptionClass</code>
-    </MixedArgument>
-    <MixedArrayOffset occurrences="4">
-      <code>$this-&gt;finalHandlers[$exceptionClass]</code>
-      <code>$this-&gt;middleHandlers[$exceptionClass]</code>
-      <code>$this-&gt;strategies[$exceptionClass]</code>
-      <code>$this-&gt;strategies[$exceptionClass]</code>
-    </MixedArrayOffset>
-    <MixedAssignment occurrences="2">
-      <code>$exceptionClass</code>
-      <code>$exceptionClass</code>
-    </MixedAssignment>
-    <MixedInferredReturnType occurrences="1">
-      <code>array|string</code>
-    </MixedInferredReturnType>
     <PossiblyInvalidIterator occurrences="3">
       <code>$exceptionClasses</code>
       <code>$exceptionClasses</code>
@@ -27,12 +11,6 @@
     </PossiblyInvalidIterator>
   </file>
   <file src="src/Strategy/AbstractStrategy.php">
-    <MixedInferredReturnType occurrences="1">
-      <code>string</code>
-    </MixedInferredReturnType>
-    <MixedReturnStatement occurrences="1">
-      <code>$this::STRATEGY</code>
-    </MixedReturnStatement>
     <PropertyNotSetInConstructor occurrences="2">
       <code>$incrementBy</code>
       <code>$timeUnit</code>
@@ -57,15 +35,9 @@
     </InvalidOperand>
   </file>
   <file src="src/Strategy/TimeFixedStrategy.php">
-    <InvalidScalarArgument occurrences="1">
+    <PossiblyInvalidArgument occurrences="1">
       <code>$incrementBy</code>
-    </InvalidScalarArgument>
-    <MixedArgument occurrences="1">
-      <code>$seconds</code>
-    </MixedArgument>
-    <MixedAssignment occurrences="1">
-      <code>$seconds</code>
-    </MixedAssignment>
+    </PossiblyInvalidArgument>
     <PossiblyNullArgument occurrences="1">
       <code>$timeUnit</code>
     </PossiblyNullArgument>
@@ -82,12 +54,8 @@
     </UndefinedInterfaceMethod>
   </file>
   <file src="src/TryAgain.php">
-    <MixedAssignment occurrences="1">
-      <code>$result</code>
-    </MixedAssignment>
-    <MixedFunctionCall occurrences="2">
-      <code>\call_user_func($this-&gt;finalHandlers[$throwableFQN], $throwable)</code>
-      <code>\call_user_func($this-&gt;middleHandlers[$throwableFQN], $throwable)</code>
-    </MixedFunctionCall>
+    <MissingReturnType occurrences="1">
+      <code>try</code>
+    </MissingReturnType>
   </file>
 </files>

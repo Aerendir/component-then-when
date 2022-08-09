@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Serendipity HQ Then When Component.
  *
@@ -11,26 +13,26 @@
 
 namespace SerendipityHQ\Component\ThenWhen;
 
-use function Safe\sprintf;
 use SerendipityHQ\Component\ThenWhen\Strategy\StrategyInterface;
+
+use function Safe\sprintf;
 
 /**
  * Build a TryAgain object that concretely manages the retries.
  */
 final class RetryStrategyBuilder
 {
-    /** @var array $strategies The strategies to use for the various kinds of exception we want to handle */
-    private $strategies = [];
+    /** The strategies to use for the various kinds of exception we want to handle */
+    private array $strategies = [];
 
-    /** @var array $middleHandlers What to do when exceptions are catched during the retryings */
-    private $middleHandlers = [];
+    /** What to do when exceptions are catched during the retryings */
+    private array $middleHandlers = [];
 
-    /** @var array $finalHandlers What to do when exceptions are catched and no other retries are possible */
-    private $finalHandlers = [];
+    /** What to do when exceptions are catched and no other retries are possible */
+    private array $finalHandlers = [];
 
     /**
-     * @param array|string      $exceptionClasses
-     * @param StrategyInterface $strategy
+     * @param array|string $exceptionClasses
      */
     public function setStrategyForException($exceptionClasses, StrategyInterface $strategy): self
     {
@@ -49,7 +51,6 @@ final class RetryStrategyBuilder
 
     /**
      * @param array|string $exceptionClasses
-     * @param callable     $middleHandler
      */
     public function setMiddleHandlerForException($exceptionClasses, callable $middleHandler): self
     {
@@ -69,7 +70,6 @@ final class RetryStrategyBuilder
 
     /**
      * @param array|string $exceptionClasses
-     * @param callable     $finalHandler
      */
     public function setFinalHandlerForException($exceptionClasses, callable $finalHandler): self
     {

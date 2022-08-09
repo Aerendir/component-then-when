@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Serendipity HQ Then When Component.
  *
@@ -16,15 +18,8 @@ final class ExponentialStrategy extends AbstractStrategy
     /** @var string */
     public const STRATEGY = 'exponential';
 
-    /** @var int $exponentialBase */
-    private $exponentialBase;
+    private int $exponentialBase;
 
-    /**
-     * @param int    $maxAttempts
-     * @param int    $incrementBy
-     * @param string $timeUnit
-     * @param int    $exponentialBase
-     */
     public function __construct(
         int $maxAttempts,
         int $incrementBy,
@@ -36,9 +31,6 @@ final class ExponentialStrategy extends AbstractStrategy
         parent::__construct($maxAttempts, $incrementBy, $timeUnit);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function retryOn()
     {
         // If we can retry...
@@ -51,9 +43,6 @@ final class ExponentialStrategy extends AbstractStrategy
         return false;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function waitFor(): int
     {
         $incrementBy = 1 === $this->getAttempts()
@@ -63,9 +52,6 @@ final class ExponentialStrategy extends AbstractStrategy
         return $this->convertToSeconds($incrementBy, $this->getTimeUnit());
     }
 
-    /**
-     * @return int
-     */
     public function getExponentialBase(): int
     {
         return $this->exponentialBase;

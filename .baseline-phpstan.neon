@@ -61,11 +61,6 @@ parameters:
 			path: src/Strategy/AbstractStrategy.php
 
 		-
-			message: "#^PHPDoc tag @param has invalid value \\(\\$timeUnit\\)\\: Unexpected token \"\\$timeUnit\", expected type at offset 47$#"
-			count: 1
-			path: src/Strategy/AbstractStrategy.php
-
-		-
 			message: "#^Class DateTime is unsafe to use\\. Its methods can return FALSE instead of throwing an exception\\. Please add 'use Safe\\\\DateTime;' at the beginning of the file to use the variant provided by the 'thecodingmachine/safe' library\\.$#"
 			count: 1
 			path: src/Strategy/ConstantStrategy.php
@@ -122,6 +117,11 @@ parameters:
 
 		-
 			message: "#^Method SerendipityHQ\\\\Component\\\\ThenWhen\\\\TryAgain\\:\\:__construct\\(\\) has parameter \\$strategies with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/TryAgain.php
+
+		-
+			message: "#^Method SerendipityHQ\\\\Component\\\\ThenWhen\\\\TryAgain\\:\\:try\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: src/TryAgain.php
 

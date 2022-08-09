@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Serendipity HQ Then When Component.
  *
@@ -22,11 +24,6 @@ final class TimeFixedStrategy extends LinearStrategy
     /** @var string */
     public const STRATEGY = 'time_fixed';
 
-    /**
-     * @param int                $maxAttempts
-     * @param \DateTimeInterface $endOfTimeWindow
-     * @param string|null        $timeUnit
-     */
     public function __construct(int $maxAttempts, \DateTimeInterface $endOfTimeWindow, string $timeUnit = null)
     {
         $incrementBy = 1;
@@ -72,9 +69,6 @@ final class TimeFixedStrategy extends LinearStrategy
     }
 
     /**
-     * @param int                $maxAttempts
-     * @param \DateTimeInterface $endOfTimeWindow
-     *
      * @return float The amount of seconds
      */
     private function calculateIncrementBy(int $maxAttempts, \DateTimeInterface $endOfTimeWindow): float

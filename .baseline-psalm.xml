@@ -54,9 +54,6 @@
     </UndefinedInterfaceMethod>
   </file>
   <file src="src/TryAgain.php">
-    <ArgumentTypeCoercion occurrences="1">
-      <code>$strategy-&gt;waitFor()</code>
-    </ArgumentTypeCoercion>
     <MissingReturnType occurrences="1">
       <code>try</code>
     </MissingReturnType>

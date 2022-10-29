@@ -106,11 +106,6 @@ parameters:
 			path: src/Strategy/TimeFixedStrategy.php
 
 		-
-			message: "#^Function Safe\\\\sleep not found\\.$#"
-			count: 1
-			path: src/TryAgain.php
-
-		-
 			message: "#^Method SerendipityHQ\\\\Component\\\\ThenWhen\\\\TryAgain\\:\\:__construct\\(\\) has parameter \\$finalHandlers with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/TryAgain.php
@@ -142,11 +137,6 @@ parameters:
 
 		-
 			message: "#^Property SerendipityHQ\\\\Component\\\\ThenWhen\\\\TryAgain\\:\\:\\$strategies type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/TryAgain.php
-
-		-
-			message: "#^Used function Safe\\\\sleep not found\\.$#"
 			count: 1
 			path: src/TryAgain.php
 

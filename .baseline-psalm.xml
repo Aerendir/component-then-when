@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<files psalm-version="4.26.0@6998fabb2bf528b65777bf9941920888d23c03ac">
+<files psalm-version="4.29.0@7ec5ffbd5f68ae03782d7fd33fff0c45a69f95b3">
   <file src="src/RetryStrategyBuilder.php">
-    <DeprecatedFunction occurrences="3">
-      <code>sprintf("The exception %s you want to handle doesn't exist.", $exceptionClass)</code>
-      <code>sprintf("You are adding a final handler for the class %s but you didn't set a Strategy for it." . ' First set a strategy and then set the final handler.', $exceptionClass)</code>
-      <code>sprintf("You are adding a middle handler for the class %s but you didn't set a Strategy for it." . ' First set a strategy and then set the middle handler.', $exceptionClass)</code>
-    </DeprecatedFunction>
     <MismatchingDocblockReturnType occurrences="1">
       <code>array|string</code>
     </MismatchingDocblockReturnType>
@@ -16,10 +11,6 @@
     </PossiblyInvalidIterator>
   </file>
   <file src="src/Strategy/AbstractStrategy.php">
-    <DeprecatedFunction occurrences="2">
-      <code>sprintf('The increment unit "%s" is not supported. Supported increment units are: %s.', $timeUnit, \implode(' ', StrategyInterface::TIME_UNITS))</code>
-      <code>sprintf('Unrecognized time unit "%s". Allowed time units are...', $timeUnit)</code>
-    </DeprecatedFunction>
     <PropertyNotSetInConstructor occurrences="2">
       <code>$incrementBy</code>
       <code>$timeUnit</code>

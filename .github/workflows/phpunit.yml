@@ -16,12 +16,8 @@ jobs:
             matrix:
                 os: [ ubuntu-latest ]
                 # When you change a version here, change it also in the SonarCloud if condition
-                php: [ '7.4', '8.0', '8.1' ]
-                symfony: [ '~4.4', '~5.4', '~6.0' ]
-
-                exclude:
-                    - php: '7.4'
-                      symfony: '~6.0'
+                php: [ '8.2', '8.3' ]
+                symfony: [ '~5.4', '~6.4', '~7.0' ]
 
         steps:
             -   name: Checkout
@@ -76,7 +72,7 @@ jobs:
 
             -   name: Sonarcloud
                 if: |
-                    github.ref == 'refs/heads/dev' && matrix.php == '8.1' && matrix.symfony == '~6.0'
+                    github.ref == 'refs/heads/dev' && matrix.php == '8.3' && matrix.symfony == '~7.0'
                 uses: sonarsource/sonarcloud-github-action@master
                 env:
                     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

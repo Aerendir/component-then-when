@@ -5,7 +5,7 @@
 </p>
 
 <h1 align="center">Serendipity HQ Then When</h1>
-<p align="center">A library to calculate the time of next retry in apps that needs to be fault tolerant and retry failed attempts of doing something.</p>
+<p align="center">A library to calculate the time of next retry in apps that needs to be fault-tolerant and retry failed attempts of doing something.</p>
 <p align="center">
     <a href="https://github.com/Aerendir/component-then-when/releases"><img src="https://img.shields.io/packagist/v/serendipity_hq/component-then-when.svg?style=flat-square"></a>
     <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square"></a>
@@ -13,15 +13,15 @@
 </p>
 <p>
     Supports:
-    <a title="Supports Symfony ^4.4" href="https://github.com/Aerendir/component-then-when/actions"><img title="Supports Symfony ^4.4" src="https://img.shields.io/badge/Symfony-%5E4.4-333?style=flat-square&logo=symfony" /></a>
     <a title="Supports Symfony ^5.4" href="https://github.com/Aerendir/component-then-when/actions"><img title="Supports Symfony ^5.4" src="https://img.shields.io/badge/Symfony-%5E5.4-333?style=flat-square&logo=symfony" /></a>
-    <a title="Supports Symfony ^6.0" href="https://github.com/Aerendir/component-then-when/actions"><img title="Supports Symfony ^6.0" src="https://img.shields.io/badge/Symfony-%5E6.0-333?style=flat-square&logo=symfony" /></a>
+    <a title="Supports Symfony ^6.4" href="https://github.com/Aerendir/component-then-when/actions"><img title="Supports Symfony ^6.4" src="https://img.shields.io/badge/Symfony-%5E6.0-333?style=flat-square&logo=symfony" /></a>
+    <a title="Supports Symfony ^7.0" href="https://github.com/Aerendir/component-then-when/actions"><img title="Supports Symfony ^7.0" src="https://img.shields.io/badge/Symfony-%5E6.0-333?style=flat-square&logo=symfony" /></a>
 </p>
 <p>
     Tested with:
-    <a title="Tested with Symfony ^4.4" href="https://github.com/Aerendir/component-then-when/actions"><img title="Tested with Symfony ^4.4" src="https://img.shields.io/badge/Symfony-%5E4.4-333?style=flat-square&logo=symfony" /></a>
     <a title="Tested with Symfony ^5.4" href="https://github.com/Aerendir/component-then-when/actions"><img title="Tested with Symfony ^5.4" src="https://img.shields.io/badge/Symfony-%5E5.4-333?style=flat-square&logo=symfony" /></a>
-    <a title="Tested with Symfony ^6.0" href="https://github.com/Aerendir/component-then-when/actions"><img title="Tested with Symfony ^6.0" src="https://img.shields.io/badge/Symfony-%5E6.0-333?style=flat-square&logo=symfony" /></a>
+    <a title="Tested with Symfony ^6.4" href="https://github.com/Aerendir/component-then-when/actions"><img title="Tested with Symfony ^6.4" src="https://img.shields.io/badge/Symfony-%5E5.4-333?style=flat-square&logo=symfony" /></a>
+    <a title="Tested with Symfony ^7.0" href="https://github.com/Aerendir/component-then-when/actions"><img title="Tested with Symfony ^7.0" src="https://img.shields.io/badge/Symfony-%5E6.0-333?style=flat-square&logo=symfony" /></a>
 </p>
 
 ## Current Status

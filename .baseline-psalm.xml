@@ -1,63 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<files psalm-version="5.0.0@4e177bf0c9f03c17d2fbfd83b7cc9c47605274d8">
+<files psalm-version="5.16.0@2897ba636551a8cb61601cc26f6ccfbba6c36591">
   <file src="src/RetryStrategyBuilder.php">
-    <MismatchingDocblockReturnType occurrences="1">
+    <MismatchingDocblockReturnType>
       <code>array|string</code>
     </MismatchingDocblockReturnType>
-    <PossiblyInvalidIterator occurrences="3">
+    <PossiblyInvalidIterator>
       <code>$exceptionClasses</code>
       <code>$exceptionClasses</code>
       <code>$exceptionClasses</code>
     </PossiblyInvalidIterator>
   </file>
   <file src="src/Strategy/AbstractStrategy.php">
-    <PropertyNotSetInConstructor occurrences="2">
+    <PropertyNotSetInConstructor>
       <code>$incrementBy</code>
       <code>$timeUnit</code>
     </PropertyNotSetInConstructor>
-    <UndefinedConstant occurrences="1">
+    <UndefinedConstant>
       <code>$this::STRATEGY</code>
     </UndefinedConstant>
   </file>
   <file src="src/Strategy/ConstantStrategy.php">
-    <InvalidOperand occurrences="1">
-      <code>$this-&gt;waitFor()</code>
+    <InvalidOperand>
+      <code><![CDATA[$this->waitFor()]]></code>
     </InvalidOperand>
   </file>
   <file src="src/Strategy/ExponentialStrategy.php">
-    <InvalidOperand occurrences="1">
-      <code>$this-&gt;waitFor()</code>
+    <InvalidOperand>
+      <code><![CDATA[$this->waitFor()]]></code>
     </InvalidOperand>
   </file>
   <file src="src/Strategy/LinearStrategy.php">
-    <InvalidOperand occurrences="1">
-      <code>$this-&gt;waitFor()</code>
+    <InvalidOperand>
+      <code><![CDATA[$this->waitFor()]]></code>
     </InvalidOperand>
   </file>
   <file src="src/Strategy/TimeFixedStrategy.php">
-    <NoValue occurrences="1">
+    <NoValue>
       <code>$endOfTimeWindow</code>
     </NoValue>
-    <PossiblyInvalidArgument occurrences="1">
+    <PossiblyInvalidArgument>
       <code>$incrementBy</code>
     </PossiblyInvalidArgument>
-    <PossiblyNullArgument occurrences="1">
+    <PossiblyNullArgument>
       <code>$timeUnit</code>
     </PossiblyNullArgument>
-    <RedundantCondition occurrences="2">
+    <RedundantCondition>
       <code>$endOfTimeWindow instanceof \DateTime</code>
       <code>false === \is_int($endOfTimeWindow)</code>
     </RedundantCondition>
-    <TypeDoesNotContainType occurrences="2">
+    <TypeDoesNotContainType>
       <code>\is_int($endOfTimeWindow)</code>
       <code>\is_int($endOfTimeWindow)</code>
     </TypeDoesNotContainType>
-    <UndefinedInterfaceMethod occurrences="1">
+    <UndefinedInterfaceMethod>
       <code>diffInSeconds</code>
     </UndefinedInterfaceMethod>
   </file>
   <file src="src/TryAgain.php">
-    <MissingReturnType occurrences="1">
+    <MissingReturnType>
       <code>try</code>
     </MissingReturnType>
   </file>

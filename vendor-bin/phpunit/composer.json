@@ -1,9 +1,9 @@
 {
     "require-dev": {
-        "phpunit/phpunit": "9.5.21",
-        "symfony/phpunit-bridge": "6.1.3",
-        "vimeo/psalm": "4.26.0",
-        "psalm/plugin-phpunit": "0.17.0"
+        "phpunit/phpunit": "9.6.13",
+        "symfony/phpunit-bridge": "6.3.8",
+        "vimeo/psalm": "5.16.0",
+        "psalm/plugin-phpunit": "0.18.4"
     },
     "config": {
         "allow-plugins": {

@@ -83,7 +83,7 @@ final class TimeFixedStrategy extends LinearStrategy
     private function validateTimeWindow(int $maxAttempts, int $seconds): void
     {
         if ($seconds < $maxAttempts) {
-            throw new \LogicException('The given number of max attempts exceeds the available time window. Try to reduce the max amount of' . ' attempts or to increase the available time window.');
+            throw new \LogicException('The given number of max attempts exceeds the available time window. Try to reduce the max amount of attempts or to increase the available time window.');
         }
     }
 }

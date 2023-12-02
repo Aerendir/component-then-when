@@ -73,7 +73,7 @@ abstract class AbstractStrategy implements StrategyInterface
     public function jsonSerialize(): array
     {
         if (false === \defined(\get_class($this) . '::STRATEGY')) {
-            throw new \RuntimeException('The Strategy doesn\'t tells its own name. Create the contant "STRATEGY" that tells the name of the' . ' strategy.');
+            throw new \RuntimeException('The Strategy doesn\'t tells its own name. Create the contant "STRATEGY" that tells the name of the strategy.');
         }
 
         return [
@@ -84,9 +84,6 @@ abstract class AbstractStrategy implements StrategyInterface
         ];
     }
 
-    /**
-     * @param $timeUnit
-     */
     protected function convertToSeconds(int $increment, string $timeUnit): int
     {
         $this->validateTimeUnit($timeUnit);

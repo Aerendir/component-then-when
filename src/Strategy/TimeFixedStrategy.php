@@ -24,7 +24,7 @@ final class TimeFixedStrategy extends LinearStrategy
     /** @var string */
     public const STRATEGY = 'time_fixed';
 
-    public function __construct(int $maxAttempts, \DateTimeInterface $endOfTimeWindow, string $timeUnit = null)
+    public function __construct(int $maxAttempts, \DateTimeInterface $endOfTimeWindow, ?string $timeUnit = null)
     {
         $incrementBy = 1;
         // $endOfTime can be only an integer or a \DateTime

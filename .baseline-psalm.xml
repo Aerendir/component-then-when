@@ -1,64 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<files psalm-version="5.16.0@2897ba636551a8cb61601cc26f6ccfbba6c36591">
+<files psalm-version="6.16.1@f1f5de594dc76faf8784e02d3dc4716c91c6f6ac">
   <file src="src/RetryStrategyBuilder.php">
     <MismatchingDocblockReturnType>
-      <code>array|string</code>
+      <code><![CDATA[array|string]]></code>
     </MismatchingDocblockReturnType>
     <PossiblyInvalidIterator>
-      <code>$exceptionClasses</code>
-      <code>$exceptionClasses</code>
-      <code>$exceptionClasses</code>
+      <code><![CDATA[$exceptionClasses]]></code>
+      <code><![CDATA[$exceptionClasses]]></code>
+      <code><![CDATA[$exceptionClasses]]></code>
     </PossiblyInvalidIterator>
+    <PossiblyUnusedMethod>
+      <code><![CDATA[setFinalHandlerForException]]></code>
+      <code><![CDATA[setMiddleHandlerForException]]></code>
+      <code><![CDATA[setStrategyForException]]></code>
+    </PossiblyUnusedMethod>
   </file>
   <file src="src/Strategy/AbstractStrategy.php">
+    <MissingOverrideAttribute>
+      <code><![CDATA[public function canRetry(): bool]]></code>
+      <code><![CDATA[public function getAttempts(): int]]></code>
+      <code><![CDATA[public function getIncrementBy(): int]]></code>
+      <code><![CDATA[public function getMaxAttempts(): int]]></code>
+      <code><![CDATA[public function getStrategyName(): string]]></code>
+      <code><![CDATA[public function getTimeUnit(): string]]></code>
+      <code><![CDATA[public function newAttempt(): StrategyInterface]]></code>
+    </MissingOverrideAttribute>
+    <PossiblyUnusedMethod>
+      <code><![CDATA[jsonSerialize]]></code>
+      <code><![CDATA[setAttempts]]></code>
+    </PossiblyUnusedMethod>
+    <PossiblyUnusedReturnValue>
+      <code><![CDATA[string]]></code>
+    </PossiblyUnusedReturnValue>
     <PropertyNotSetInConstructor>
-      <code>$incrementBy</code>
-      <code>$timeUnit</code>
+      <code><![CDATA[$incrementBy]]></code>
+      <code><![CDATA[$timeUnit]]></code>
     </PropertyNotSetInConstructor>
     <UndefinedConstant>
-      <code>$this::STRATEGY</code>
+      <code><![CDATA[$this::STRATEGY]]></code>
     </UndefinedConstant>
   </file>
   <file src="src/Strategy/ConstantStrategy.php">
-    <InvalidOperand>
-      <code><![CDATA[$this->waitFor()]]></code>
-    </InvalidOperand>
+    <MissingOverrideAttribute>
+      <code><![CDATA[public function retryOn(): \DateTime|false]]></code>
+      <code><![CDATA[public function waitFor(): int]]></code>
+    </MissingOverrideAttribute>
   </file>
   <file src="src/Strategy/ExponentialStrategy.php">
-    <InvalidOperand>
-      <code><![CDATA[$this->waitFor()]]></code>
-    </InvalidOperand>
+    <MissingOverrideAttribute>
+      <code><![CDATA[public function retryOn(): \DateTime|false]]></code>
+      <code><![CDATA[public function waitFor(): int]]></code>
+    </MissingOverrideAttribute>
+    <PossiblyUnusedMethod>
+      <code><![CDATA[__construct]]></code>
+    </PossiblyUnusedMethod>
   </file>
   <file src="src/Strategy/LinearStrategy.php">
-    <InvalidOperand>
-      <code><![CDATA[$this->waitFor()]]></code>
-    </InvalidOperand>
+    <MissingOverrideAttribute>
+      <code><![CDATA[public function retryOn(): \DateTime|false]]></code>
+      <code><![CDATA[public function waitFor(): int]]></code>
+    </MissingOverrideAttribute>
+  </file>
+  <file src="src/Strategy/LiveStrategy.php">
+    <UnusedClass>
+      <code><![CDATA[LiveStrategy]]></code>
+    </UnusedClass>
+  </file>
+  <file src="src/Strategy/NeverRetryStrategy.php">
+    <MissingOverrideAttribute>
+      <code><![CDATA[public function retryOn(): bool]]></code>
+      <code><![CDATA[public function waitFor(): int]]></code>
+    </MissingOverrideAttribute>
+  </file>
+  <file src="src/Strategy/StrategyInterface.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[getStrategyName]]></code>
+    </PossiblyUnusedMethod>
+    <PossiblyUnusedReturnValue>
+      <code><![CDATA[StrategyInterface]]></code>
+    </PossiblyUnusedReturnValue>
   </file>
   <file src="src/Strategy/TimeFixedStrategy.php">
     <NoValue>
-      <code>$endOfTimeWindow</code>
+      <code><![CDATA[$endOfTimeWindow]]></code>
     </NoValue>
     <PossiblyInvalidArgument>
-      <code>$incrementBy</code>
+      <code><![CDATA[$incrementBy]]></code>
     </PossiblyInvalidArgument>
     <PossiblyNullArgument>
-      <code>$timeUnit</code>
+      <code><![CDATA[$timeUnit]]></code>
     </PossiblyNullArgument>
     <RedundantCondition>
-      <code>$endOfTimeWindow instanceof \DateTime</code>
-      <code>false === \is_int($endOfTimeWindow)</code>
+      <code><![CDATA[$endOfTimeWindow instanceof \DateTime]]></code>
+      <code><![CDATA[false === \is_int($endOfTimeWindow)]]></code>
     </RedundantCondition>
     <TypeDoesNotContainType>
-      <code>\is_int($endOfTimeWindow)</code>
-      <code>\is_int($endOfTimeWindow)</code>
+      <code><![CDATA[\is_int($endOfTimeWindow)]]></code>
+      <code><![CDATA[\is_int($endOfTimeWindow)]]></code>
     </TypeDoesNotContainType>
     <UndefinedInterfaceMethod>
-      <code>diffInSeconds</code>
+      <code><![CDATA[diffInSeconds]]></code>
     </UndefinedInterfaceMethod>
+    <UnusedClass>
+      <code><![CDATA[TimeFixedStrategy]]></code>
+    </UnusedClass>
+  </file>
+  <file src="src/ThenWhen.php">
+    <UnusedClass>
+      <code><![CDATA[ThenWhen]]></code>
+    </UnusedClass>
   </file>
   <file src="src/TryAgain.php">
     <MissingReturnType>
-      <code>try</code>
+      <code><![CDATA[try]]></code>
     </MissingReturnType>
+    <PossiblyUnusedMethod>
+      <code><![CDATA[try]]></code>
+    </PossiblyUnusedMethod>
   </file>
 </files>

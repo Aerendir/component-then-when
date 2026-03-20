@@ -1,0 +1,12 @@
+name: component-then-when
+
+services:
+    php:
+        image: component-then-when-php:current
+        container_name: component-then-when
+        volumes:
+            - ../../:/project
+        working_dir: /project
+        command: [ "tail", "-f", "/dev/null" ]
+        stdin_open: true
+        tty: true

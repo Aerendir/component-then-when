@@ -115,49 +115,7 @@ parameters:
 			path: src/Strategy/LinearStrategy.php
 
 		-
-			message: '#^Binary operation "/" between mixed and int results in an error\.$#'
-			identifier: binaryOp.invalid
-			count: 1
-			path: src/Strategy/TimeFixedStrategy.php
-
-		-
-			message: '#^Call to an undefined method DateTimeInterface\:\:diffInSeconds\(\)\.$#'
-			identifier: method.notFound
-			count: 1
-			path: src/Strategy/TimeFixedStrategy.php
-
-		-
-			message: '#^Call to function is_int\(\) with DateTime will always evaluate to false\.$#'
-			identifier: function.impossibleType
-			count: 1
-			path: src/Strategy/TimeFixedStrategy.php
-
-		-
-			message: '#^Call to function is_int\(\) with DateTimeInterface will always evaluate to false\.$#'
-			identifier: function.impossibleType
-			count: 1
-			path: src/Strategy/TimeFixedStrategy.php
-
-		-
-			message: '#^Instanceof between DateTime and DateTime will always evaluate to true\.$#'
-			identifier: instanceof.alwaysTrue
-			count: 1
-			path: src/Strategy/TimeFixedStrategy.php
-
-		-
 			message: '#^Parameter \#1 \$timeUnit of method SerendipityHQ\\Component\\ThenWhen\\Strategy\\AbstractStrategy\:\:validateTimeUnit\(\) expects string, string\|null given\.$#'
-			identifier: argument.type
-			count: 1
-			path: src/Strategy/TimeFixedStrategy.php
-
-		-
-			message: '#^Parameter \#2 \$incrementBy of method SerendipityHQ\\Component\\ThenWhen\\Strategy\\AbstractStrategy\:\:__construct\(\) expects int, float given\.$#'
-			identifier: argument.type
-			count: 1
-			path: src/Strategy/TimeFixedStrategy.php
-
-		-
-			message: '#^Parameter \#2 \$seconds of method SerendipityHQ\\Component\\ThenWhen\\Strategy\\TimeFixedStrategy\:\:validateTimeWindow\(\) expects int, mixed given\.$#'
 			identifier: argument.type
 			count: 1
 			path: src/Strategy/TimeFixedStrategy.php
@@ -165,12 +123,6 @@ parameters:
 		-
 			message: '#^Parameter \#2 \$timeUnit of method SerendipityHQ\\Component\\ThenWhen\\Strategy\\AbstractStrategy\:\:convertToSeconds\(\) expects string, string\|null given\.$#'
 			identifier: argument.type
-			count: 1
-			path: src/Strategy/TimeFixedStrategy.php
-
-		-
-			message: '#^Strict comparison using \=\=\= between false and false will always evaluate to true\.$#'
-			identifier: identical.alwaysTrue
 			count: 1
 			path: src/Strategy/TimeFixedStrategy.php
 
@@ -223,8 +175,92 @@ parameters:
 			path: src/TryAgain.php
 
 		-
+			message: '#^Call to static method PHPUnit\\Framework\\Assert\:\:assertInstanceOf\(\) with ''SerendipityHQ\\\\Component\\\\ThenWhen\\\\TryAgain'' and SerendipityHQ\\Component\\ThenWhen\\TryAgain will always evaluate to true\.$#'
+			identifier: staticMethod.alreadyNarrowedType
+			count: 1
+			path: tests/RetryStrategyBuilderTest.php
+
+		-
+			message: '#^Parameter \#1 \$exceptionClasses of method SerendipityHQ\\Component\\ThenWhen\\RetryStrategyBuilder\:\:setStrategyForException\(\) expects array\|string, int given\.$#'
+			identifier: argument.type
+			count: 1
+			path: tests/RetryStrategyBuilderTest.php
+
+		-
+			message: '#^Parameter \#2 \$array of static method PHPUnit\\Framework\\Assert\:\:assertArrayHasKey\(\) expects array\<mixed\>\|ArrayAccess\<\(int\|string\), mixed\>, mixed given\.$#'
+			identifier: argument.type
+			count: 4
+			path: tests/RetryStrategyBuilderTest.php
+
+		-
+			message: '#^Method SerendipityHQ\\Component\\ThenWhen\\Strategy\\AbstractStrategy@anonymous/tests/Strategy/AbstractStrategyTest\.php\:92\:\:publicSetAttempts\(\) should return SerendipityHQ\\Component\\ThenWhen\\Strategy\\AbstractStrategy@anonymous/tests/Strategy/AbstractStrategyTest\.php\:92 but returns SerendipityHQ\\Component\\ThenWhen\\Strategy\\AbstractStrategy\.$#'
+			identifier: return.type
+			count: 1
+			path: tests/Strategy/AbstractStrategyTest.php
+
+		-
+			message: '#^Method SerendipityHQ\\Component\\ThenWhen\\Strategy\\AbstractStrategy@anonymous/tests/Strategy/AbstractStrategyTest\.php\:92\:\:publicSetIncrementBy\(\) should return SerendipityHQ\\Component\\ThenWhen\\Strategy\\AbstractStrategy@anonymous/tests/Strategy/AbstractStrategyTest\.php\:92 but returns SerendipityHQ\\Component\\ThenWhen\\Strategy\\AbstractStrategy\.$#'
+			identifier: return.type
+			count: 1
+			path: tests/Strategy/AbstractStrategyTest.php
+
+		-
+			message: '#^Method SerendipityHQ\\Component\\ThenWhen\\Strategy\\AbstractStrategy@anonymous/tests/Strategy/AbstractStrategyTest\.php\:92\:\:publicSetMaxAttempts\(\) should return SerendipityHQ\\Component\\ThenWhen\\Strategy\\AbstractStrategy@anonymous/tests/Strategy/AbstractStrategyTest\.php\:92 but returns SerendipityHQ\\Component\\ThenWhen\\Strategy\\AbstractStrategy\.$#'
+			identifier: return.type
+			count: 1
+			path: tests/Strategy/AbstractStrategyTest.php
+
+		-
+			message: '#^Method SerendipityHQ\\Component\\ThenWhen\\Strategy\\AbstractStrategy@anonymous/tests/Strategy/AbstractStrategyTest\.php\:92\:\:publicSetTimeUnit\(\) should return SerendipityHQ\\Component\\ThenWhen\\Strategy\\AbstractStrategy@anonymous/tests/Strategy/AbstractStrategyTest\.php\:92 but returns SerendipityHQ\\Component\\ThenWhen\\Strategy\\AbstractStrategy\.$#'
+			identifier: return.type
+			count: 1
+			path: tests/Strategy/AbstractStrategyTest.php
+
+		-
+			message: '#^Class DateTime is unsafe to use\. Its methods can return FALSE instead of throwing an exception\. Please add ''use Safe\\DateTime;'' at the beginning of the file to use the variant provided by the ''thecodingmachine/safe'' library\.$#'
+			identifier: theCodingMachineSafe.class
+			count: 1
+			path: tests/Strategy/ConstantStrategyTest.php
+
+		-
+			message: '#^Class DateTime is unsafe to use\. Its methods can return FALSE instead of throwing an exception\. Please add ''use Safe\\DateTime;'' at the beginning of the file to use the variant provided by the ''thecodingmachine/safe'' library\.$#'
+			identifier: theCodingMachineSafe.class
+			count: 1
+			path: tests/Strategy/ExponentialStrategyTest.php
+
+		-
+			message: '#^Class DateTime is unsafe to use\. Its methods can return FALSE instead of throwing an exception\. Please add ''use Safe\\DateTime;'' at the beginning of the file to use the variant provided by the ''thecodingmachine/safe'' library\.$#'
+			identifier: theCodingMachineSafe.class
+			count: 1
+			path: tests/Strategy/LinearStrategyTest.php
+
+		-
+			message: '#^Class DateTime is unsafe to use\. Its methods can return FALSE instead of throwing an exception\. Please add ''use Safe\\DateTime;'' at the beginning of the file to use the variant provided by the ''thecodingmachine/safe'' library\.$#'
+			identifier: theCodingMachineSafe.class
+			count: 1
+			path: tests/Strategy/LiveStrategyTest.php
+
+		-
 			message: '#^Call to static method PHPUnit\\Framework\\Assert\:\:assertFalse\(\) with false will always evaluate to true\.$#'
 			identifier: staticMethod.alreadyNarrowedType
 			count: 1
 			path: tests/Strategy/NeverRetryStrategyTest.php
+
+		-
+			message: '#^Class DateTime is unsafe to use\. Its methods can return FALSE instead of throwing an exception\. Please add ''use Safe\\DateTime;'' at the beginning of the file to use the variant provided by the ''thecodingmachine/safe'' library\.$#'
+			identifier: theCodingMachineSafe.class
+			count: 3
+			path: tests/Strategy/TimeFixedStrategyTest.php
+
+		-
+			message: '#^Call to static method PHPUnit\\Framework\\Assert\:\:assertInstanceOf\(\) with ''SerendipityHQ\\\\Component\\\\ThenWhen\\\\RetryStrategyBuilder'' and SerendipityHQ\\Component\\ThenWhen\\RetryStrategyBuilder will always evaluate to true\.$#'
+			identifier: staticMethod.alreadyNarrowedType
+			count: 1
+			path: tests/ThenWhenTest.php
+
+		-
+			message: '#^Call to static method PHPUnit\\Framework\\Assert\:\:assertInstanceOf\(\) with ''SerendipityHQ\\\\Component\\\\ThenWhen\\\\TryAgain'' and SerendipityHQ\\Component\\ThenWhen\\TryAgain will always evaluate to true\.$#'
+			identifier: staticMethod.alreadyNarrowedType
+			count: 1
+			path: tests/ThenWhenTest.php
 

@@ -14,46 +14,61 @@ declare(strict_types=1);
 namespace SerendipityHQ\Component\ThenWhen\Tests\Strategy;
 
 use PHPUnit\Framework\TestCase;
-use SerendipityHQ\Component\ThenWhen\Strategy\ConstantStrategy;
+use SerendipityHQ\Component\ThenWhen\Strategy\ExponentialStrategy;
 use SerendipityHQ\Component\ThenWhen\Strategy\StrategyInterface;
 
-final class ConstantStrategyTest extends TestCase
+final class ExponentialStrategyTest extends TestCase
 {
     public function testStrategy(): void
     {
-        $maxAttempts = 3;
-        $incrementBy = 10;
-        $timeUnit    = StrategyInterface::TIME_UNIT_SECONDS;
-        $resource    = new ConstantStrategy($maxAttempts, $incrementBy, $timeUnit);
+        $maxAttempts     = 3;
+        $incrementBy     = 10;
+        $timeUnit        = StrategyInterface::TIME_UNIT_SECONDS;
+        $exponentialBase = 3;
+        $resource        = new ExponentialStrategy($maxAttempts, $incrementBy, $timeUnit, $exponentialBase);
 
         self::assertSame($maxAttempts, $resource->getMaxAttempts());
         self::assertSame($incrementBy, $resource->getIncrementBy());
         self::assertSame($timeUnit, $resource->getTimeUnit());
-        self::assertSame('constant', $resource->getStrategyName());
+        self::assertSame('exponential', $resource->getStrategyName());
         self::assertSame(0, $resource->getAttempts());
+        self::assertSame($exponentialBase, $resource->getExponentialBase());
 
         // Test waitFor
-        self::assertSame($incrementBy, $resource->waitFor());
+        // Attempt 0: 3^0 * 10 = 1 * 10 = 10 (Actually, it returns convertToSeconds(incrementBy, timeUnit) if attempts is 0 or 1 depending on implementation)
+        // Looking at the code:
+        // $incrementBy = 1 === $this->getAttempts() ? $this->getIncrementBy() : $this->getExponentialBase() ** $this->getAttempts() * $this->getIncrementBy();
+        // If attempts is 0: 3^0 * 10 = 1 * 10 = 10.
+        self::assertSame(10, $resource->waitFor());
 
         // Test canRetry and newAttempt
         self::assertTrue($resource->canRetry());
         $resource->newAttempt();
         self::assertSame(1, $resource->getAttempts());
+        // Attempt 1: code says if 1 === attempts, return incrementBy
+        self::assertSame(10, $resource->waitFor());
+
         self::assertTrue($resource->canRetry());
         $resource->newAttempt();
         self::assertSame(2, $resource->getAttempts());
+        // Attempt 2: 3^2 * 10 = 9 * 10 = 90
+        self::assertSame(90, $resource->waitFor());
+
         self::assertTrue($resource->canRetry());
         $resource->newAttempt();
         self::assertSame(3, $resource->getAttempts());
+        // Attempt 3: 3^3 * 10 = 27 * 10 = 270
+        self::assertSame(270, $resource->waitFor());
+
         self::assertFalse($resource->canRetry());
 
         // Test retryOn
-        $resource = new ConstantStrategy($maxAttempts, $incrementBy, $timeUnit);
+        $resource = new ExponentialStrategy($maxAttempts, $incrementBy, $timeUnit, $exponentialBase);
         $retryOn  = $resource->retryOn();
         self::assertInstanceOf(\DateTime::class, $retryOn);
 
         // Verification of the time (approximate since we use 'new \DateTime()')
-        $expectedTime = (new \DateTime())->modify('+' . $incrementBy . ' ' . $timeUnit);
+        $expectedTime = (new \DateTime())->modify('+' . $resource->waitFor() . ' ' . $timeUnit);
         self::assertEqualsWithDelta($expectedTime->getTimestamp(), $retryOn->getTimestamp(), 1);
 
         // Exhaust retries
@@ -62,33 +77,20 @@ final class ConstantStrategyTest extends TestCase
         self::assertFalse($resource->retryOn());
     }
 
-    public function testWaitForWithDifferentUnits(): void
+    public function testBaseValidation(): void
     {
-        $resource = new ConstantStrategy(1, 1, StrategyInterface::TIME_UNIT_SECONDS);
-        self::assertSame(1, $resource->waitFor());
-
-        $resource = new ConstantStrategy(1, 1, StrategyInterface::TIME_UNIT_MINUTES);
-        self::assertSame(60, $resource->waitFor());
-
-        $resource = new ConstantStrategy(1, 1, StrategyInterface::TIME_UNIT_HOURS);
-        self::assertSame(3600, $resource->waitFor());
-
-        $resource = new ConstantStrategy(1, 1, StrategyInterface::TIME_UNIT_DAYS);
-        self::assertSame(86400, $resource->waitFor());
-
-        $resource = new ConstantStrategy(1, 1, StrategyInterface::TIME_UNIT_MONTHS);
-        self::assertSame(2592000, $resource->waitFor()); // 30 days * 86400
-
-        $resource = new ConstantStrategy(1, 1, StrategyInterface::TIME_UNIT_YEARS);
-        self::assertSame(31104000, $resource->waitFor()); // 12 months * 30 days * 86400
+        $this->expectException(\InvalidArgumentException::class);
+        $this->expectExceptionMessage('The exponential base must be greater than or equal to 2.');
+        new ExponentialStrategy(3, 10, StrategyInterface::TIME_UNIT_SECONDS, 1);
     }
 
     public function testJsonSerialization(): void
     {
-        $maxAttempts = 3;
-        $incrementBy = 10;
-        $timeUnit    = StrategyInterface::TIME_UNIT_SECONDS;
-        $resource    = new ConstantStrategy($maxAttempts, $incrementBy, $timeUnit);
+        $maxAttempts     = 3;
+        $incrementBy     = 10;
+        $timeUnit        = StrategyInterface::TIME_UNIT_SECONDS;
+        $exponentialBase = 2;
+        $resource        = new ExponentialStrategy($maxAttempts, $incrementBy, $timeUnit, $exponentialBase);
 
         $expected = [
             'attempts'       => 0,

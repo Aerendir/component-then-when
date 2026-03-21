@@ -24,5 +24,29 @@ final class NeverRetryStrategyTest extends TestCase
 
         self::assertFalse($resource->canRetry());
         self::assertFalse($resource->retryOn());
+        self::assertSame(0, $resource->waitFor());
+        self::assertSame('never_retry', $resource->getStrategyName());
+        self::assertSame(0, $resource->getAttempts());
+        self::assertSame(0, $resource->getIncrementBy());
+        self::assertSame(0, $resource->getMaxAttempts());
+        self::assertSame('seconds', $resource->getTimeUnit());
+
+        $resource->newAttempt();
+        self::assertSame(1, $resource->getAttempts());
+        self::assertFalse($resource->canRetry());
+    }
+
+    public function testJsonSerialize(): void
+    {
+        $resource = new NeverRetryStrategy();
+
+        $expected = [
+            'attempts'       => 0,
+            'max_attempts'   => 0,
+            'increment_by'   => 0,
+            'increment_unit' => 'seconds',
+        ];
+
+        self::assertSame($expected, $resource->jsonSerialize());
     }
 }

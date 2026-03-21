@@ -13,6 +13,10 @@ declare(strict_types=1);
 
 namespace SerendipityHQ\Component\ThenWhen;
 
+if (false === \function_exists('Safe\sleep')) {
+    require_once __DIR__ . '/functions.php';
+}
+
 use SerendipityHQ\Component\ThenWhen\Strategy\StrategyInterface;
 
 use function Safe\sleep;

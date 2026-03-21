@@ -24,13 +24,9 @@ final class TimeFixedStrategy extends LinearStrategy
     /** @var string */
     public const STRATEGY = 'time_fixed';
 
-    public function __construct(int $maxAttempts, \DateTimeInterface $endOfTimeWindow, ?string $timeUnit = null)
+    public function __construct(int $maxAttempts, int|\DateTimeInterface $endOfTimeWindow, ?string $timeUnit = null)
     {
         $incrementBy = 1;
-        // $endOfTime can be only an integer or a \DateTime
-        if (false === \is_int($endOfTimeWindow) && false === $endOfTimeWindow instanceof \DateTime) {
-            throw new \InvalidArgumentException('$endOfTimeWindow (second argument) can be only an integer or a \DateTime object.');
-        }
 
         // If $endOfTimeWindow is an integer...
         if (\is_int($endOfTimeWindow)) {
@@ -46,13 +42,12 @@ final class TimeFixedStrategy extends LinearStrategy
             $incrementBy = \ceil($seconds / $endOfTimeWindow);
         }
 
-        // If $endOfTimeWindow is a \DateTime...
-        if ($endOfTimeWindow instanceof \DateTime) {
+        // If $endOfTimeWindow is a \DateTimeInterface...
+        if ($endOfTimeWindow instanceof \DateTimeInterface) {
             // We don't need a $fixedTimeUnit...
             if (null !== $timeUnit) {
                 // ... so it's better to alert the developer that one were passed
-                throw new \LogicException('A fixed time unit is required only if $fixedTime is an integer but it is a \DateTime object.
-                ');
+                throw new \LogicException('A fixed time unit is required only if $fixedTime is an integer but it is a \DateTime object.');
             }
 
             // And the DateTime passed MUST be in the future!
@@ -65,7 +60,7 @@ final class TimeFixedStrategy extends LinearStrategy
         }
 
         // We always have our $incrementBy expressed in seconds
-        parent::__construct($maxAttempts, $incrementBy, StrategyInterface::TIME_UNIT_SECONDS);
+        parent::__construct($maxAttempts, (int) $incrementBy, StrategyInterface::TIME_UNIT_SECONDS);
     }
 
     /**
@@ -73,7 +68,7 @@ final class TimeFixedStrategy extends LinearStrategy
      */
     private function calculateIncrementBy(int $maxAttempts, \DateTimeInterface $endOfTimeWindow): float
     {
-        $seconds = $endOfTimeWindow->diffInSeconds();
+        $seconds = (int) Carbon::instance($endOfTimeWindow)->diffInSeconds(null, true);
 
         $this->validateTimeWindow($maxAttempts, $seconds);
 

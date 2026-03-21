@@ -13,6 +13,10 @@ declare(strict_types=1);
 
 namespace SerendipityHQ\Component\ThenWhen\Strategy;
 
+if (false === \function_exists('Safe\sprintf')) {
+    require_once __DIR__ . '/../functions.php';
+}
+
 use function Safe\sprintf;
 
 /**

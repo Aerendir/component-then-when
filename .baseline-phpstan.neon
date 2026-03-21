@@ -175,6 +175,18 @@ parameters:
 			path: src/TryAgain.php
 
 		-
+			message: '#^Function Safe\\sprintf\(\) has parameter \$args with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/functions.php
+
+		-
+			message: '#^Parameter \#2 \.\.\.\$values of function sprintf expects bool\|float\|int\|string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/functions.php
+
+		-
 			message: '#^Call to static method PHPUnit\\Framework\\Assert\:\:assertInstanceOf\(\) with ''SerendipityHQ\\\\Component\\\\ThenWhen\\\\TryAgain'' and SerendipityHQ\\Component\\ThenWhen\\TryAgain will always evaluate to true\.$#'
 			identifier: staticMethod.alreadyNarrowedType
 			count: 1

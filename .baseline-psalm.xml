@@ -70,6 +70,11 @@
       <code><![CDATA[try]]></code>
     </MissingReturnType>
   </file>
+  <file src="src/functions.php">
+    <MissingParamType>
+      <code><![CDATA[$args]]></code>
+    </MissingParamType>
+  </file>
   <file src="tests/RetryStrategyBuilderTest.php">
     <InvalidArgument>
       <code><![CDATA[123]]></code>

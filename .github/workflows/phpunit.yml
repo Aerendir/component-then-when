@@ -24,6 +24,8 @@ jobs:
         steps:
             -   name: Checkout
                 uses: actions/checkout@v6
+                with:
+                    fetch-depth: 0
 
             -   name: Setup PHP
                 uses: shivammathur/setup-php@2.36.0
@@ -71,13 +73,30 @@ jobs:
                     fi
 
             -   name: Change paths in clover.xml
-                if: env.IS_MAIN_ENV == 'true'
+                if: ${{ !cancelled() && env.IS_MAIN_ENV == 'true' }}
                 run: |
                     sed -i 's+/home/runner/work/component-then-when/component-then-when+/github/workspace+g' ./var/coverage/clover.xml
 
             -   name: Sonarcloud
-                if: env.IS_MAIN_ENV == 'true'
+                if: ${{ !cancelled() && env.IS_MAIN_ENV == 'true' }}
                 uses: sonarsource/sonarcloud-github-action@master
                 env:
                     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+            - name: Upload test results to Codecov
+              if: ${{ !cancelled() && env.IS_MAIN_ENV == 'true' }}
+              uses: codecov/test-results-action@v1
+              with:
+                  token: ${{ secrets.CODECOV_TOKEN }}
+                  flags: ${{matrix.php}}
+                  files: junit.xml
+
+            -   name: Upload coverage reports to Codecov
+                if: ${{ !cancelled() && env.IS_MAIN_ENV == 'true' }}
+                uses: codecov/codecov-action@v5
+                with:
+                    token: ${{ secrets.CODECOV_TOKEN }}
+                    fail_ci_if_error: false
+                    verbose: true
+                    files: ./var/coverage/clover.xml

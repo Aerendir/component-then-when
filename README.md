@@ -9,22 +9,14 @@
 <p align="center">
     <a href="https://github.com/Aerendir/component-then-when/releases"><img src="https://img.shields.io/packagist/v/serendipity_hq/component-then-when.svg?style=flat-square"></a>
     <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square"></a>
-    <a href="https://github.com/Aerendir/component-then-when/releases"><img src="https://img.shields.io/packagist/php-v/serendipity_hq/component-then-when?color=%238892BF&style=flat-square&logo=php" /></a>
-</p>
-<p>
-    Supports:
-    <a title="Supports Symfony ^5.4" href="https://github.com/Aerendir/component-then-when/actions"><img title="Supports Symfony ^5.4" src="https://img.shields.io/badge/Symfony-%5E5.4-333?style=flat-square&logo=symfony" /></a>
-    <a title="Supports Symfony ^6.4" href="https://github.com/Aerendir/component-then-when/actions"><img title="Supports Symfony ^6.4" src="https://img.shields.io/badge/Symfony-%5E6.0-333?style=flat-square&logo=symfony" /></a>
-    <a title="Supports Symfony ^7.0" href="https://github.com/Aerendir/component-then-when/actions"><img title="Supports Symfony ^7.0" src="https://img.shields.io/badge/Symfony-%5E6.0-333?style=flat-square&logo=symfony" /></a>
-</p>
-<p>
-    Tested with:
-    <a title="Tested with Symfony ^5.4" href="https://github.com/Aerendir/component-then-when/actions"><img title="Tested with Symfony ^5.4" src="https://img.shields.io/badge/Symfony-%5E5.4-333?style=flat-square&logo=symfony" /></a>
-    <a title="Tested with Symfony ^6.4" href="https://github.com/Aerendir/component-then-when/actions"><img title="Tested with Symfony ^6.4" src="https://img.shields.io/badge/Symfony-%5E5.4-333?style=flat-square&logo=symfony" /></a>
-    <a title="Tested with Symfony ^7.0" href="https://github.com/Aerendir/component-then-when/actions"><img title="Tested with Symfony ^7.0" src="https://img.shields.io/badge/Symfony-%5E6.0-333?style=flat-square&logo=symfony" /></a>
+    <a href="https://github.com/Aerendir/component-then-when/actions?query=workflow%3APHPunit"><img src="https://img.shields.io/badge/PHP-8.2-8892BF?style=flat-square&logo=php" /></a>
+    <a href="https://github.com/Aerendir/component-then-when/actions?query=workflow%3APHPunit"><img src="https://img.shields.io/badge/PHP-8.3-8892BF?style=flat-square&logo=php" /></a>
+    <a href="https://github.com/Aerendir/component-then-when/actions?query=workflow%3APHPunit"><img src="https://img.shields.io/badge/PHP-8.4-8892BF?style=flat-square&logo=php" /></a>
+    <a href="https://github.com/Aerendir/component-then-when/actions?query=workflow%3APHPunit"><img src="https://img.shields.io/badge/PHP-8.5-8892BF?style=flat-square&logo=php" /></a>
 </p>
 
 ## Current Status
+
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_component-then-when&metric=coverage)](https://sonarcloud.io/dashboard?id=Aerendir_component-then-when)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_component-then-when&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=Aerendir_component-then-when)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_component-then-when&metric=alert_status)](https://sonarcloud.io/dashboard?id=Aerendir_component-then-when)
@@ -33,13 +25,18 @@
 [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_component-then-when&metric=sqale_index)](https://sonarcloud.io/dashboard?id=Aerendir_component-then-when)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_component-then-when&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=Aerendir_component-then-when)
 
-[![Phan](https://github.com/Aerendir/component-then-when/workflows/Phan/badge.svg)](https://github.com/Aerendir/component-then-when/actions?query=branch%3Adev)
 [![PHPStan](https://github.com/Aerendir/component-then-when/workflows/PHPStan/badge.svg)](https://github.com/Aerendir/component-then-when/actions?query=branch%3Adev)
 [![PSalm](https://github.com/Aerendir/component-then-when/workflows/PSalm/badge.svg)](https://github.com/Aerendir/component-then-when/actions?query=branch%3Adev)
 [![PHPUnit](https://github.com/Aerendir/component-then-when/workflows/PHPunit/badge.svg)](https://github.com/Aerendir/component-then-when/actions?query=branch%3Adev)
 [![Composer](https://github.com/Aerendir/component-then-when/workflows/Composer/badge.svg)](https://github.com/Aerendir/component-then-when/actions?query=branch%3Adev)
 [![PHP CS Fixer](https://github.com/Aerendir/component-then-when/workflows/PHP%20CS%20Fixer/badge.svg)](https://github.com/Aerendir/component-then-when/actions?query=branch%3Adev)
 [![Rector](https://github.com/Aerendir/component-then-when/workflows/Rector/badge.svg)](https://github.com/Aerendir/component-then-when/actions?query=branch%3Adev)
+
+[![codecov](https://codecov.io/gh/Aerendir/component-then-when/branch/master/graph/badge.svg?token=W9FH392F73)](https://codecov.io/gh/Aerendir/component-then-when)
+
+[![CodeCov SunBurst](https://codecov.io/gh/Aerendir/component-then-when/branch/master/graphs/sunburst.svg)](https://codecov.io/gh/Aerendir/component-then-when)
+[![CodeCov Tree](https://codecov.io/gh/Aerendir/component-then-when/branch/master/graphs/tree.svg)](https://codecov.io/gh/Aerendir/component-then-when)
+[![CodeCov I Cicle](https://codecov.io/gh/Aerendir/component-then-when/branch/master/graphs/icicle.svg)](https://codecov.io/gh/Aerendir/component-then-when)
 
 <hr />
 <h3 align="center">

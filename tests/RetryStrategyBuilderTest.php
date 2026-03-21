@@ -33,8 +33,7 @@ final class RetryStrategyBuilderTest extends TestCase
         // Use reflection to check private properties of TryAgain
         $reflection     = new \ReflectionClass($tryAgain);
         $strategiesProp = $reflection->getProperty('strategies');
-        $strategiesProp->setAccessible(true);
-        $strategies = $strategiesProp->getValue($tryAgain);
+        $strategies     = $strategiesProp->getValue($tryAgain);
 
         self::assertArrayHasKey(\RuntimeException::class, $strategies);
         self::assertSame($strategy, $strategies[\RuntimeException::class]);
@@ -51,13 +50,30 @@ final class RetryStrategyBuilderTest extends TestCase
 
         $reflection     = new \ReflectionClass($tryAgain);
         $strategiesProp = $reflection->getProperty('strategies');
-        $strategiesProp->setAccessible(true);
-        $strategies = $strategiesProp->getValue($tryAgain);
+        $strategies     = $strategiesProp->getValue($tryAgain);
 
         self::assertArrayHasKey(\RuntimeException::class, $strategies);
         self::assertArrayHasKey(\LogicException::class, $strategies);
         self::assertSame($strategy, $strategies[\RuntimeException::class]);
         self::assertSame($strategy, $strategies[\LogicException::class]);
+    }
+
+    public function testSetStrategyForExceptionInterface(): void
+    {
+        $builder  = new RetryStrategyBuilder();
+        $strategy = new ConstantStrategy(3, 10);
+
+        $builder->setStrategyForException(\Throwable::class, $strategy);
+
+        $tryAgain = $builder->initializeRetryStrategy();
+        self::assertInstanceOf(TryAgain::class, $tryAgain);
+
+        $reflection     = new \ReflectionClass($tryAgain);
+        $strategiesProp = $reflection->getProperty('strategies');
+        $strategies     = $strategiesProp->getValue($tryAgain);
+
+        self::assertArrayHasKey(\Throwable::class, $strategies);
+        self::assertSame($strategy, $strategies[\Throwable::class]);
     }
 
     public function testSetStrategyForNonExistentExceptionThrowsException(): void
@@ -84,8 +100,7 @@ final class RetryStrategyBuilderTest extends TestCase
 
         $reflection   = new \ReflectionClass($tryAgain);
         $handlersProp = $reflection->getProperty('middleHandlers');
-        $handlersProp->setAccessible(true);
-        $handlers = $handlersProp->getValue($tryAgain);
+        $handlers     = $handlersProp->getValue($tryAgain);
 
         self::assertArrayHasKey(\RuntimeException::class, $handlers);
         self::assertSame($handler, $handlers[\RuntimeException::class]);
@@ -115,8 +130,7 @@ final class RetryStrategyBuilderTest extends TestCase
 
         $reflection   = new \ReflectionClass($tryAgain);
         $handlersProp = $reflection->getProperty('finalHandlers');
-        $handlersProp->setAccessible(true);
-        $handlers = $handlersProp->getValue($tryAgain);
+        $handlers     = $handlersProp->getValue($tryAgain);
 
         self::assertArrayHasKey(\RuntimeException::class, $handlers);
         self::assertSame($handler, $handlers[\RuntimeException::class]);

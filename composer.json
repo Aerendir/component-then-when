@@ -119,11 +119,11 @@
       "vendor-bin/infection/vendor/bin/infection --skip-initial-tests --coverage=./var/coverage/ --logger-html=./var/mutations"
     ],
     "test:run": [
-      "@php vendor-bin/phpunit/vendor/bin/phpunit"
+      "@php vendor-bin/phpunit/vendor/bin/phpunit --display-deprecations --display-phpunit-deprecations"
     ],
     "test:run:coverage": [
       "@putenv XDEBUG_MODE=coverage",
-      "@test:run --coverage-html ./var/coverage/coverage-html --coverage-clover ./var/coverage/clover.xml --coverage-xml ./var/coverage/coverage-xml --log-junit ./var/coverage/junit.xml"
+      "@test:run --display-deprecations --display-phpunit-deprecations --coverage-html ./var/coverage/coverage-html --coverage-clover ./var/coverage/clover.xml --coverage-xml ./var/coverage/coverage-xml --log-junit ./var/coverage/junit.xml"
     ],
     "test:run:coverage:filter": [
       "@test:run:coverage --filter"

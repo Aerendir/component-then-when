@@ -15,6 +15,7 @@ namespace SerendipityHQ\Component\ThenWhen\Tests;
 
 use PHPUnit\Framework\TestCase;
 use SerendipityHQ\Component\ThenWhen\Strategy\ConstantStrategy;
+use SerendipityHQ\Component\ThenWhen\Strategy\StrategyInterface;
 use SerendipityHQ\Component\ThenWhen\TryAgain;
 
 final class TryAgainTest extends TestCase
@@ -117,6 +118,32 @@ final class TryAgainTest extends TestCase
 
         self::assertSame('handled by final', $result);
         self::assertSame(2, $attempts);
+    }
+
+    public function testMiddleHandlerReceivesStrategy(): void
+    {
+        $strategy         = new ConstantStrategy(2, 0);
+        $strategies       = [\RuntimeException::class => $strategy];
+        $receivedStrategy = null;
+        $middleHandlers   = [
+            \RuntimeException::class => function (\Throwable $t, StrategyInterface $s) use (&$receivedStrategy): void {
+                $receivedStrategy = $s;
+            },
+        ];
+        $finalHandlers = [];
+        $tryAgain      = new TryAgain($strategies, $middleHandlers, $finalHandlers);
+
+        $attempts = 0;
+        $tryAgain->try(function () use (&$attempts): string {
+            ++$attempts;
+            if ($attempts < 2) {
+                throw new \RuntimeException('retry me');
+            }
+
+            return 'success';
+        });
+
+        self::assertSame($strategy, $receivedStrategy);
     }
 
     public function testMiddleHandlerReturnsFalseStopsRetrying(): void

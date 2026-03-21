@@ -76,7 +76,7 @@ final class TryAgain
 
             // Now check if there is a middle handler
             if (isset($this->middleHandlers[$throwableFQN])) {
-                $result = \call_user_func($this->middleHandlers[$throwableFQN], $throwable);
+                $result = \call_user_func($this->middleHandlers[$throwableFQN], $throwable, $strategy);
 
                 // If the result is false...
                 if (false === $result) {

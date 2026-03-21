@@ -43,7 +43,7 @@ final class RetryStrategyBuilder
         $exceptionClasses = $this->prepareClasses($exceptionClasses);
 
         foreach ($exceptionClasses as $exceptionClass) {
-            if (false === \class_exists($exceptionClass)) {
+            if (false === \class_exists($exceptionClass) && false === \interface_exists($exceptionClass)) {
                 throw new \InvalidArgumentException(sprintf("The exception %s you want to handle doesn't exist.", $exceptionClass));
             }
 

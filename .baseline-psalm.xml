@@ -74,12 +74,6 @@
     <InvalidArgument>
       <code><![CDATA[123]]></code>
     </InvalidArgument>
-    <UnusedMethodCall>
-      <code><![CDATA[setAccessible]]></code>
-      <code><![CDATA[setAccessible]]></code>
-      <code><![CDATA[setAccessible]]></code>
-      <code><![CDATA[setAccessible]]></code>
-    </UnusedMethodCall>
   </file>
   <file src="tests/Strategy/AbstractStrategyTest.php">
     <LessSpecificReturnStatement>

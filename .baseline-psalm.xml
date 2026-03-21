@@ -9,11 +9,6 @@
       <code><![CDATA[$exceptionClasses]]></code>
       <code><![CDATA[$exceptionClasses]]></code>
     </PossiblyInvalidIterator>
-    <PossiblyUnusedMethod>
-      <code><![CDATA[setFinalHandlerForException]]></code>
-      <code><![CDATA[setMiddleHandlerForException]]></code>
-      <code><![CDATA[setStrategyForException]]></code>
-    </PossiblyUnusedMethod>
   </file>
   <file src="src/Strategy/AbstractStrategy.php">
     <MissingOverrideAttribute>
@@ -25,10 +20,6 @@
       <code><![CDATA[public function getTimeUnit(): string]]></code>
       <code><![CDATA[public function newAttempt(): StrategyInterface]]></code>
     </MissingOverrideAttribute>
-    <PossiblyUnusedMethod>
-      <code><![CDATA[jsonSerialize]]></code>
-      <code><![CDATA[setAttempts]]></code>
-    </PossiblyUnusedMethod>
     <PossiblyUnusedReturnValue>
       <code><![CDATA[string]]></code>
     </PossiblyUnusedReturnValue>
@@ -51,9 +42,6 @@
       <code><![CDATA[public function retryOn(): \DateTime|false]]></code>
       <code><![CDATA[public function waitFor(): int]]></code>
     </MissingOverrideAttribute>
-    <PossiblyUnusedMethod>
-      <code><![CDATA[__construct]]></code>
-    </PossiblyUnusedMethod>
   </file>
   <file src="src/Strategy/LinearStrategy.php">
     <MissingOverrideAttribute>
@@ -61,61 +49,72 @@
       <code><![CDATA[public function waitFor(): int]]></code>
     </MissingOverrideAttribute>
   </file>
-  <file src="src/Strategy/LiveStrategy.php">
-    <UnusedClass>
-      <code><![CDATA[LiveStrategy]]></code>
-    </UnusedClass>
-  </file>
   <file src="src/Strategy/NeverRetryStrategy.php">
     <MissingOverrideAttribute>
       <code><![CDATA[public function retryOn(): bool]]></code>
       <code><![CDATA[public function waitFor(): int]]></code>
     </MissingOverrideAttribute>
   </file>
-  <file src="src/Strategy/StrategyInterface.php">
-    <PossiblyUnusedMethod>
-      <code><![CDATA[getStrategyName]]></code>
-    </PossiblyUnusedMethod>
-    <PossiblyUnusedReturnValue>
-      <code><![CDATA[StrategyInterface]]></code>
-    </PossiblyUnusedReturnValue>
-  </file>
   <file src="src/Strategy/TimeFixedStrategy.php">
-    <NoValue>
-      <code><![CDATA[$endOfTimeWindow]]></code>
-    </NoValue>
-    <PossiblyInvalidArgument>
-      <code><![CDATA[$incrementBy]]></code>
-    </PossiblyInvalidArgument>
     <PossiblyNullArgument>
       <code><![CDATA[$timeUnit]]></code>
     </PossiblyNullArgument>
-    <RedundantCondition>
-      <code><![CDATA[$endOfTimeWindow instanceof \DateTime]]></code>
-      <code><![CDATA[false === \is_int($endOfTimeWindow)]]></code>
-    </RedundantCondition>
-    <TypeDoesNotContainType>
-      <code><![CDATA[\is_int($endOfTimeWindow)]]></code>
-      <code><![CDATA[\is_int($endOfTimeWindow)]]></code>
-    </TypeDoesNotContainType>
-    <UndefinedInterfaceMethod>
-      <code><![CDATA[diffInSeconds]]></code>
-    </UndefinedInterfaceMethod>
-    <UnusedClass>
-      <code><![CDATA[TimeFixedStrategy]]></code>
-    </UnusedClass>
   </file>
   <file src="src/ThenWhen.php">
-    <UnusedClass>
-      <code><![CDATA[ThenWhen]]></code>
-    </UnusedClass>
+    <UnusedConstructor>
+      <code><![CDATA[__construct]]></code>
+    </UnusedConstructor>
   </file>
   <file src="src/TryAgain.php">
     <MissingReturnType>
       <code><![CDATA[try]]></code>
     </MissingReturnType>
-    <PossiblyUnusedMethod>
-      <code><![CDATA[try]]></code>
-    </PossiblyUnusedMethod>
+  </file>
+  <file src="tests/RetryStrategyBuilderTest.php">
+    <InvalidArgument>
+      <code><![CDATA[123]]></code>
+    </InvalidArgument>
+    <UnusedMethodCall>
+      <code><![CDATA[setAccessible]]></code>
+      <code><![CDATA[setAccessible]]></code>
+      <code><![CDATA[setAccessible]]></code>
+      <code><![CDATA[setAccessible]]></code>
+    </UnusedMethodCall>
+  </file>
+  <file src="tests/Strategy/AbstractStrategyTest.php">
+    <LessSpecificReturnStatement>
+      <code><![CDATA[$this->setAttempts($attempts)]]></code>
+      <code><![CDATA[$this->setIncrementBy($incrementBy)]]></code>
+      <code><![CDATA[$this->setMaxAttempts($maxAttempts)]]></code>
+      <code><![CDATA[$this->setTimeUnit($timeUnit)]]></code>
+    </LessSpecificReturnStatement>
+    <MissingOverrideAttribute>
+      <code><![CDATA[protected function validateTimeUnit(string $timeUnit): string]]></code>
+      <code><![CDATA[public function retryOn(): bool]]></code>
+      <code><![CDATA[public function retryOn(): bool]]></code>
+      <code><![CDATA[public function retryOn(): bool]]></code>
+      <code><![CDATA[public function retryOn(): bool]]></code>
+      <code><![CDATA[public function retryOn(): bool]]></code>
+      <code><![CDATA[public function retryOn(): bool]]></code>
+      <code><![CDATA[public function waitFor(): int]]></code>
+      <code><![CDATA[public function waitFor(): int]]></code>
+      <code><![CDATA[public function waitFor(): int]]></code>
+      <code><![CDATA[public function waitFor(): int]]></code>
+      <code><![CDATA[public function waitFor(): int]]></code>
+      <code><![CDATA[public function waitFor(): int]]></code>
+    </MissingOverrideAttribute>
+    <MoreSpecificReturnType>
+      <code><![CDATA[self]]></code>
+      <code><![CDATA[self]]></code>
+      <code><![CDATA[self]]></code>
+      <code><![CDATA[self]]></code>
+    </MoreSpecificReturnType>
+  </file>
+  <file src="tests/TryAgainTest.php">
+    <UnusedClosureParam>
+      <code><![CDATA[$t]]></code>
+      <code><![CDATA[$t]]></code>
+      <code><![CDATA[$t]]></code>
+    </UnusedClosureParam>
   </file>
 </files>

@@ -37,11 +37,6 @@ jobs:
                 with:
                     composer-options: --no-scripts
 
-            -   name: Update Composer deps (with Flex)
-                # The second update is to make Flex able to do its job
-                run: |
-                    composer update --no-interaction --no-scripts
-
             -   name: Install Composer bin PHPUnit
                 uses: ramsey/composer-install@v3
                 with:

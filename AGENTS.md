@@ -59,7 +59,6 @@ When changing the supported PHP versions, you need to update those files:
 - GitHub Actions `phpunit.yml` workflow: update the SonarCloud step: always send the report for lowest supported PHP versions and the highest supported composer versions. The matrix has to support all supported PHP versions
 - `composer.json` (`require.php`): always ensure it requires the lowest supported version of PHP, e.g. `"php": "^8.2"`.
 - `Makefile`: update `PHP_VERSIONS` variable with the new supported version. Set the variable `PHP_V` to the lowest supported version, e.g. `8.2`.
-- `psalm.xml`: update the `phpVersion` attribute of the `psalm` element to the lowest supported version, e.g. `8.2`.
 - `README.md`: update the "Supported PHP versions" section with the updated supported versions.
 
 ### Changing the supported Symfony versions

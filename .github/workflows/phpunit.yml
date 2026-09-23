@@ -46,7 +46,7 @@ jobs:
                     key: php-composer-dependencies-cache
 
             -   name: Install Composer deps
-                uses: ramsey/composer-install@v3
+                uses: ramsey/composer-install@v4
                 with:
                     composer-options: --no-scripts
 
@@ -60,7 +60,7 @@ jobs:
                     fi
 
             -   name: Install Composer bin PHPUnit
-                uses: ramsey/composer-install@v3
+                uses: ramsey/composer-install@v4
                 with:
                     working-directory: './vendor-bin/phpunit'
 

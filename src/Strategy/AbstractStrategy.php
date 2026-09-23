@@ -143,7 +143,7 @@ abstract class AbstractStrategy implements StrategyInterface
 
     protected function validateTimeUnit(string $timeUnit): string
     {
-        if (false === \in_array($timeUnit, StrategyInterface::TIME_UNITS)) {
+        if (false === \in_array($timeUnit, StrategyInterface::TIME_UNITS, true)) {
             throw new \InvalidArgumentException(sprintf('The increment unit "%s" is not supported. Supported increment units are: %s.', $timeUnit, \implode(' ', StrategyInterface::TIME_UNITS)));
         }
 

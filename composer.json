@@ -13,7 +13,7 @@
   "require": {
     "php": "^8.2",
     "nesbot/carbon": "^2.43.0 || ^3.0",
-    "thecodingmachine/safe": "^2.0"
+    "thecodingmachine/safe": "^2.0 || ^3.0"
   },
   "require-dev": {
     "ext-ast": "*",

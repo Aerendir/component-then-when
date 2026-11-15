@@ -9,7 +9,7 @@
 <p align="center">
     <a href="https://github.com/Aerendir/component-then-when/releases"><img src="https://img.shields.io/packagist/v/serendipity_hq/component-then-when.svg?style=flat-square"></a>
     <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square"></a>
-        <a href="https://github.com/Aerendir/component-text-matrix/releases"><img src="https://img.shields.io/packagist/php-v/serendipity_hq/component-text-matrix?color=%238892BF&style=flat-square&logo=php" /></a>
+    <a href="https://github.com/Aerendir/component-then-when/releases"><img src="https://img.shields.io/packagist/php-v/serendipity_hq/component-then-when?color=%238892BF&style=flat-square&logo=php" /></a>
 </p>
 
 ## Current Status

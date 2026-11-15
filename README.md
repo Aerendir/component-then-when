@@ -22,12 +22,12 @@
 [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_component-then-when&metric=sqale_index)](https://sonarcloud.io/dashboard?id=Aerendir_component-then-when)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=Aerendir_component-then-when&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=Aerendir_component-then-when)
 
-[![PHPStan](https://github.com/Aerendir/component-then-when/workflows/PHPStan/badge.svg)](https://github.com/Aerendir/component-then-when/actions?query=branch%3Adev)
-[![PSalm](https://github.com/Aerendir/component-then-when/workflows/PSalm/badge.svg)](https://github.com/Aerendir/component-then-when/actions?query=branch%3Adev)
-[![PHPUnit](https://github.com/Aerendir/component-then-when/workflows/PHPunit/badge.svg)](https://github.com/Aerendir/component-then-when/actions?query=branch%3Adev)
-[![Composer](https://github.com/Aerendir/component-then-when/workflows/Composer/badge.svg)](https://github.com/Aerendir/component-then-when/actions?query=branch%3Adev)
-[![PHP CS Fixer](https://github.com/Aerendir/component-then-when/workflows/PHP%20CS%20Fixer/badge.svg)](https://github.com/Aerendir/component-then-when/actions?query=branch%3Adev)
-[![Rector](https://github.com/Aerendir/component-then-when/workflows/Rector/badge.svg)](https://github.com/Aerendir/component-then-when/actions?query=branch%3Adev)
+[![PHPStan](https://github.com/Aerendir/component-then-when/workflows/PHPStan/badge.svg)](https://github.com/Aerendir/component-then-when/actions?query=branch%3Amaster)
+[![PSalm](https://github.com/Aerendir/component-then-when/workflows/PSalm/badge.svg)](https://github.com/Aerendir/component-then-when/actions?query=branch%3Amaster)
+[![PHPUnit](https://github.com/Aerendir/component-then-when/workflows/PHPunit/badge.svg)](https://github.com/Aerendir/component-then-when/actions?query=branch%3Amaster)
+[![Composer](https://github.com/Aerendir/component-then-when/workflows/Composer/badge.svg)](https://github.com/Aerendir/component-then-when/actions?query=branch%3Amaster)
+[![PHP CS Fixer](https://github.com/Aerendir/component-then-when/workflows/PHP%20CS%20Fixer/badge.svg)](https://github.com/Aerendir/component-then-when/actions?query=branch%3Amaster)
+[![Rector](https://github.com/Aerendir/component-then-when/workflows/Rector/badge.svg)](https://github.com/Aerendir/component-then-when/actions?query=branch%3Amaster)
 
 [![codecov](https://codecov.io/gh/Aerendir/component-then-when/branch/master/graph/badge.svg?token=W9FH392F73)](https://codecov.io/gh/Aerendir/component-then-when)
 

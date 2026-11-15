@@ -13,13 +13,7 @@ declare(strict_types=1);
 
 namespace SerendipityHQ\Component\ThenWhen;
 
-if (false === \function_exists('Safe\sprintf')) {
-    require_once __DIR__ . '/functions.php';
-}
-
 use SerendipityHQ\Component\ThenWhen\Strategy\StrategyInterface;
-
-use function Safe\sprintf;
 
 /**
  * Build a TryAgain object that concretely manages the retries.
